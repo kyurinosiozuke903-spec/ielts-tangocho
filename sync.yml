@@ -1,0 +1,54 @@
+name: Sync Notion to index.html
+
+on:
+  # 毎日 JST 10:00 と 18:00 に実行
+  # GitHub Actions の cron は UTC なので、JST = UTC+9 で換算:
+  #   JST 10:00 → UTC 01:00
+  #   JST 18:00 → UTC 09:00
+  schedule:
+    - cron: "0 1 * * *"
+    - cron: "0 9 * * *"
+  # 手動でも実行できるように
+  workflow_dispatch:
+
+# 同時実行を防ぐ（重複コミット対策）
+concurrency:
+  group: sync-notion
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # コミットして push するため
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Sync Notion → index.html
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: python sync_notion.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- index.html; then
+            echo "ℹ️ 変更なし — コミットしません"
+          else
+            git add index.html
+            git commit -m "chore: sync words from Notion ($(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST'))"
+            git push
+            echo "✅ index.html を更新してプッシュしました"
+          fi
