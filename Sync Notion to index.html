@@ -1,0 +1,54 @@
+name: Sync Notion to index.html
+
+on:
+  schedule:
+    # JST 10:07 → UTC 01:07（朝の同期・本命）
+    - cron: "7 1 * * *"
+    # JST 10:37 → UTC 01:37（朝の同期・保険）
+    - cron: "37 1 * * *"
+    # JST 18:07 → UTC 09:07（夕方の同期・本命）
+    - cron: "7 9 * * *"
+    # JST 18:37 → UTC 09:37（夕方の同期・保険）
+    - cron: "37 9 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sync-notion
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Sync Notion to index.html
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: python sync_notion.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- index.html; then
+            echo "No changes detected"
+          else
+            git add index.html
+            git commit -m "chore: sync words from Notion ($(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST'))"
+            git push
+            echo "Pushed updated index.html"
+          fi
