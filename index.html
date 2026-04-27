@@ -794,7 +794,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-04-27 00:50 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-04-27 18:31 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading" },
@@ -1877,6 +1877,46 @@ const SAMPLE_WORDS = [
   { 番号:1077, 単語:"a welcome one", 意味:"歓迎すべきもの、望ましいもの", 例文:"The trend is, on the whole, a welcome one.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
   { 番号:1078, 単語:"home ownership", 意味:"住宅所有、持ち家", 例文:"The growing preference for home ownership is driven by the desire for financial stability.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
   { 番号:1079, 単語:"the desire for", 意味:"〜への願望、〜を求める気持ち", 例文:"...driven by the desire for financial stability.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1080, 単語:"illustrate", 意味:"（図表などが）〜を示す、描き出す。Task 1の冒頭で頻出の動詞", 例文:"This line graph illustrates the changes in the annual number of visitors to a particular Caribbean island from 2010 to 2017.", 品詞:"verb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1081, 単語:"depict", 意味:"〜を描写する、表す。illustrateの言い換えとしてTask 1で使える", 例文:"The graph depicts the statistics of the number of tourists visiting a particular Caribbean island between 2010 and 2017.", 品詞:"verb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1082, 単語:"compare", 意味:"〜を比較する。複数のデータ系列を扱うTask 1の導入に最適", 例文:"The line graph compares the annual number of tourists visiting a particular Caribbean island between 2010 and 2017.", 品詞:"verb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1083, 単語:"distinguish between", 意味:"〜を区別する／〜と〜を分けて示す。グラフのカテゴリ分けを示す表現", 例文:"The line graph distinguishes between those who stayed on cruise ships and those who lodged on the island.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1084, 単語:"be broken down into", 意味:"〜に分類される、内訳が示される。intoが正しい前置詞（×to）", 例文:"The data is broken down into two categories of accommodation: cruise ships and the island itself.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1085, 単語:"categorise … into", 意味:"〜を…に分類する。break down intoの言い換えとして使える", 例文:"It also categorises visitors into two types of accommodation.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1086, 単語:"accommodation", 意味:"宿泊施設、宿泊（不可算名詞）。lodgingよりIELTS Academic標準", 例文:"The graph is broken down into two categories of accommodation: cruise ships and the island.", 品詞:"noun", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1087, 単語:"fluctuations in", 意味:"〜の変動／上下動。trends in / changes inの言い換え", 例文:"The graph shows the fluctuations in the number of visitors over an eight-year period.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1088, 単語:"annual", 意味:"年間の、毎年の。per yearよりも簡潔で形容詞として名詞を直接修飾できる", 例文:"This line graph demonstrates the changes in the annual number of visitors to a particular Caribbean island.", 品詞:"adjective", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1089, 単語:"lodge", 意味:"（一時的に）宿泊する、滞在する。stayの言い換えとして語彙の幅を出せる", 例文:"…distinguishing between those who stayed on cruise ships and those who lodged on the island.", 品詞:"verb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1090, 単語:"upward trend", 意味:"上昇傾向。overviewの定番表現。対語はdownward trend", 例文:"Overall, all three figures showed upward trends during the period.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1091, 単語:"register", 意味:"（値・變化を）記録する、示す。record/showの言い換えとして語彙レンジを拡張", 例文:"Visitors staying on cruise ships registered the most significant rise.", 品詞:"verb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1092, 単語:"the main driver of", 意味:"〜の主要因、原動力。因果関係を明示してTA加点を狙える", 例文:"Cruise-ship visitors were the main driver of the overall growth.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1093, 単語:"level off", 意味:"横ばいになる、頭打ちになる。グラフ描写の最重要動詞句の1つ。UK綴りはlevelled off", 例文:"The number of tourists lodging on the island levelled off in the latter half of the period.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1094, 単語:"plateau", 意味:"（動）横ばい状態になる、停滞する。level offの言い換え", 例文:"The figure plateaued at around 1.5 million from 2013 onwards.", 品詞:"verb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1095, 単語:"modestly", 意味:"緩やかに、控えめに。rise/increase modestlyで「緩やかに上昇」", 例文:"The number of tourists lodging on the island rose more modestly.", 品詞:"adverb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1096, 単語:"substantially", 意味:"大幅に、かなり。surged overwhelminglyの代わりにrose substantiallyが適切", 例文:"The total number of tourists rose substantially over the period.", 品詞:"adverb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1097, 単語:"trajectory", 意味:"軌跡、推移の流れ。upward/downward trajectoryで「上昇・下降の推移」", 例文:"Cruise-ship visitors showed a similar but more dramatic upward trajectory.", 品詞:"noun", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1098, 単語:"the latter half of the period", 意味:"期間の後半。時間範囲をエレガントに区切る表現。対語はthe former half / the early years", 例文:"The number levelled off in the latter half of the period.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1099, 単語:"whereas", 意味:"〜である一方。whilst/whileよりもフォーマルで対比を明確に示す接続詞", 例文:"Cruise-ship visitors experienced the steepest rise, whereas those staying on the island grew at a far more modest pace.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1100, 単語:"outpace", 意味:"〜を上回る、〜より速く進む。far outpacingで「はるかに大きく上回る」", 例文:"Those staying on the island climbed by 0.75 million, far outpacing the cruise-ship category.", 品詞:"verb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1101, 単語:"the principal contributor to", 意味:"〜への主要な貢献者。the main driver ofの言い換えとしてBodyで使える", 例文:"The island-based segment was the principal contributor to the rise in the overall total.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1102, 単語:"contraction", 意味:"縮小、減少。dip / declineの言い換えとして一時的な下落を表す", 例文:"The total continued to rise despite a temporary contraction in cruise-ship arrivals.", 品詞:"noun", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1103, 単語:"owing to", 意味:"〜のために、〜によって。thanks to（カジュアル）をAcademicにdue to / owing toへ置換", 例文:"The total kept rising owing to the steady growth of the island segment.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1104, 単語:"arrivals", 意味:"到着者（数）。visitors / touristsの言い換え。観光業グラフで頻出", 例文:"There was a temporary contraction in cruise-ship arrivals in 2012.", 品詞:"noun", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1105, 単語:"climb by", 意味:"〜だけ上昇する。rise by / increase byの言い換え。by + 増加幅", 例文:"Those staying on the island climbed by roughly 0.75 million.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1106, 単語:"roughly", 意味:"およそ、約。approximately / aroundの言い換え。数値の前に付けて誤読リスクを退ける", 例文:"Those staying on the island climbed by roughly 0.75 million.", 品詞:"adverb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1107, 単語:"Remarkably,", 意味:"注目すべきは、極めて。特筆すべきデータ点を引き立たせる文頭副詞。Notably / Strikinglyの言い換え", 例文:"Remarkably, in 2012, the total continued to rise despite a temporary contraction in cruise-ship arrivals.", 品詞:"adverb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1108, 単語:"despite", 意味:"〜にもかかわらず。後ろに名詞／動名詞句を伴い、逆接関係を示す。even though（接続詞）と使い分ける", 例文:"The total continued to rise despite a temporary contraction in cruise-ship arrivals.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1109, 単語:"expansion of", 意味:"〜の拡大、拡張。growth of / increase ofの言い換え。前置詞はofが標準", 例文:"The total kept rising owing to the steady expansion of the island segment.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1110, 単語:"reverse entirely", 意味:"完全に逆転する。switch completelyの言い換え。トレンド逆転点を強調する表現", 例文:"After 2013, the trends between the two categories reversed entirely.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1111, 単語:"an increasing number of", 意味:"ますます多くの〜。more and moreのアカデミック言い換え。名詞句の主語位置で使う", 例文:"An increasing number of tourists came to use cruise ships as accommodation.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1112, 単語:"stand at", 意味:"〜に達する、〜に位置する。with the figure standing atの形で分詞構文として使える", 例文:"...with the figure standing at approximately 2 million in 2017.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1113, 単語:"eightfold / N-fold", 意味:"8倍の、N倍の。an eightfold rise / a tenfold increaseで倍数表現をコンパクトに。N times higher thanの言い換え", 例文:"Cruise-ship visitors reached approximately 2 million in 2017 — an eightfold rise since 2010.", 品詞:"adjective", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1114, 単語:"fluctuate within a narrow band", 意味:"狭い範囲で変動する。plateauではなく「上下しながらも結果的に同程度」を表す表現", 例文:"The number of visitors lodging on the island fluctuated within a narrow band over the four years.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1115, 単語:"be surpassed by", 意味:"〜に追い押される、上回られる。overtakeの受動として同義。交差点を表すグラフ描写表現", 例文:"The island figure was surpassed by the cruise-ship segment in 2016.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1116, 単語:"offset", 意味:"〜を相殺する、打ち消す。A was offset by B = AはBによって打ち消された。主語と被位語の関係に要注意", 例文:"The rise in cruise-ship arrivals was offset by a temporary decline in island stays.", 品詞:"verb", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1117, 単語:"a sharp increase", 意味:"急激な上昇。a steep rise / a marked surgeの言い換え。precipitousは下落に使い、上昇にはsharpが標準", 例文:"In 2017, the total registered a sharp increase, driven by gains in both segments.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1118, 単語:"driven by", 意味:"〜によって推進された、〜が原動力となった。因果関係を示す受動分詞。due to / owing toと使い分け", 例文:"The total registered a sharp increase, driven by simultaneous gains in both segments.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
+  { 番号:1119, 単語:"by contrast", 意味:"対照的に、それに対して。in contrast / on the other handの言い換え。文頭 or 主語の後にカンマで挿入", 例文:"The number of visitors lodging on the island, by contrast, fluctuated within a narrow band.", 品詞:"phrase", 習熟度:"苦手", skills:"writing1" },
 ];
 
 
