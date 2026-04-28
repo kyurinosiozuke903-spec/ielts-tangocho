@@ -794,7 +794,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-04-28 00:26 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-04-28 18:37 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading" },
@@ -1927,6 +1927,31 @@ const SAMPLE_WORDS = [
   { 番号:1127, 単語:"tactile appeal", 意味:"触感的な魅力、手で触れて感じる魅力（紙媒体擁護で頻出）", 例文:"Tangible media will persist owing to their tactile appeal and archival value.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
   { 番号:1128, 単語:"archival value", 意味:"アーカイブ価値、長期保存に資する価値", 例文:"Printed publications retain archival value that digital formats cannot fully replicate.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
   { 番号:1129, 単語:"free of charge", 意味:"無料で（\"without paying\" のフォーマルな言い換え）", 例文:"Readers will access books and newspapers on the internet free of charge.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1130, 単語:"give (something) a twist", 意味:"〜に独自のひねりを加える、新しい工夫を加える", 例文:"At each destination along the road, people gave noodles a twist, adding different flavours and ingredients to create a new dish.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1131, 単語:"exotic", 意味:"異国風の、目新しくて魅力的な", 例文:"So, noodles were very exotic in the 1920s and 30s in the United States.", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
+  { 番号:1132, 単語:"at one point or another", 意味:"いつかしら、どこかの時点で", 例文:"And at one point or another, different chefs decided to localise these dishes.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1133, 単語:"tweak", 意味:"少しだけ調整する、手を加えて改善する", 例文:"We love these Chinese noodle dishes. However, why don't we tweak them?", 品詞:"verb", 習熟度:"苦手", skills:"listening" },
+  { 番号:1134, 単語:"push the boundaries", 意味:"既存の限界に挑む、慣習を打ち破る", 例文:"Ramen continues to evolve. Unlike other Japanese foods, it's OK to push the boundaries.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1135, 単語:"a load of", 意味:"たくさんの、大量の", 例文:"We have had an absolute wok-load of emails sent to sliced.bread@bbc.co.uk asking about cooking oils.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1136, 単語:"advocate", 意味:"〜を主張する、推奨する", 例文:"They advocate consuming extra-virgin olive oil, but as I understand it that's not suitable for frying a fish.", 品詞:"verb", 習熟度:"苦手", skills:"listening" },
+  { 番号:1137, 単語:"what the heck", 意味:"一体全体、いったい何なんだ（不満や驚きを表す）", 例文:"What the heck do I use for frying and roasting?", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1138, 単語:"wonder product", 意味:"驚異の商品、万能商品", 例文:"There's lots of myths about these super foods and wonder oils and wonder this and that.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1139, 単語:"hogwash", 意味:"たわごと、ナンセンス", 例文:"And it's just all, I'm afraid, hogwash.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1140, 単語:"unchecked", 意味:"抑制されずに、放置された", 例文:"One of the reasons for this is that the forests have been left to grow unchecked.", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
+  { 番号:1141, 単語:"graze", 意味:"（動物が）草を食べる、（人が）ちびちびつまむ", 例文:"What we had before in our ecosystems here in Europe is that we had big grazers: we had bison, we had tauros, we had wild horses.", 品詞:"verb", 習熟度:"苦手", skills:"listening" },
+  { 番号:1142, 単語:"extinction", 意味:"絶滅", 例文:"And now they are gone from the ecosystem because of extinction, domestication.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1143, 単語:"voracious", 意味:"亀貪な、がつがつした、貪欲な", 例文:"Along with the cows' voracious appetite, they trample on the vegetation.", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
+  { 番号:1144, 単語:"flammable", 意味:"可燃性の、燃えやすい", 例文:"It's that trampling that helps to open up the forest so it's not so densely packed full of flammable vegetation.", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
+  { 番号:1145, 単語:"conservation", 意味:"保護、保全（動植物や自然を人間の害から守ること）", 例文:"I remember myself going to see lowland gorillas at Zoo Atlanta every single year, and the point of this was to introduce us to conservation.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1146, 単語:"reluctant", 意味:"気が進まない、しぶしぶの", 例文:"Pandas are notoriously reluctant to mate.", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
+  { 番号:1147, 単語:"it takes two to tango", 意味:"治も争うも両方から、二人がいて初めて成り立つ", 例文:"The female pandas have a narrow window of fertility, they're solitary creatures and it takes two to tango when it comes to reproduction.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1148, 単語:"abnormal", 意味:"異常な、普通と違う（悪い意味で）", 例文:"Many animals in zoos and aquariums display abnormal behaviours like head-bobbing, pacing, stereotypical behaviours.", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
+  { 番号:1149, 単語:"mimic", 意味:"模倣する、真似る", 例文:"Zoos cannot mimic the natural habitat of animals in the wild.", 品詞:"verb", 習熟度:"苦手", skills:"listening" },
+  { 番号:1150, 単語:"nothing better in the world", 意味:"これ以上に良いものはない（愛着を強調）", 例文:"A crunch of a fresh apple is nothing better in the world, honestly, to me.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1151, 単語:"one of life's true pleasures", 意味:"人生の本当の楽しみの一つ", 例文:"I really find that to be one of life's real true pleasures.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1152, 単語:"a ton of", 意味:"たくさんの、大量の", 例文:"So that first bite gives us a ton of information.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
+  { 番号:1153, 単語:"mushy", 意味:"（食べ物が）柔らかい、ぐにゃぐにゃした", 例文:"Everybody, I think, has had the experience of biting into a mushy apple and saying, \"No thank you!\"", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
+  { 番号:1154, 単語:"convert", 意味:"考えや生き方を転換した人、改宗者", 例文:"So, are you an insect convert then?", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
 ];
 
 
