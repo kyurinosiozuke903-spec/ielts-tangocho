@@ -794,7 +794,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-01 00:30 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-01 17:30 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading" },
@@ -1952,6 +1952,43 @@ const SAMPLE_WORDS = [
   { 番号:1152, 単語:"a ton of", 意味:"たくさんの、大量の", 例文:"So that first bite gives us a ton of information.", 品詞:"phrase", 習熟度:"苦手", skills:"listening" },
   { 番号:1153, 単語:"mushy", 意味:"（食べ物が）柔らかい、ぐにゃぐにゃした", 例文:"Everybody, I think, has had the experience of biting into a mushy apple and saying, \"No thank you!\"", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
   { 番号:1154, 単語:"convert", 意味:"考えや生き方を転換した人、改宗者", 例文:"So, are you an insect convert then?", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1155, 単語:"residual demand", 意味:"残存需要。主流市場が代替品に移行した後も、少数派によって根強く残る需要（譲歩表現で頻出）", 例文:"A residual demand for tangible media will persist owing to their tactile appeal and archival value.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1156, 単語:"bibliophile", 意味:"愛書家、本を愛する人、蔵書家", 例文:"Elderly bibliophiles and serious collectors value tangible publications for aesthetic reasons.", 品詞:"noun", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1157, 単語:"tactile sensation", 意味:"触感、手で触れた時の感覚（紙媒体擁護で頻出）", 例文:"Many also derive genuine pleasure from the tactile sensation of handling printed pages.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1158, 単語:"derive pleasure from", 意味:"〜から喜びを得る、〜から楽しみを引き出す（derive A from Bのコロケーション）", 例文:"Many also derive genuine pleasure from the tactile sensation of handling printed pages.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1159, 単語:"wholesale migration", 意味:"全面的移行、大規模な乗り換え（wholesaleは「全面的な」の形容詞用法）", 例文:"The wholesale migration to digital platforms appears all but inevitable.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1160, 単語:"all but inevitable", 意味:"ほぼ避けられない、ほぼ不可避な（all but = almostのイディオム）", 例文:"The wholesale migration to digital platforms appears all but inevitable.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1161, 単語:"niche demand", 意味:"ニッチ需要、小規模だが特化した需要（residual demandとして同義だが「特化」のニュアンスが強い）", 例文:"There will still be a niche demand for printed media among elderly bibliophiles.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1162, 単語:"curate", 意味:"（コレクションを）厳選して整える、狙いをもって集める", 例文:"Enthusiasts often take pride in curating rare book covers and bindings.", 品詞:"verb", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1163, 単語:"take pride in", 意味:"〜に誇りをもつ、〜を誇りに思う", 例文:"Enthusiasts often take pride in curating rare book covers and bindings.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1164, 単語:"enthusiast", 意味:"熱心な愛好家、マニア、ファン（aficionadoより中立的・一般的）", 例文:"Enthusiasts often take pride in curating rare book covers and bindings.", 品詞:"noun", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1165, 単語:"sensory experience", 意味:"感覚体験、五感を通じた体験", 例文:"A sensory experience absent from screen-based reading.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1166, 単語:"as a subset of", 意味:"〜の一部として、〜の部分集合として（全体の中の限られた集団を論理的・分析的に切り出すアカデミック表現）", 例文:"There will still be a niche demand for printed media, as a subset of readers value tangible publications for aesthetic reasons.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1167, 単語:"a host of", 意味:"数々の、多くの（a lot of よりフォーマル、IELTS推奨）", 例文:"Digital publishing offers a host of compelling advantages, most notably accessibility and affordability.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1168, 単語:"at the click of a button", 意味:"ボタンひとつで、ワンクリックで（デジタルの手軽さを表すコロケーション）", 例文:"Online platforms grant readers near-instantaneous access to vast repositories of information at the click of a button.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1169, 単語:"repository", 意味:"保管庫、蔵、宝庫（情報や知識の集積場所）", 例文:"Online platforms grant access to vast repositories of information.", 品詞:"noun", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1170, 単語:"ubiquity", 意味:"遍在性、どこにでもあること（形容詞は ubiquitous）", 例文:"Owing to the ubiquity of digital platforms, individuals can retrieve information at any time and from any location.", 品詞:"noun", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1171, 単語:"narrow the divide", 意味:"格差を縮める、隔たりを埋める（narrow + the gap/divide のコロケーション）", 例文:"Online sources help to narrow the economic divide between the affluent and the disadvantaged.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1172, 単語:"the affluent", 意味:"富裕層、裕福な人々（the + 形容詞で集合名詞。反意語は the disadvantaged / the impoverished）", 例文:"Online sources help to narrow the economic divide between the affluent and the disadvantaged.", 品詞:"noun", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1173, 単語:"compelling", 意味:"説得力のある、強い説得力をもつ、興味を引きつけて離さない", 例文:"Digital publishing offers a host of compelling advantages.", 品詞:"adjective", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1174, 単語:"mitigation", 意味:"緩和、軽減（動詞は mitigate。問題を「完全に解決」ではなく「和らげる」ニュアンス）", 例文:"The proliferation of online sources leads to the mitigation of the economic divide.", 品詞:"noun", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1175, 単語:"financial burden", 意味:"経済的負担、金銭的重荷（pose / impose / place a financial burden on の型で使う）", 例文:"Printed books often pose a financial burden on low-income individuals owing to their relatively high prices.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1176, 単語:"retrieve", 意味:"（情報を）取り出す、検索して得る、回収する（getよりフォーマル）", 例文:"Individuals can retrieve information at any time and from any location.", 品詞:"verb", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1177, 単語:"grant", 意味:"（権利・アクセスを）与える、許可する（giveよりフォーマル。grant A B / grant B to A の二重目的語を取る）", 例文:"Online platforms grant readers near-instantaneous access to vast repositories of information.", 品詞:"verb", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1178, 単語:"instantaneous", 意味:"即座の、瞬時の（名詞は instant、副詞は instantaneously。near-instantaneous で「ほぼ即時の」のフォーマル表現）", 例文:"Online platforms grant readers near-instantaneous access to vast repositories of information.", 品詞:"adjective", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1179, 単語:"at any time and from any location", 意味:"いつでも、どこからでも（whenever and whereverのフォーマル言い換え。デジタルのアクセシビリティを表す定型句）", 例文:"Individuals can retrieve information at any time and from any location.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1180, 単語:"substantial proportion of", 意味:"かなりの割合の、相当な部分の（most ofより中立・アカデミック。不加算名詞とも使える）", 例文:"A substantial proportion of online content is available free of charge.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1181, 単語:"content", 意味:"（デジタル・メディア上の）コンテンツ、中身、情報や記事などの総称（不可算名詞・単数扱い。articles とした複数可算名詞よりフォーマルで包括的）", 例文:"A substantial proportion of online content is available free of charge.", 品詞:"noun", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1182, 単語:"through the proliferation of", 意味:"〜の急増・拡散によって（by proliferation of は誤り。through / with the proliferation of が正しいコロケーション）", 例文:"Through the proliferation of online sources, essential information can be accessed at no cost.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1183, 単語:"at no cost", 意味:"無料で、コストをかけずに（free of charge の言い換え。両者交互で使うとLR加点）", 例文:"Through the proliferation of online sources, essential information can be accessed at no cost.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1184, 単語:"thereby + V-ing", 意味:"それによって〜する（分詞構文。主節の動作の「結果」を示すBand 7+の定型構文。コンマで接続し、後ろに動名詞を置く）", 例文:"Essential information can be accessed at no cost, thereby helping to narrow the economic divide between the affluent and the disadvantaged.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1185, 単語:"wholesale", 意味:"全面的な、大規模な、包括的な（原意は「卵売りの」だが、形容詞として「全面的な変化・移行」を修飾IELTS Band 8語彙）", 例文:"The wholesale digitalization of reading appears virtually irreversible.", 品詞:"adjective", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1186, 単語:"irreversible", 意味:"不可逆な、元に戻せない（形容詞。反意語は reversible。inevitableと似るが「一方向性」を強調）", 例文:"The wholesale digitalization of reading appears virtually irreversible.", 品詞:"adjective", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1187, 単語:"unparalleled", 意味:"比類のない、並ぶもののない（greatやveryよりフォーマル。unprecedentedと交互で使うとLR加点）", 例文:"Digital publishing offers unparalleled accessibility and cost-effectiveness.", 品詞:"adjective", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1188, 単語:"cost-effectiveness", 意味:"費用対効果、コストパフォーマンス（affordability の言い換え。形容詞は cost-effective。ハイフン表記が標準）", 例文:"The shift to digital reading is driven by its unparalleled accessibility and cost-effectiveness.", 品詞:"noun", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1189, 単語:"persistent demand for", 意味:"〜への根強い需要、持続的な需要（demand は前置詞 for を取る。of は誤り。residual demand と類似）", 例文:"A persistent demand for printed media will remain among those who value its tactile appeal.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1190, 単語:"among those who", 意味:"〜する人々の間で、〜する人々によって（関係代名詞を使った限定表現。主体を明確にしながら一般論を語る Band 7+ 構文）", 例文:"A persistent demand will remain among those who value tangible media's tactile appeal.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2" },
+  { 番号:1191, 単語:"virtually", 意味:"実質的に、ほぼ、事実上（形容詞を修飾して「ちょっと以外はそう」とニュアンスを和らげる。almostよりフォーマル。virtual realityの「仮想」とは意味が違う点に注意）", 例文:"The wholesale digitalization of reading appears virtually irreversible.", 品詞:"adverb", 習熟度:"苦手", skills:"writing2" },
 ];
 
 
