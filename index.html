@@ -794,7 +794,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-02 20:33 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-03 17:17 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading" },
@@ -2066,6 +2066,35 @@ const SAMPLE_WORDS = [
   { 番号:1266, 単語:"springy noodles", 意味:"もちもちした麺・コシを感じる麺。springy = 「弾力のある・もちもちの」。麺の食感を表すコレがピンポイントで出せると評価上ジ。chewy(もちもち・歯ごたえ)ともセットで覚える", 例文:"Tonkotsu ramen is famous for its rich broth and springy noodles.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
   { 番号:1267, 単語:"tender", 意味:"(肉・野菜が)柔らかい・口どけのよい・juicyとセットでFood記述の双璧。softよりもぐっと上品でグルメ。tender chashu / tender beef / tender chicken / fall-apart tender など。(二義: 「優しい・思いやりのある」の意も)", 例文:"A steaming bowl of rich broth, springy noodles, and tender chashu pork is the ultimate comfort food.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking" },
   { 番号:1268, 単語:"(after) years of ~ing", 意味:"何年も〜してきた後で・長年の〜の末に。経験の長さ・積み重ねを一語で示せるSpeaking高効表現。after years of practising / after years of studying / even after years of eating it など。after long years ofより自然", 例文:"Even after years of eating ramen, there's always a new variation to discover.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1269, 単語:"choreography", 意味:"振り付け", 例文:"(From Cambridge 15 Test 2)", 品詞:"noun", 習熟度:"苦手", skills:"reading" },
+  { 番号:1270, 単語:"improvise", 意味:"即興で作る", 例文:"(From Cambridge 15 Test 2)", 品詞:"verb", 習熟度:"苦手", skills:"reading" },
+  { 番号:1271, 単語:"prevalent", 意味:"普及している", 例文:"(From Cambridge 15 Test 2)", 品詞:"adjective", 習熟度:"苦手", skills:"reading" },
+  { 番号:1272, 単語:"awning", 意味:"日よけ", 例文:"(From Cambridge 15 Test 2)", 品詞:"noun", 習熟度:"苦手", skills:"reading" },
+  { 番号:1273, 単語:"staggered", 意味:"ずらした、交互の", 例文:"(From Cambridge 15 Test 2)", 品詞:"adjective", 習熟度:"苦手", skills:"reading" },
+  { 番号:1274, 単語:"carriageway", 意味:"車道", 例文:"(From Cambridge 15 Test 2)", 品詞:"noun", 習熟度:"苦手", skills:"reading" },
+  { 番号:1275, 単語:"debilitating", 意味:"衰弱させる", 例文:"(From Cambridge 15 Test 2)", 品詞:"adjective", 習熟度:"苦手", skills:"reading" },
+  { 番号:1276, 単語:"notorious", 意味:"悪名高い", 例文:"(From Cambridge 15 Test 2)", 品詞:"adjective", 習熟度:"苦手", skills:"reading" },
+  { 番号:1277, 単語:"contagious", 意味:"伝染性の", 例文:"(From Cambridge 15 Test 2)", 品詞:"adjective", 習熟度:"苦手", skills:"reading" },
+  { 番号:1278, 単語:"pinpointing", 意味:"正確に特定する", 例文:"(From Cambridge 15 Test 2)", 品詞:"verb", 習熟度:"苦手", skills:"reading" },
+  { 番号:1279, 単語:"city-dwellers", 意味:"都市居住者", 例文:"(From Cambridge 15 Test 2)", 品詞:"noun", 習熟度:"苦手", skills:"reading" },
+  { 番号:1280, 単語:"fraternity", 意味:"友愛会、同業者仲間", 例文:"(From Cambridge 15 Test 2)", 品詞:"noun", 習熟度:"苦手", skills:"reading" },
+  { 番号:1281, 単語:"be teased by", 意味:"からかわれる", 例文:"(From Cambridge 15 Test 2)", 品詞:"phrase", 習熟度:"苦手", skills:"reading" },
+  { 番号:1282, 単語:"dominant", 意味:"支配的な", 例文:"(From Cambridge 15 Test 2)", 品詞:"adjective", 習熟度:"苦手", skills:"reading" },
+  { 番号:1283, 単語:"submissive", 意味:"従順な", 例文:"(From Cambridge 15 Test 2)", 品詞:"adjective", 習熟度:"苦手", skills:"reading" },
+  { 番号:1284, 単語:"respite", 意味:"休息、猶予", 例文:"(From Cambridge 15 Test 2)", 品詞:"noun", 習熟度:"苦手", skills:"reading" },
+  { 番号:1285, 単語:"tedious", 意味:"退屈な", 例文:"(From Cambridge 15 Test 2)", 品詞:"adjective", 習熟度:"苦手", skills:"reading" },
+  { 番号:1286, 単語:"replenishment", 意味:"補充", 例文:"(From Cambridge 15 Test 2)", 品詞:"noun", 習熟度:"苦手", skills:"reading" },
+  { 番号:1287, 単語:"multiplication", 意味:"掛け算、増加", 例文:"(From Cambridge 15 Test 2)", 品詞:"noun", 習熟度:"苦手", skills:"reading" },
+  { 番号:1288, 単語:"irrigation", 意味:"灌漑、水を引いて土地を潤すこと", 例文:"the programme focused primarily on making use of existing water resources from the Limpopo River by setting up systems of irrigation, which would provide a dependable water supply for crops and animals.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1289, 単語:"preservation", 意味:"保存、保護（食品の保存・遺産の保護）", 例文:"in order to prevent food from being spoiled, the farmers needed to learn techniques for its preservation.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1290, 単語:"arid", 意味:"（土地・気候が）乾燥した、不毛の", 例文:"This is a dry and arid region, with unpredictable rainfall.", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
+  { 番号:1291, 単語:"charcoal", 意味:"木炭", 例文:"they used the forest as a means of providing themselves with an income, mainly by selling charcoal.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1292, 単語:"livestock", 意味:"家畜（牛・羊などの総称）", 例文:"These associations planned and carried out activities including water management, livestock breeding and agriculture.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1293, 単語:"cultivate", 意味:"（土地を）耕す、（作物を）栽培する", 例文:"Once the area had been fenced off, it could be cultivated.", 品詞:"verb", 習熟度:"苦手", skills:"listening" },
+  { 番号:1294, 単語:"petition", 意味:"請願（書）、嘆願", 例文:"Diane Gosforth was one of those people, and she organised petitions and demonstrations, which eventually made the council change its mind.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1295, 単語:"satire", 意味:"風刺、皮肉（文学・社会批評の手法）", 例文:"His satire of the legal system is pretty powerful.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1296, 単語:"sibling", 意味:"兄弟姉妹（性別を問わない総称）", 例文:"one trait that a lot of the studies mention is that they are easier to get on with than older or younger siblings.", 品詞:"noun", 習熟度:"苦手", skills:"listening" },
+  { 番号:1297, 単語:"nurturing", 意味:"（人を）育てる、世話をする（caring とほぼ同義）", 例文:"they were thought to be good at nurturing — certainly in the past when people had large families they would have been expected to look after the younger ones.", 品詞:"adjective", 習熟度:"苦手", skills:"listening" },
 ];
 
 
