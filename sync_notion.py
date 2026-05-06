@@ -36,6 +36,7 @@ PROP_EXAMPLE = "例文"
 PROP_POS = "品詞"
 PROP_PROFICIENCY = "習熟度"
 PROP_SKILLS = "skills"
+PROP_TOPIC = "分野"  # IELTSトピック分類: society/medical/culture/economy/environment/nature/history/technology/education/general
 
 
 def die(msg: str, code: int = 1) -> None:
