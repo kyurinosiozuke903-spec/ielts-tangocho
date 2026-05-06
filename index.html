@@ -794,7 +794,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-05 21:15 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-06 18:38 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading" },
@@ -2201,6 +2201,36 @@ const SAMPLE_WORDS = [
   { 番号:1399, 単語:"elaborately decorated", 意味:"精巧に装飾された、手の込んだ装飾を施された", 例文:"The wooden floats are elaborately decorated and pulled through the city centre.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
   { 番号:1400, 単語:"lined with", 意味:"〜が立ち並ぶ、〜で縁取られた", 例文:"The streets in central Kyoto are pedestrianised and lined with food stalls offering local specialities.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
   { 番号:1401, 単語:"deeply rooted in", 意味:"〜に深く根ざしている、〜に深く根付いた", 例文:"It still feels deeply rooted in Kyoto's cultural heritage.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1402, 単語:"play a vital role in", 意味:"〜に重要な役割を果たす", 例文:"Festivals play a vital role in maintaining social cohesion.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1403, 単語:"social cohesion", 意味:"社会的結束、社会の一体感", 例文:"Festivals play a vital role in maintaining social cohesion.", 品詞:"noun", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1404, 単語:"foster a sense of belonging", 意味:"帰属意識を育む", 例文:"This kind of collective effort fosters a strong sense of belonging among the participants.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1405, 単語:"pass down to younger generations", 意味:"次世代に受け継ぐ", 例文:"Festivals serve as a vehicle for passing cultural heritage down to younger generations.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1406, 単語:"a cornerstone of", 意味:"〜の礎、〜の基盤となるもの", 例文:"Festivals are a cornerstone of community life.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1407, 単語:"get together", 意味:"集まる、一緒になる（家族や友人と会うニュアンスで自然・会話的）", 例文:"We get together at home, share a cake along with some steak, and my parents always pick out a thoughtful present for me.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1408, 単語:"thoughtful", 意味:"思いやりのある、心のこもった、配慮の行き届いた", 例文:"My parents always pick out a thoughtful present for me on my birthday.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1409, 単語:"hop on a video call", 意味:"ビデオ通話に参加する、ささっとビデオ通話する（カジュアルで自然）", 例文:"We exchange heartfelt messages and sometimes hop on a video call to mark the occasion.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1410, 単語:"exchange messages", 意味:"メッセージをやり取りする（text each other より少し丁寧で書き言葉的）", 例文:"We've had to celebrate through social media instead—we exchange heartfelt messages and sometimes hop on a video call.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1411, 単語:"mark the occasion", 意味:"（特別な日・出来事を）祝う、記念する", 例文:"We sometimes hop on a video call to mark the occasion.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1412, 単語:"by far", 意味:"断然、はるかに（最上級・比較級を強調）", 例文:"I'd say my birthday is by far the most important day of the year for me.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1413, 単語:"take a step towards adulthood", 意味:"大人への一歩を踏み出す", 例文:"It's the one day when I genuinely feel I'm taking another step towards adulthood.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1414, 単語:"self-reflection", 意味:"自己省察、内省", 例文:"My birthday always prompts a kind of mini self-reflection.", 品詞:"noun", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1415, 単語:"look back on", 意味:"〜を振り返る、回顧する", 例文:"I usually take some time to look back on the past year.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1416, 単語:"set goals for the year ahead", 意味:"その先一年の目標を立てる", 例文:"I set clear goals for the year ahead on my birthday.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1417, 単語:"attend (a festival)", 意味:"（祭りに）参加する／足を運ぶ（観客として）", 例文:"I'd love to attend Nebuta Matsuri, which is held in Aomori Prefecture every August.", 品詞:"verb", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1418, 単語:"the sheer scale of", 意味:"〜の圧倒的なスケール／規模", 例文:"What really appeals to me is the sheer scale of the event—some of the floats are several metres tall.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1419, 単語:"electrifying atmosphere", 意味:"電気が走るような熱狂的な雰囲気", 例文:"Thousands of dancers chanting 'rassera, rassera' apparently creates an electrifying atmosphere.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1420, 単語:"sample regional flavours", 意味:"その土地ならではの味を少しずつ味わう", 例文:"You can wander around and sample regional flavours you can't easily find elsewhere.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1421, 単語:"on my bucket list", 意味:"死ぬまでにやりたいことリストに入っている", 例文:"It's been on my bucket list for years, and I'm hoping to make it up there next summer.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1422, 単語:"catch up on current events", 意味:"最新ニュースに追いつく／時事に追いつく", 例文:"Watching the morning news is a great way to catch up on current events.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1423, 単語:"get ready", 意味:"出かける準備をする／支度する", 例文:"I watch the news while I'm getting ready in the morning.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1424, 単語:"when it comes to", 意味:"〜に関して言えば（話題転換のディスコースマーカー）", 例文:"When it comes to entertainment, I tend to rely on streaming services.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1425, 単語:"rely on", 意味:"〜に頼る／〜を主に使う", 例文:"I tend to rely on streaming services like Netflix instead of watching traditional TV.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1426, 単語:"screen time", 意味:"スクリーンを見ている時間／視聴時間（テレビ・スマホ・PC含む）", 例文:"My overall screen time hasn't really changed, even though I watch less actual TV.", 品詞:"noun", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1427, 単語:"tune into", 意味:"（テレビ・ラジオの番組に）チャンネルを合わせる、視聴する", 例文:"I occasionally tune into documentaries on current affairs.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1428, 単語:"current affairs", 意味:"時事問題、現在進行中の政治・社会的出来事", 例文:"Documentaries on current affairs tie in nicely with what I'm studying at university.", 品詞:"noun", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1429, 単語:"tie in with", 意味:"～と結びつく、関連する、合致する", 例文:"Documentaries on history tie in nicely with my research at university.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1430, 単語:"at home and abroad", 意味:"国内外で（国内と海外の両方で）", 例文:"The morning news helps me catch up on what's going on at home and abroad.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking" },
+  { 番号:1431, 単語:"news-focused", 意味:"ニュース中心の、報道に特化した（複合形容詞）", 例文:"My actual TV viewing is pretty narrow and news-focused.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking" },
 ];
 
 
