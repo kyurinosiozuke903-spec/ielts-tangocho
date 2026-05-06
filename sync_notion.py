@@ -115,21 +115,100 @@ def extract_number(prop: dict | None) -> int | None:
         return None
 
 
+# ─── 分野(トピック)の番号→分野マッピング ─────────────────
+# Notion DB に「分野」プロパティが無い場合のフォールバック。
+# Notion 側に「分野」(select または text) を追加すれば、そちらが優先される。
+TOPIC_RANGE_MAP = [
+    (1, 25, "medical"), (26, 39, "society"), (40, 55, "medical"),
+    (56, 75, "culture"), (76, 81, "economy"), (82, 94, "history"),
+    (95, 103, "education"), (104, 116, "medical"), (117, 124, "education"),
+    (125, 128, "nature"), (129, 134, "technology"), (135, 153, "general"),
+    (154, 154, "education"), (155, 155, "society"), (156, 158, "education"),
+    (159, 176, "medical"), (177, 199, "society"), (200, 220, "society"),
+    (221, 223, "general"), (224, 226, "education"), (227, 229, "society"),
+    (230, 230, "general"), (231, 245, "nature"), (246, 255, "general"),
+    (256, 256, "technology"), (257, 262, "society"), (263, 280, "nature"),
+    (281, 282, "society"), (283, 284, "general"), (285, 286, "society"),
+    (287, 290, "history"), (291, 299, "society"), (301, 307, "technology"),
+    (308, 312, "medical"), (313, 317, "environment"), (318, 322, "medical"),
+    (323, 326, "environment"), (327, 332, "medical"), (333, 337, "medical"),
+    (338, 342, "society"), (343, 352, "general"), (353, 357, "general"),
+    (358, 362, "general"), (363, 367, "nature"), (368, 372, "general"),
+    (373, 394, "society"), (395, 400, "medical"), (401, 402, "history"),
+    (403, 416, "environment"), (417, 427, "culture"), (428, 436, "society"),
+    (437, 441, "society"), (442, 451, "society"), (452, 456, "culture"),
+    (457, 471, "environment"), (472, 472, "general"), (473, 480, "history"),
+    (481, 497, "society"), (498, 510, "society"), (511, 530, "general"),
+    (531, 545, "society"), (546, 561, "culture"), (562, 590, "environment"),
+    (591, 600, "economy"), (601, 617, "technology"), (618, 625, "medical"),
+    (626, 640, "society"), (641, 649, "general"), (650, 664, "society"),
+    (665, 685, "history"), (686, 720, "society"), (721, 745, "environment"),
+    (746, 749, "society"), (750, 761, "society"), (762, 770, "medical"),
+    (771, 779, "society"), (780, 810, "economy"), (811, 819, "society"),
+    (820, 830, "culture"), (831, 844, "general"), (845, 854, "general"),
+    (855, 870, "culture"), (871, 879, "general"), (880, 945, "economy"),
+    (946, 949, "society"), (950, 969, "nature"), (970, 985, "society"),
+    (986, 989, "society"), (990, 999, "general"), (1000, 1059, "economy"),
+    (1060, 1075, "economy"), (1076, 1129, "general"), (1130, 1145, "culture"),
+    (1146, 1180, "culture"), (1181, 1189, "economy"), (1190, 1210, "general"),
+    (1211, 1239, "general"), (1240, 1268, "culture"), (1269, 1295, "general"),
+    (1296, 1300, "society"), (1301, 1340, "history"), (1341, 1395, "economy"),
+    (1396, 1416, "culture"), (1417, 1423, "culture"), (1424, 1431, "society"),
+]
+TOPIC_OVERRIDES = {
+    27: "economy", 73: "general", 74: "general", 181: "economy",
+    187: "economy", 188: "economy", 189: "economy", 230: "general",
+    285: "society", 287: "nature", 288: "nature", 289: "nature",
+    290: "society", 405: "environment", 406: "economy", 407: "economy",
+    408: "economy", 409: "economy", 410: "economy", 411: "economy",
+    412: "environment", 414: "economy", 415: "economy", 416: "economy",
+    449: "technology", 691: "environment", 701: "culture", 723: "society",
+    736: "environment", 738: "environment", 741: "environment",
+    876: "environment", 877: "environment", 902: "medical",
+    1142: "nature", 1143: "nature", 1144: "general", 1145: "environment",
+    1149: "nature", 1288: "environment", 1289: "environment",
+    1290: "environment", 1292: "nature", 1293: "environment",
+    1402: "society", 1403: "society", 1404: "society", 1405: "society",
+}
+
+
+def topic_for_number(num) -> str:
+    """番号から分野を推定 (Notionに分野欄が無い場合のフォールバック)。"""
+    if num is None:
+        return "general"
+    try:
+        n = int(num)
+    except (TypeError, ValueError):
+        return "general"
+    if n in TOPIC_OVERRIDES:
+        return TOPIC_OVERRIDES[n]
+    for start, end, cat in TOPIC_RANGE_MAP:
+        if start <= n <= end:
+            return cat
+    return "general"
+
+
 def page_to_word(page: dict) -> dict | None:
-    """Notion ページを {番号, 単語, 意味, 例文, 品詞, 習熟度, skills} dict に変換。"""
+    """Notion ページを {番号, 単語, 意味, 例文, 品詞, 習熟度, skills, 分野} dict に変換。"""
     props = page.get("properties", {})
     word = extract_text(props.get(PROP_WORD)).strip()
     if not word:
         return None  # 単語が空のレコードはスキップ
 
+    num = extract_number(props.get(PROP_NUMBER))
+    # Notion に分野欄があればそれを優先、無ければ番号から自動判定
+    topic_from_notion = extract_text(props.get(PROP_TOPIC)).strip()
+    topic = topic_from_notion if topic_from_notion else topic_for_number(num)
+
     return {
-        "番号": extract_number(props.get(PROP_NUMBER)),
+        "番号": num,
         "単語": word,
         "意味": extract_text(props.get(PROP_MEANING)).strip(),
         "例文": extract_text(props.get(PROP_EXAMPLE)).strip(),
         "品詞": extract_text(props.get(PROP_POS)).strip() or "noun",
         "習熟度": extract_text(props.get(PROP_PROFICIENCY)).strip() or "苦手",
         "skills": extract_text(props.get(PROP_SKILLS)).strip() or "reading",
+        "分野": topic,
     }
 
 
@@ -158,7 +237,8 @@ def words_to_js_array(words: list[dict]) -> str:
             f"例文:{js_string(w['例文'])}, "
             f"品詞:{js_string(w['品詞'])}, "
             f"習熟度:{js_string(w['習熟度'])}, "
-            f"skills:{js_string(w['skills'])} }},"
+            f"skills:{js_string(w['skills'])}, "
+            f"分野:{js_string(w.get('分野', 'general'))} }},"
         )
     lines.append("];")
     return "\n".join(lines)
