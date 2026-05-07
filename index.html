@@ -847,7 +847,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-07 19:09 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-08 01:20 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2309,6 +2309,26 @@ const SAMPLE_WORDS = [
   { 番号:1454, 単語:"inherently", 意味:"本質的に・もともと・それ自体として", 例文:"There isn't anything inherently unpleasant about it.", 品詞:"adverb", 習熟度:"苦手", skills:"listening", 分野:"general" },
   { 番号:1455, 単語:"dodgy", 意味:"(口語)怠い・体調を崩しそうな・信用できない", 例文:"You had what you call a dodgy prawn.", 品詞:"adjective", 習熟度:"苦手", skills:"listening", 分野:"general" },
   { 番号:1456, 単語:"avoidance", 意味:"回避・避けること", 例文:"So, that's a sort of fear-based avoidance.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1457, 単語:"gravitate towards", 意味:"〜に惹かれる／自然と〜を選ぶ（嗜好や関心が向かう）", 例文:"I tend to gravitate towards sci-fi and fantasy series rather than reality shows.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1458, 単語:"richly imagined", 意味:"緻密に作り込まれた／世界観が豊かに描かれた（小説・映画・ドラマの世界観を褒める定番表現）", 例文:"What draws me to fantasy dramas is the richly imagined worlds the writers create.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1459, 単語:"character-driven storytelling", 意味:"キャラクター主導の物語（プロットよりも登場人物の内面・成長で進む物語のこと。Speaking/Writingで作品評価に使える高評価フレーズ）", 例文:"I prefer character-driven storytelling because it makes the emotional arcs feel more authentic.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1460, 単語:"thought-provoking", 意味:"考えさせられる／示唆に富む（ドキュメンタリー・記事・本などを評価する形容詞。Band 7+で頻出）", 例文:"Documentaries on geopolitics are often genuinely thought-provoking.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1461, 単語:"escapism", 意味:"現実逃避（娯楽の効用として中立〜ポジティブに使える名詞。fiction/games/films等の話題で重宝）", 例文:"For me, fantasy series are a form of healthy escapism after long hours of studying.", 品詞:"noun", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1462, 単語:"mass reach", 意味:"マスリーチ／広範な視聴者への到達力（テレビ・新聞・ラジオなど伝統メディアの強みを帰納する高頻出名詞句）", 例文:"Television's biggest strength is its mass reach—it can deliver the same message to millions of viewers at once.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1463, 単語:"shared cultural moments", 意味:"共有された文化的瞬間（オリンピック中継や年末番組など、國民が同時に体験する塱り上がりを指すメディア論の重要フレーズ）", 例文:"TV is uniquely suited to creating shared cultural moments that streaming platforms struggle to replicate.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1464, 単語:"a passive medium", 意味:"受動的なメディア（視聴者が選択できず放送されたものを受け取るだけの媒体。TVの欠点を語る際の定番表現）", 例文:"Compared to streaming, TV is a fundamentally passive medium—you watch whatever happens to be on at that hour.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1465, 単語:"lose ground to", 意味:"〜にシェアを奢われる／後れを取る（企業・技術・メディアなどが弱体化していくトレンドを語る際のBand 7+コロケーション）", 例文:"Traditional TV is gradually losing ground to on-demand streaming services, especially among younger viewers.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1466, 単語:"on-demand", 意味:"オンデマンドの／視聴者の要求に応じた（streaming/video/contentなどを修飾し、伝統メディアとの対比を明確にする重要形容詞）", 例文:"More and more people prefer on-demand streaming over scheduled TV broadcasts.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1467, 単語:"an ingrained habit", 意味:"深く根づいた習慣／体に染みついた日課", 例文:"Going for a morning walk has become such an ingrained habit that the day genuinely feels off without it.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1468, 単語:"set someone up nicely for", 意味:"～へのよい流れを作る／うまく繋ぐ", 例文:"A short walk in the morning sets me up nicely for a couple of hours of focused study afterwards.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1469, 単語:"switch off and recharge", 意味:"頭を完全に切り替えてリフレッシュする", 例文:"After a demanding week of academic reading, watching a film is the perfect way to switch off and recharge.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1470, 単語:"a demanding week", 意味:"ハードな一週間／要求が多い一週間", 例文:"After a demanding week of academic reading, I really need some proper downtime.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1471, 単語:"a nice blend of", 意味:"～がうまく調和したもの／程よく混ざったもの", 例文:"My weekends are a nice blend of productivity, downtime, and quality time with the people I care about.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1472, 単語:"a fairly structured day", 意味:"きっちり組まれた一日／規則的な日課", 例文:"A typical weekday for me follows a fairly structured rhythm.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1473, 単語:"power through", 意味:"（しんどい作業を）気合いで一気に片付ける", 例文:"I head straight to the library and power through several hours of academic reading.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1474, 単語:"breathing room", 意味:"（時間・心理的に）余裕／一息つける余地", 例文:"Tuesdays and Thursdays give me a bit more breathing room.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1475, 単語:"wind down", 意味:"（一日の活動から）徐々にリラックス状態に入る", 例文:"I make it a point to wind down properly before bed.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1476, 単語:"call it a night", 意味:"（活動を）切り上げて寝る", 例文:"I try to call it a night by around eleven.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
 ];
 
 
