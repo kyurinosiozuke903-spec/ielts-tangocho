@@ -847,7 +847,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-07 01:12 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-07 10:32 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2284,6 +2284,31 @@ const SAMPLE_WORDS = [
   { 番号:1429, 単語:"tie in with", 意味:"～と結びつく、関連する、合致する", 例文:"Documentaries on history tie in nicely with my research at university.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"society" },
   { 番号:1430, 単語:"at home and abroad", 意味:"国内外で（国内と海外の両方で）", 例文:"The morning news helps me catch up on what's going on at home and abroad.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"society" },
   { 番号:1431, 単語:"news-focused", 意味:"ニュース中心の、報道に特化した（複合形容詞）", 例文:"My actual TV viewing is pretty narrow and news-focused.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking", 分野:"society" },
+  { 番号:1432, 単語:"where (someone) is coming from", 意味:"～の意見・視点・立場", 例文:"Tell us a little bit more about yourself and where you're coming from?", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1433, 単語:"background", 意味:"経歴・専門分野・最も経験のある領域", 例文:"My background is with investigation.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1434, 単語:"renaissance", 意味:"(あるテーマ・分野での)新たな関心の高まり・復興", 例文:"I think we're seeing a renaissance in the pattern-recognition forms of evidence.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1435, 単語:"out of favour", 意味:"人気がなくなった・廃れた・好まれなくなった", 例文:"There's been lots of challenges with those forms of evidence over the last ten years, probably going a little bit out of favour.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1436, 単語:"real-time", 意味:"リアルタイムの・即時の(情報が起きたその瞬間に提示される)", 例文:"You can take a photo of a mark with your phone, compare that mark to the database and get real-time insight.", 品詞:"adjective", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1437, 単語:"chronic", 意味:"慢性的な・長期にわたって続く", 例文:"If that becomes more of a kind of chronic kind of stress, then that might lead to burnout in the end.", 品詞:"adjective", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1438, 単語:"burnout", 意味:"燃え尽き症候群・働きすぎによる心身の疲弊", 例文:"Overwhelm can lead to burnout, mental or physical exhaustion caused by working too hard.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1439, 単語:"sharpen the mind", 意味:"思考を研ぎ澄ます・集中力を高める(=concentrate the mind)", 例文:"Nerves sharpen your thinking and allow you to really do your best.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1440, 単語:"nerves", 意味:"(口語)緊張・不安・心配", 例文:"It's normal to feel nerves before an exam.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1441, 単語:"one-size-fits-all", 意味:"万能の・一律の(同じ解決策をあらゆる問題に当てはめようとする)", 例文:"There's no one-size-fits-all as well, when it comes to this.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1442, 単語:"polyglot", 意味:"複数言語話者・多言語を操る人", 例文:"Someone who knows multiple languages is a polyglot.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1443, 単語:"tune into", 意味:"～に耳を傾ける・注意を向ける・波長を合わせる", 例文:"Babies even before they speak have to tune into the languages around them.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1444, 単語:"juggle", 意味:"複数のことを同時にこなす・並行して扱う", 例文:"Juggling several languages has helped them boost this brain efficiency.", 品詞:"verb", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1445, 単語:"pick up", 意味:"(言語・技能などを)自然に身につける・習得する", 例文:"Victoria says she was able to pick up Norwegian quite easily.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1446, 単語:"soldier on", 意味:"困難に耐えてやり逆げる・めげずに進める", 例文:"But they soldiered on because if you want to work, you want to live there, you have to learn.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1447, 単語:"call ahead of time", 意味:"事前に電話をする・前もって連絡する", 例文:"Having to call ahead of time, talk to the manager, talk to the chef.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1448, 単語:"accommodate", 意味:"(要望・必要に)対応する・配慮して提供する", 例文:"Make sure that the restaurant can accommodate me.", 品詞:"verb", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1449, 単語:"protocols", 意味:"手順・規則・所定のプロセス", 例文:"Use protocols to prevent any sort of risk of any allergens touching my dish.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1450, 単語:"drop off", 意味:"(数量・頻度が)減少する・低下する", 例文:"That does drop off once they're a bit older.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1451, 単語:"the capital of the world", 意味:"～で世界的に有名な場所・～の中心地", 例文:"Australia's termed the allergy capital of the world.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1452, 単語:"hard-wired", 意味:"生まれつきの・本能的に組み込まれた", 例文:"Are food dislikes learned or genetic, hard-wired in some way?", 品詞:"adjective", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1453, 単語:"masking", 意味:"マスキング・(嫌いな味や要素を)他のもので覆い隠すこと", 例文:"One of the really good techniques that we might use is something called masking.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1454, 単語:"inherently", 意味:"本質的に・もともと・それ自体として", 例文:"There isn't anything inherently unpleasant about it.", 品詞:"adverb", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1455, 単語:"dodgy", 意味:"(口語)怠い・体調を崩しそうな・信用できない", 例文:"You had what you call a dodgy prawn.", 品詞:"adjective", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1456, 単語:"avoidance", 意味:"回避・避けること", 例文:"So, that's a sort of fear-based avoidance.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
 ];
 
 
