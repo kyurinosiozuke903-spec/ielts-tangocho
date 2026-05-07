@@ -2783,6 +2783,8 @@ function submitQuizInput() {
   inp.disabled = true;
   inp.classList.add(isCorrect ? 'correct' : 'wrong');
   answerQuiz(isCorrect, null, w);
+  // 正解後に英単語を自動発音（不正解時もユーザーが正解を聞けるよう発音）
+  setTimeout(() => speakWord(w.単語), 250);
 }
 
 function setQuizDirection(dir) {
