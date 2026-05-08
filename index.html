@@ -847,7 +847,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-08 16:02 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-09 00:08 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2344,6 +2344,31 @@ const SAMPLE_WORDS = [
   { 番号:1489, 単語:"appetite", 意味:"強い欲求・需要（食欲だけでなく、何かを求める気持ち全般）", 例文:"Increasingly the appetite for it is growing in continents like Africa.", 品詞:"noun", 習熟度:"苦手", skills:"listening", 分野:"general" },
   { 番号:1490, 単語:"get on board", 意味:"（計画・考えに）賛同する、参加する、協力する", 例文:"We've got, last year, 1,268 farmers on board applying this AWD technique to reduce the overall methane emission.", 品詞:"phrase", 習熟度:"苦手", skills:"listening", 分野:"general" },
   { 番号:1491, 単語:"tangible", 意味:"実体のある、明確で測定可能な、目に見える", 例文:"They need to see tangible results at the end of the crop.", 品詞:"adjective", 習熟度:"苦手", skills:"listening", 分野:"general" },
+  { 番号:1492, 単語:"gravitate towards", 意味:"〜に自然と惹かれる、〜の方向に傾く", 例文:"I tend to gravitate towards simple, casual clothes rather than anything particularly luxurious or trendy.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1493, 単語:"high-street chains", 意味:"大衆向けの全国チェーン店、ファストファッションブランド店", 例文:"I mostly shop at high-street chains like Uniqlo or GU, because they strike a great balance between functionality and cost-effectiveness.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"economy" },
+  { 番号:1494, 単語:"cost-effectiveness", 意味:"費用対効果、コストパフォーマンス", 例文:"They strike a great balance between functionality and cost-effectiveness, which matters a lot to me as a student.", 品詞:"noun", 習熟度:"苦手", skills:"speaking", 分野:"economy" },
+  { 番号:1495, 単語:"designer labels", 意味:"高級ブランド、有名デザイナーズブランドの服", 例文:"I'd much rather invest my money in experiences like travelling or going to concerts than spend it on designer labels I'd only wear occasionally.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1496, 単語:"practical mindset", 意味:"実用的・現実的な考え方、機能や合理性を重視する姿勢", 例文:"I think this preference also reflects my practical mindset—I'd rather invest in experiences than designer labels.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1497, 単語:"eye-catching", 意味:"人目を引く、見栄えのする", 例文:"I'd much rather prioritise functionality and cost-effectiveness over how stylish or eye-catching my outfits look.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1498, 単語:"put one's money towards", 意味:"〜のためにお金を使う、〜に充てる", 例文:"As a student, I'd much rather put my money towards experiences like travelling abroad.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"economy" },
+  { 番号:1499, 単語:"dress appropriately for the occasion", 意味:"その場にふさわしい服装をする、TPOに合わせて服を選ぶ", 例文:"I do think it's worth dressing appropriately for the occasion, especially in formal settings like academic presentations.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1500, 単語:"first impressions", 意味:"第一印象", 例文:"In formal settings like job interviews, first impressions can really matter.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1501, 単語:"self-presentation", 意味:"自己呈示、自己提示（他者にどう見られるかを意識した振る舞い）", 例文:"I see fashion more as a practical tool for self-presentation rather than a form of personal expression.", 品詞:"noun", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1502, 単語:"carry yourself", 意味:"（人前で）振る舞う、立ち居振る舞いをする", 例文:"I think what you wear does influence how you carry yourself, at least to a certain extent.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1503, 単語:"composed and articulate", 意味:"落ち着いていて、はきはきと話す", 例文:"When you put on a suit for a job interview, you almost automatically become more composed and articulate.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1504, 単語:"enclothed cognition", 意味:"着衣認知（服装が思考や行動に影響を与えるという心理学概念）", 例文:"There's a psychological concept called 'enclothed cognition', which suggests that the symbolic meaning of clothes can subtly shape our mindset.", 品詞:"noun", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1505, 単語:"a subtle nudge", 意味:"さりげない後押し、微妙な促し", 例文:"Clothes act as a subtle nudge rather than a determining factor.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1506, 単語:"have the final say", 意味:"最終決定権を持つ、最後にものを言う", 例文:"Outfits and behaviour are loosely linked, but personality still has the final say.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1507, 単語:"gateway into ~", 意味:"〜への入口・きっかけ", 例文:"Smartphones ended up being my only gateway into gaming.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1508, 単語:"go-to genre", 意味:"いつも選ぶ／お気に入りのジャンル", 例文:"These days, my go-to genre is football management games, where you build up a squad and fine-tune tactics.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1509, 単語:"scratch one's competitive itch", 意味:"競争心を満たす、勝負欲を満たす", 例文:"What I love about football management games is that they scratch both my competitive itch and my analytical side.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1510, 単語:"crunch the numbers", 意味:"数字を細かく分析する、計算する", 例文:"You really have to crunch the numbers on player stats and formations to climb the rankings.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1511, 単語:"hardcore gamer", 意味:"熱狂的なゲーマー、ガチ勢", 例文:"While I wouldn't call myself a hardcore gamer, gaming has become a meaningful part of my daily routine.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1512, 単語:"put together a squad", 意味:"チームを編成する／選手を集めてチームを組む", 例文:"In this football management game, you can put together your own squad and fine-tune the starting eleven before every match.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1513, 単語:"fine-tune", 意味:"微調整する／細かく調整する（戦術・設定・計画など）", 例文:"I love spending hours fine-tuning formations and tactics before each match.", 品詞:"verb", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1514, 単語:"on the pitch", 意味:"ピッチ上で／フィールド上で（サッカー等の競技場面で）", 例文:"You can actually control the players on the pitch and dictate every move.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1515, 単語:"the vicarious thrill of ~", 意味:"〜を疑似体験する興奮／他人の体験を通じての高揚感", 例文:"The game gives me the vicarious thrill of playing alongside world-class footballers I'd never get to meet in real life.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1516, 単語:"world-class", 意味:"世界一流の／世界レベルの", 例文:"In the game I can play alongside world-class footballers I'd never get to meet otherwise.", 品詞:"adjective", 習熟度:"苦手", skills:"speaking", 分野:"general" },
 ];
 
 
