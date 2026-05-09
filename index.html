@@ -847,7 +847,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-09 20:38 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-09 22:34 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2400,6 +2400,27 @@ const SAMPLE_WORDS = [
   { 番号:1545, 単語:"switch to something more mellow", 意味:"もっとゆったりした曲・雰囲気のものに切り替える", 例文:"In the evening, I switch to something more mellow — usually acoustic ballads or lo-fi beats — to help me wind down.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
   { 番号:1546, 単語:"catch live gigs whenever one can", 意味:"機会があるたびにライブに行く", 例文:"On top of that, I try to catch live gigs whenever I can, usually with my best friend who introduced me to the band.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
   { 番号:1547, 単語:"a tool to regulate one's mood and stay productive", 意味:"気分を整え生産性を保つための手段", 例文:"Music isn't just background noise for me — it works almost like a tool that helps me regulate my mood and stay productive throughout the day.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1548, 単語:"pick up on the emotional nuances", 意味:"感情の微妙なニュアンスを感じ取る", 例文:"Japanese lyrics let me pick up on the emotional nuances and cultural references that resonate with my own experiences.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1549, 単語:"dip into other genres depending on one's mood", 意味:"その時の気分によって他のジャンルに手を出す", 例文:"I'm fairly open-minded and dip into other genres depending on my mood — anything from K-pop ballads to indie rock or jazz instrumentals.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1550, 単語:"well-crafted lyrics that tell a story", 意味:"よく練られた、物語性のある歌詞", 例文:"What I'm drawn to most is well-crafted lyrics that tell a story — a song with shallow lyrics rarely sticks with me.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1551, 単語:"put on upbeat playlists in the background", 意味:"アップテンポなプレイリストをBGMとして流す", 例文:"While I'm cooking dinner or doing chores, I usually put on upbeat playlists in the background — it makes mundane tasks feel less tedious.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1552, 単語:"drift off (to sleep)", 意味:"うとうとと眼りに落ちる", 例文:"Late at night before bed, I prefer instrumental or ambient tracks to help me drift off.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1553, 単語:"be completely obsessed with X", 意味:"Xに完全に夡中していた", 例文:"In elementary school, I was completely obsessed with anime soundtracks, particularly Studio Ghibli opening themes.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1554, 単語:"X became a kind of social currency", 意味:"Xが一種の社交の鍵・共通話題になった", 例文:"By junior high, I'd graduated to mainstream J-pop, because music became a kind of social currency at that age.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1555, 単語:"with the benefit of hindsight", 意味:"今思えば・後から振り返ってみると", 例文:"With the benefit of hindsight, I really wish I'd stuck with piano lessons.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1556, 単語:"a fantastic creative outlet", 意味:"素晴らしい创造的なはけ口・表現手段", 例文:"I imagine learning the guitar would be a fantastic creative outlet alongside my academic work.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1557, 単語:"sheer versatility", 意味:"純粋に広い適応性・多面性", 例文:"There's something about the piano's sheer versatility that I find genuinely captivating — it shows up in every genre.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1558, 単語:"hold a special place in one's heart", 意味:"心の中で特別な位置を占めている", 例文:"Even though I can't play it myself, the piano holds a special place in my heart.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1559, 単語:"the sheer emotional intensity behind every brushstroke", 意味:"一筆一筆に込められた圧倒的な感情の濃さ", 例文:"What draws me to Van Gogh's paintings is the sheer emotional intensity behind every brushstroke.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1560, 単語:"sense one's inner turmoil pulsing through the canvas", 意味:"作者の内面の葫藤がキャンバスを透して伝わってくる", 例文:"Pieces like Starry Night feel almost alive, as if you can sense his inner turmoil pulsing through the canvas.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1561, 単語:"devotion to X for its own sake", 意味:"Xそれ自体のための獻身・他を求めない頭倒", 例文:"There's something genuinely inspiring about that level of devotion to art for its own sake, regardless of recognition.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1562, 単語:"evoke atmosphere rather than aiming for photographic accuracy", 意味:"写真のような正確さよりも雰囲気を喚び起こす", 例文:"I'm drawn to Post-Impressionist paintings because of the way they evoke atmosphere rather than aiming for photographic accuracy.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1563, 単語:"capture not just what a scene looks like, but what it feels like to be there", 意味:"風景の見た目だけでなく、そこにいる感覚まで捕える", 例文:"Monet's paintings capture not just what a scene looks like, but what it feels like to be there — the play of light, the weight of the air, the mood of the moment.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1564, 単語:"perched on a clifftop overlooking X", 意味:"Xを見下ろす崖の上に位置している", 例文:"The Louisiana Museum is perched on a clifftop overlooking the Øresund strait, and the setting alone is breathtaking.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1565, 単語:"thoughtfully curated collection", 意味:"綿密に選び抜かれたコレクション", 例文:"What I love most is how thoughtfully curated the collection is — it spans everything from Picasso to cutting-edge contemporary installations.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1566, 単語:"barely scratched the surface", 意味:"ほんの表面をなぞっただけだった・まだほとんど探れていない", 例文:"I spent an entire afternoon there and still felt I'd barely scratched the surface.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1567, 単語:"give one a visceral sense of historical continuity", 意味:"歴史の連続性を胸に迫るように体感させる", 例文:"Standing in front of an actual Van Gogh gives you a visceral sense of historical continuity that's impossible to replicate digitally.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1568, 単語:"feel increasingly precious in our distraction-heavy digital age", 意味:"気を散らすものが多いデジタル時代においてますます貴重に感じられる", 例文:"Museums offer a quiet, reflective environment where you can engage with ideas at your own pace, which feels increasingly precious in our distraction-heavy digital age.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
 ];
 
 
