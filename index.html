@@ -847,7 +847,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-09 16:27 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-09 20:38 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2380,6 +2380,26 @@ const SAMPLE_WORDS = [
   { 番号:1525, 単語:"There's something about X that V", 意味:"〜には〜という何かがある（漠然とした魅力・感情への影響を語る万能構文）", 例文:"There's something about it that instantly lifts my mood whenever I see it.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
   { 番号:1526, 単語:"shape one's buying habits", 意味:"購買傾向を形作る・買い物の習慣に影響を与える", 例文:"This preference has shaped my buying habits quite a bit.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
   { 番号:1527, 単語:"filled with [colour] accents", 意味:"〜色のアクセントで満たされている（インテリア・部屋の雰囲気を描写）", 例文:"My room has gradually ended up filled with blue accents.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1528, 単語:"be famously featured on", 意味:"（国旗・建物・記号などに）有名に描かれている／象徴的に登場している", 例文:"Japan's national colours are red and white, both of which are famously featured on the national flag.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1529, 単語:"traditionally symbolise", 意味:"伝統的に〜を象徴する（文化的・歴史的な象徴を語る場面で使う高評価コロケーション）", 例文:"The red disc represents the rising sun, while the white background traditionally symbolises purity and integrity.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1530, 単語:"capture the X mentality", 意味:"Xの精神性・国民性を見事に捉える（illustrate より自然な抽象表現）", 例文:"I feel these two colours capture the Japanese mentality remarkably well.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1531, 単語:"there's something almost meditative about ...", 意味:"〜にはどこか瞑想的な趣がある（漠然とした美的・感性的な魅力を語る Band 8 構文）", 例文:"There's something almost meditative about the simplicity of the design.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1532, 単語:"cultural emphasis on understatement and quiet dignity", 意味:"控えめな表現と静かな威厳を重視する文化的特性（日本文化・美学を抽象化する高評価フレーズ）", 例文:"It reflects our cultural emphasis on understatement and quiet dignity, which I think is one of the defining characteristics of Japanese aesthetics.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
+  { 番号:1533, 単語:"have a remarkable influence on one's emotional state", 意味:"感情・気分に大きな影響を与える", 例文:"I'd say colours have a remarkable influence on my emotional state, often more than I consciously realise.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1534, 単語:"put X in a calm, focused frame of mind", 意味:"Xを落ち着いた集中状態にする", 例文:"Cool tones like blue and green tend to put me in a calm, focused frame of mind.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1535, 単語:"give X an energising boost", 意味:"Xに活力を与える", 例文:"Warm colours like red and orange give me an energising boost on days when I need to feel more assertive.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1536, 単語:"leave X feeling somewhat lethargic", 意味:"Xを少しけだるい気分にさせる", 例文:"Dull, washed-out shades like grey can leave me feeling somewhat lethargic, especially during the rainy season.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1537, 単語:"a growing body of research in colour psychology", 意味:"色彩心理学における研究の蓄積", 例文:"There's actually a growing body of research in colour psychology suggesting these effects are largely universal rather than purely personal.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1538, 単語:"one's preferences have stayed remarkably consistent since childhood", 意味:"〜の好みは子供の頃から見事に一貫している", 例文:"My colour preferences have stayed remarkably consistent since childhood — blue has been my go-to colour for as long as I can remember.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1539, 単語:"X has been my go-to colour for as long as I can remember", 意味:"Xは記憶にある限りずっと一番好きな色だ", 例文:"Blue has been my go-to colour for as long as I can remember.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1540, 単語:"the earliest memory I can pin down", 意味:"思い出せる最古の記憶", 例文:"The earliest memory I can pin down is from kindergarten, when my mother surprised me with a navy pencil case.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1541, 単語:"gravitate towards X almost instinctively", 意味:"ほぼ無意識のうちにXに引き寄せられる", 例文:"From that point on, I started gravitating towards anything blue almost instinctively, whether it was clothes, stationery, or kitchenware.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1542, 単語:"one's taste has matured along with one", 意味:"趣味・好みが自分自身とともに成熟した", 例文:"My taste has matured along with me, which I think is quite a natural progression.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1543, 単語:"I'd struggle to get through the day without X", 意味:"Xなしでは一日を乗り切るのが難しいだろう", 例文:"I'm a huge music lover — I'd genuinely struggle to get through the day without it.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1544, 単語:"have up-tempo tracks playing through one's earphones", 意味:"イヤホンでアップテンポの曲を流している", 例文:"On my morning commute, I always have up-tempo tracks playing through my earphones, which gives me a real energy boost.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1545, 単語:"switch to something more mellow", 意味:"もっとゆったりした曲・雰囲気のものに切り替える", 例文:"In the evening, I switch to something more mellow — usually acoustic ballads or lo-fi beats — to help me wind down.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1546, 単語:"catch live gigs whenever one can", 意味:"機会があるたびにライブに行く", 例文:"On top of that, I try to catch live gigs whenever I can, usually with my best friend who introduced me to the band.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1547, 単語:"a tool to regulate one's mood and stay productive", 意味:"気分を整え生産性を保つための手段", 例文:"Music isn't just background noise for me — it works almost like a tool that helps me regulate my mood and stay productive throughout the day.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
 ];
 
 
