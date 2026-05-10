@@ -847,7 +847,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-09 22:34 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-10 11:11 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2421,6 +2421,23 @@ const SAMPLE_WORDS = [
   { 番号:1566, 単語:"barely scratched the surface", 意味:"ほんの表面をなぞっただけだった・まだほとんど探れていない", 例文:"I spent an entire afternoon there and still felt I'd barely scratched the surface.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
   { 番号:1567, 単語:"give one a visceral sense of historical continuity", 意味:"歴史の連続性を胸に迫るように体感させる", 例文:"Standing in front of an actual Van Gogh gives you a visceral sense of historical continuity that's impossible to replicate digitally.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"culture" },
   { 番号:1568, 単語:"feel increasingly precious in our distraction-heavy digital age", 意味:"気を散らすものが多いデジタル時代においてますます貴重に感じられる", 例文:"Museums offer a quiet, reflective environment where you can engage with ideas at your own pace, which feels increasingly precious in our distraction-heavy digital age.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"general" },
+  { 番号:1569, 単語:"unequivocally", 意味:"明白に、疑う余地なく", 例文:"Walking was unequivocally the most common method.", 品詞:"adverb", 習熟度:"苦手", skills:"writing1", 分野:"general" },
+  { 番号:1570, 単語:"plummet", 意味:"急落する", 例文:"The number of walking trips plummeted.", 品詞:"verb", 習熟度:"苦手", skills:"writing1", 分野:"general" },
+  { 番号:1571, 単語:"surge", 意味:"急増", 例文:"journeys made as car passengers experienced a substantial surge", 品詞:"noun", 習熟度:"苦手", skills:"writing1", 分野:"general" },
+  { 番号:1572, 単語:"dominant", 意味:"支配的な、最も有力な", 例文:"becoming the dominant mode of transport", 品詞:"adjective", 習熟度:"苦手", skills:"writing1", 分野:"general" },
+  { 番号:1573, 単語:"weigh the pros and cons", 意味:"長所と短所を比較検討する", 例文:"By weighing the pros and cons and seeking advice from others, individuals are more likely to make well-informed and sustainable decisions.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1574, 単語:"act promptly", 意味:"迅速に行動する", 例文:"For instance, business leaders and emergency workers are frequently required to act promptly to avoid potential losses or save lives.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1575, 単語:"fast-paced world", 意味:"変化の激しい世界、現代社会", 例文:"In today’s fast-paced world, being decisive is often seen as a sign of confidence and efficiency.", 品詞:"noun", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1576, 単語:"emotional bias", 意味:"感情的な偏見、感情バイアス", 例文:"In addition, careful decision-making reduces the risk of emotional bias, allowing people to remain objective and rational.", 品詞:"noun", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1577, 単語:"course of action", 意味:"行動方針、取るべき手段", 例文:"While some people are of the opinion that decisions should be made quickly, others think that it is wiser to take sufficient time and consider all factors before choosing a course of action.", 品詞:"noun", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1578, 単語:"long-term consequence", 意味:"長期的な結果、影響", 例文:"Important choices, such as those related to career, education, or financial investments, can have long-term consequences.", 品詞:"noun", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1579, 単語:"act impulsively", 意味:"衝動的に行動する", 例文:"Acting impulsively in such matters often leads to regret or failure.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1580, 単語:"objective and rational", 意味:"客観的かつ合理的", 例文:"In addition, careful decision-making reduces the risk of emotional bias, allowing people to remain objective and rational.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1581, 単語:"deliberate", 意味:"慎重な、熟考された", 例文:"I believe that careful and deliberate decision-making is generally more effective because it leads to wiser, more stable, and longer-lasting results.", 品詞:"adjective", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1582, 単語:"make a well-informed decision", 意味:"十分な情報に基づいた決定を下す", 例文:"By weighing the pros and cons and seeking advice from others, individuals are more likely to make well-informed and sustainable decisions.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1583, 単語:"overanalyze", 意味:"過剰に分析する、考えすぎる", 例文:"Moreover, quick decision-makers are sometimes more adaptable because they trust their instincts and can learn from immediate feedback rather than overanalyzing every detail.", 品詞:"verb", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1584, 単語:"trust one's instincts", 意味:"直感を信じる", 例文:"Moreover, quick decision-makers are sometimes more adaptable because they trust their instincts and can learn from immediate feedback rather than overanalyzing every detail.", 品詞:"phrase", 習熟度:"苦手", skills:"writing2", 分野:"general" },
+  { 番号:1585, 単語:"missed opportunity", 意味:"逃した機会、機会損失", 例文:"Taking too long to decide in such situations can lead to missed opportunities or worsening problems.", 品詞:"noun", 習熟度:"苦手", skills:"writing2", 分野:"general" },
 ];
 
 
