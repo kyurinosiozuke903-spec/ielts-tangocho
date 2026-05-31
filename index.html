@@ -848,7 +848,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-31 14:17 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-05-31 19:53 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2640,6 +2640,18 @@ const SAMPLE_WORDS = [
   { 番号:1784, 単語:"have a long-term impact on", 意味:"〜に長期的影響を及ぼす。和製的な \"future influence\" を Band 7+ に格上げ。lasting consequences for / enduring influence on も同義。教育・健康・社会議論で高頻度。", 例文:"Eating habits formed at an early age have a long-term impact on a person's adult life and overall wellbeing.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"education" },
   { 番号:1785, 単語:"bridge the inequality (in access to)", 意味:"〜へのアクセス格差を埋める。\"demolish this uneven\" は語選択ミス（demolish=物理破壊、uneven=名詞不可）、正しくは bridge / close / address the inequality。close the gap in / address the disparity in も同義。卒論の規範論にも直結。", 例文:"Universal free school meals can bridge the inequality in access to healthy food, regardless of family income.", 品詞:"phrase", 習熟度:"苦手", skills:"speaking", 分野:"society" },
   { 番号:1786, 単語:"the Restoration of Imperial Rule / Taisei Hōkan", 意味:"大政奉還（1867年・徳川慶喜が政権を朝廷に返還した事件）の英語定型。\"Tokugawa general returned the right to political things\" は不可（general≠将軍、right to political thingsは和製直訳）。the Tokugawa shogunate restored political authority to the Emperor。二條城・明治維新 Part 2 で必須。", 例文:"Nijo Castle was the site of the Restoration of Imperial Rule — Taisei Hōkan — in 1867, which paved the way for the Meiji Restoration.", 品詞:"noun", 習熟度:"苦手", skills:"speaking", 分野:"history" },
+  { 番号:1787, 単語:"norm protector", 意味:"規範守護者。既存の規範秩序を擁護し、規範起業家による新規範の拡散に対抗するアクター（足立の概念）。フレーミング破壊や接ぎ木の切断などの対抗戦略をとる。", 例文:"足立も同様に、「規範守護者」（norm protector）の分析視角を提示し、規範起業家による新規範の拡散に対抗する戦略（フレーミング破壊や接ぎ木の切断）を明らかにした。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1788, 単語:"logic of appropriateness", 意味:"適切さの論理。アクターが「その状況で何が適切か」という規範的期待に従って行動するという行為論理（March & Olsen）。", 例文:"規範起業家が説得や社会化を通じて新たな規範を拡散するにあたっては、「適切さの論理」（logic of appropriateness）に依拠すると主張した。", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1789, 単語:"structuration", 意味:"構造化。構造がエージェントの行為を意味づける一方、構造自体もエージェントの実践の中で変化しうるという相互構成のプロセス（Wendt）。", 例文:"構造自体もエージェントによる実践の中で変化しうるという「構造化」（structuration）のプロセスとして国際関係を捉えたのである。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1790, 単語:"methodological holism", 意味:"方法論的全体論。構造はエージェントとその相互作用に還元できない独自の性質を持つとする立場。方法論的個人主義（methodological individualism）と対比される。", 例文:"方法論的全体論（methodological holism）を明示的に強調する立場はSCと呼ぶことができる。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1791, 単語:"reconciliation", 意味:"（規範の）調整。競合・錯綜する複数の規範間の関係を調整し、新たな規範的変化や複合規範を生み出すこと。", 例文:"規範の重複・錯綜状況を避け、どのようにそれらを「調整」（reconciliation）するのか、そのメカニズムを明らかにしようとする研究も近年盛んになりつつある。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1792, 単語:"intermediaries", 意味:"中間組織。オーケストレーターが目的を共有させ自発的協力を引き出して動員する仲介アクター。規範の調整を間接的に担う。", 例文:"目的を共有し自発的な協力を提供する中間組織（intermediaries）を動員して、間接的に行うというオーケストレーション論にも注目が集まっている。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1793, 単語:"norm circulation", 意味:"規範の循環。国際規範と現地規範が相互にフィードバックし合いながら修正されていくプロセス（Acharya）。", 例文:"類似の枠組みとして、「規範の循環」（norm circulation）や「規範のフィードバックループ」モデルが存在する。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1794, 単語:"coordinative discourse", 意味:"調整的言説。政治的エリート間の合意を調達するため、討議のための枠組みを提供する役割を果たす言説（V. Schmidt）。", 例文:"「調整的」（coordinative）言説…前者は、政治的エリートの合意を調達するために、その討議のための枠組みを提供する役割を果たす。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1795, 単語:"communicative discourse", 意味:"伝達的言説。公衆を説得するため、ある政策を分かりやすく表現・翻訳する役割を担う言説（V. Schmidt）。", 例文:"「伝達的」（communicative）言説…後者は、公衆を説得するために、ある政策を分かりやすく表現・翻訳する役割を担う。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1796, 単語:"infantilize", 意味:"幼児化する。社会化の対象となるアクターを未熟な存在として扱うこと。伝統的ACへのリベラル・バイアス批判の論点。", 例文:"社会化の対象となるアクターを「幼児化」（infantilize）することが含意される。", 品詞:"verb", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1797, 単語:"discursive institutionalism", 意味:"言説的制度論。アイディアや言説に着目し、構成主義的に政治変化を説明する比較政治学の新制度論（V. Schmidt）。", 例文:"2000年代以降、比較政治学においてもアイディアの政治、構成主義的政治理論、言説的制度論と呼ばれる、国際関係論におけるコンストラクティビズムと同様の関心を持つ研究が登場し始めた。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1798, 単語:"taken-for-granted", 意味:"当たり前の／自明視された。規範が内面化され、公的な議論にかけられることなく当然視された状態を表す。", 例文:"まさに国際関係論における「当たり前」（taken-for-granted）の理論的アプローチの一つとなったことを意味している。", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
 ];
 
 
