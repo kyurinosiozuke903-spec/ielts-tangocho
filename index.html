@@ -848,7 +848,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-05-31 19:53 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-06-01 15:01 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2652,6 +2652,49 @@ const SAMPLE_WORDS = [
   { 番号:1796, 単語:"infantilize", 意味:"幼児化する。社会化の対象となるアクターを未熟な存在として扱うこと。伝統的ACへのリベラル・バイアス批判の論点。", 例文:"社会化の対象となるアクターを「幼児化」（infantilize）することが含意される。", 品詞:"verb", 習熟度:"苦手", skills:"論文", 分野:"society" },
   { 番号:1797, 単語:"discursive institutionalism", 意味:"言説的制度論。アイディアや言説に着目し、構成主義的に政治変化を説明する比較政治学の新制度論（V. Schmidt）。", 例文:"2000年代以降、比較政治学においてもアイディアの政治、構成主義的政治理論、言説的制度論と呼ばれる、国際関係論におけるコンストラクティビズムと同様の関心を持つ研究が登場し始めた。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
   { 番号:1798, 単語:"taken-for-granted", 意味:"当たり前の／自明視された。規範が内面化され、公的な議論にかけられることなく当然視された状態を表す。", 例文:"まさに国際関係論における「当たり前」（taken-for-granted）の理論的アプローチの一つとなったことを意味している。", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1799, 単語:"proscription", 意味:"禁止規範（ある行為を「するな」と命じる否定的規範）", 例文:"Prohibitive effects are the intended effects of proscriptions, while permissive effects are the unintended effects of proscriptions.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1800, 単語:"prescription", 意味:"命令規範（ある行為を「せよ」と命じる肯定的規範。※論文では医療の「処方」ではなく規範論の用法）", 例文:"Obligative effects are the intended effects of prescriptions, while omissive effects are the unintended effects of prescriptions.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1801, 単語:"oughtness", 意味:"当為性（「〜すべき」という、規範に固有の性質）", 例文:"It is closely linked to norms, especially to their central qualities of oughtness and action-guiding.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1802, 単語:"injunction", 意味:"（規範が伝える）命令・指令、禁止命令", 例文:"The typology uses the kind of normative command – the injunction – conveyed by the respective norm to distinguish proscriptions and prescriptions.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1803, 単語:"deontic", 意味:"義務論理の（禁止・義務・許可の様相を扱う法哲学的伝統に関する）", 例文:"It is useful to consult another strand of literature on this matter, namely the deontic school.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1804, 単語:"corollary", 意味:"当然の帰結、必然的に付随するもの", 例文:"The unintended – permissive – effects arise as a corollary to all three subtypes.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1805, 単語:"stigmatise", 意味:"烙印を押す、汚名を着せる、スティグマ化する", 例文:"They direct the attention towards certain undesired behaviours and stigmatise these behaviours to motivate the actors to refrain from them.", 品詞:"verb", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1806, 単語:"constitutive", 意味:"構成的な（意味やアイデンティティを定義する効果）", 例文:"Constitutive effects frequently denote the impact of norms on identities.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1807, 単語:"regulative", 意味:"規制的な（行動を方向づけ規律する効果）", 例文:"Regulative effects encompass the impact of norms on the behaviour of actors.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1808, 単語:"perpetrator", 意味:"加害者、犯人", 例文:"...criminalise the male victim of rape next to the perpetrator through prohibitions of male-male sexual intercourse.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1809, 単語:"evasion", 意味:"回避、（規範からの）言い逃れ", 例文:"It suggests mechanisms such as evasion, substitution, and reactance to be at work.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1810, 単語:"reactance", 意味:"心理的リアクタンス（自由を制限されることへの反発・抵抗）", 例文:"It suggests mechanisms such as evasion, substitution, and reactance to be at work.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1811, 単語:"omissive", 意味:"不作為的な（命令規範の意図せざる効果。望ましい行為の不履行が許容されること）", 例文:"Omissive effects are the unintended counterpart to the intended obligative effects of prescriptions.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1812, 単語:"permissive effects", 意味:"許可的効果。規範が特定の行為を許容・正当化することで生じる効果（行為を要求はしないが認める）。", 例文:"Permissive effects occur when a norm grants actors the latitude to act in a certain way, without requiring them to do so.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1813, 単語:"diehard", 意味:"なかなか消えない頑固なもの／最後まで抵抗する人。", 例文:"Some diehard supporters of the norm continued to defend it even after it had lost much of its force.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1814, 単語:"terminological", 意味:"用語上の、術語に関する。", 例文:"This is not merely a terminological distinction but reflects a substantive difference in how norms operate.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1815, 単語:"tabulation", 意味:"表化、一覧表にまとめること。", 例文:"The tabulation of norm effects in the typology makes their differences analytically visible.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1816, 単語:"prohibitive effects", 意味:"禁止的効果。規範が特定の行為を禁じることで生じる効果（例：拷問禁止規範）。", 例文:"Prohibitive effects are produced when a norm forbids a particular conduct, as in the case of the prohibition of torture.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1817, 単語:"obligative effects", 意味:"義務的効果。規範が特定の行為を要求・命じることで生じる効果。", 例文:"Obligative effects arise when a norm requires actors to perform a specific action.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1818, 単語:"sporadically", 意味:"散発的に、時折。", 例文:"Such effects appear only sporadically in the historical record.", 品詞:"adverb", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1819, 単語:"functionalist understanding of norms", 意味:"規範の機能主義的理解。規範を道徳的内容ではなく、それが生み出す効果・機能の観点から捉える見方。", 例文:"A functionalist understanding of norms focuses on the effects they produce rather than on their moral content.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1820, 単語:"the letter of a law", 意味:"法の文言（字義通りの解釈）。条文の言葉そのもの。", 例文:"Actors may comply with the letter of a law while violating its underlying purpose.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1821, 単語:"the spirit of a law", 意味:"法の精神（立法趣旨）。条文の背後にある本来の目的・意図。", 例文:"Observing the spirit of a law requires more than formal adherence to its wording.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1822, 単語:"enforced disappearances", 意味:"強制失踪。国家等が人を拘束し、その消息を隠す人権侵害行為。", 例文:"The convention against enforced disappearances illustrates how a prohibitive norm targets a specific atrocity.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1823, 単語:"yard stick", 意味:"判断基準、尺度。行動の適否を測る物差し。", 例文:"Norms provide a yardstick against which behaviour can be judged as appropriate or inappropriate.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1824, 単語:"logic of consequences", 意味:"結果の論理。行為者が予想される費用と便益を計算して行動を選ぶという行動論理（logic of appropriatenessと対比）。", 例文:"Under a logic of consequences, actors choose behaviour by calculating expected costs and benefits.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1825, 単語:"homo sociologicus", 意味:"ホモ・ソシオロジクス。規範を正統で適切とみなして従う社会的人間像。", 例文:"The homo sociologicus follows rules because they are seen as legitimate and appropriate.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1826, 単語:"homo oeconomicus", 意味:"ホモ・エコノミクス。自己の効用を最大化するよう行動する合理的経済人。", 例文:"In contrast, the homo oeconomicus acts to maximise its own utility.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1827, 単語:"atrocity", 意味:"残虐行為、残虐性。大規模で凄惨な暴力。", 例文:"Norms against atrocity crimes seek to prevent the most egregious forms of violence.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1828, 単語:"substitution", 意味:"代替、置き換え。禁止された行為を機能的に等価な別の行為で置き換えること。", 例文:"Substitution occurs when actors replace a prohibited practice with a functionally equivalent one.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1829, 単語:"facticity", 意味:"（規範の）事実性。規範が実際に名宛人の行動を方向づけている度合い（遵守）。validity（妥当性）と対をなし robustness を構成する。", 例文:"A norm's robustness is composed of its validity and facticity.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1830, 単語:"concordance", 意味:"一致・合意。規範の正統性が議論や条約でどれだけ広く受容されているか（robustnessの言説的指標の一つ）。", 例文:"Concordance means how widely accepted the rules are in diplomatic discussions and treaties.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1831, 単語:"normative embeddedness", 意味:"規範的埋め込み。ある規範がより大きな規範構造（norm cluster）に組み込まれている状態。規範を異議から保護しうる。", 例文:"Being embedded in a dense normative environment helps norms remain robust.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1832, 単語:"opinio juris", 意味:"法的確信。慣習国際法の成立要件の一つで、ある規範が法的拘束力を持つという信念。", 例文:"Customary law requires both state practice (consuetudo) and opinio juris.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1833, 単語:"consuetudo", 意味:"慣行・慣習。慣習国際法の成立要件の一つで、国家の一般的な実行（state practice）。", 例文:"International law identifies customary law through both consuetudo and opinio juris.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1834, 単語:"nonderogable", 意味:"（権利・規範が）逸脱・適用除外を許さない、絶対的な。いかなる例外状態でも制限できない。", 例文:"The prohibition on torture is nonderogable, even in emergencies.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1835, 単語:"epiphenomenal", 意味:"付随現象的な。他の要因に付随して生じるだけで、独自の因果力を持たないさま。", 例文:"Some realists perceive norms and institutions as epiphenomenal to security politics.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1836, 単語:"rhetorical entrapment", 意味:"レトリックの罠。アクターが自らの言明に縛られ、規範への遵守を迫られる過程。", 例文:"Strategic applicatory contestation can reinvigorate norms through what is called \"rhetorical entrapment.\"", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1837, 単語:"sanctioning fatigue", 意味:"制裁疲れ。高度に制度化された規範でも、違反が制裁されず放置されることでかえって規範が損なわれる現象。", 例文:"Strong institutionalization can also cause \"sanctioning fatigue.\"", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1838, 単語:"stickiness", 意味:"粘着性。確立した規範が権力の露骨な行使にも耐えて存続する性質。", 例文:"Well-established norms display a stickiness that withstands even the blatant use of power.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1839, 単語:"metanorm", 意味:"メタ規範。複数の関連規範を束ねる上位の規範（例：持続可能性）。super-norm とも呼ばれる。", 例文:"Natural resources norms often refer to the \"metanorm\" of sustainability.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1840, 単語:"grafting", 意味:"接ぎ木。新しい規範を、すでに受容された既存規範に接合して受容を促す戦略。", 例文:"Grafting new norms upon previously accepted norms often facilitates acceptance.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1841, 単語:"norm cluster", 意味:"規範クラスター。相互に関連する規範の束。埋め込みによって個々の規範を保護する。", 例文:"The norm has remained robust because it is embedded in a norm cluster.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
 ];
 
 
