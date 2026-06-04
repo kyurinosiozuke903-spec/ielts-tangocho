@@ -848,7 +848,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-06-04 14:55 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-06-04 20:47 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2705,6 +2705,28 @@ const SAMPLE_WORDS = [
   { 番号:1849, 単語:"infringe upon", 意味:"〜を侵害する、（規範・規則に）違反する", 例文:"The norm against wartime plunder and the nuclear non-proliferation norm have been repeatedly infringed upon, yet without being undermined or abolished.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
   { 番号:1850, 単語:"escalation spiral", 意味:"エスカレーションの連鎖。一方の違反が連鎖的に相互の違反を誘発する過程", 例文:"This set an escalation spiral into motion; when the USA entered the war with Japan in 1941, it immediately declared unrestricted submarine warfare.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
   { 番号:1851, 単語:"precision (of a norm)", 意味:"規範の精密性。規制目的・手続・適用範囲が明確に定義されている度合い", 例文:"The specific result of norm challenges – the weakening or abolition of the norm – is contingent upon the precision of the norm.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1852, 単語:"norm regress", 意味:"規範の退行・後退（「規範退行」）。McKeownが拷問禁止規範の「緩慢な死（slow death）」を説明する際に用いた語。", 例文:"McKeown, Ryder 2009. 'Norm Regress: US Revisionism and the Slow Death of the Torture Norm', International Relations 23(1): 5-25.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1853, 単語:"works-in-progress", 意味:"形成途上（のもの）。論文ではKrook & Trueが、規範は固定化された概念ではなく「形成途上」の過程として広まると論じた語。", 例文:"規範は固定化された概念として伝播するのではなく、形成途上（works-in-progress）の過程として広まっていくことを考察している。", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1854, 単語:"rival activism", 意味:"対抗活動。Bobが、ある規範が提唱された際に保守的アクターが展開する国際的な対抗運動を指して用いた語。", 例文:"ある規範が提唱されると対抗活動（rival activism）が展開されることを指摘する。", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1855, 単語:"procedural justice", 意味:"手続的正義。Dembinskiが、規範が適用される過程の手続的公正さが規範の受容を左右すると論じた概念。", 例文:"彼は「手続的正義（procedural justice）」の有無が規範の受容に影響を与えたことを明らかにしている。", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1856, 単語:"transplantation", 意味:"移植。Farrellが、国際規範は自然に伝播するのではなく国内規範と親和性をもつとき「移植」が可能になると論じた語。", 例文:"セオ・ファレルは、国際規範は自然に伝播するのではなく国内規範と親和性を有するときに「移植（transplantation）」が可能になると論じ、規範が受容される条件を提示している。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1857, 単語:"organised principles", 意味:"組織化された原則。Wienerの規範三類型の一つで、メタ・レベルの「根本規範」とミクロ・レベルの「標準化された手続き」の対立を媒介する中間的規範。", 例文:"そして三つ目の規範がこの論争を取り持つ「仲裁規範（intermediary norm）」という性格を有する「組織化された原則（organised principles）」である。", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1858, 単語:"intermediary norm", 意味:"仲裁規範。異なるレベルの規範の対立を取り持つ規範。Wienerの「組織化された原則」が有する性格を指す。", 例文:"そして三つ目の規範がこの論争を取り持つ「仲裁規範（intermediary norm）」という性格を有する「組織化された原則」である。", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1859, 単語:"norm suppressor", 意味:"規範抑制者。Joseが、新規範の形成を阻止しようとするアクター（例：HRW）を指して用いた語。", 例文:"ヒューマンライツ・ウォッチ（ＨＲＷ）が「規範抑制者（norm suppressor）」としてこの試みを阻止するキャンペーンを展開したことを考察している。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1860, 単語:"norm subsidiarity", 意味:"規範補完性。Acharyaが、大国の干渉を嫌う第三世界が対抗する形で別の規範を醸成していく動きを指した概念。", 例文:"アチャリヤは次の研究で「規範補完性（norm subsidiarity）」という概念を示し、大国の干渉を嫌う第三世界がこれに対抗する形で別の規範を醸成していったことを議論する。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1861, 単語:"localization", 意味:"現地化。Acharyaが、国際規範が受け手側の文化・規範に合致するよう再構成される過程を指して提唱した概念。", 例文:"彼は「現地化（localization）」という概念を提唱し、欧州安全保障協力機構（ＯＳＣＥ）に出自を持つ「共通安全保障（common security）」という規範がアジアでどのように受け入れられたかを考察する。", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1862, 単語:"cycle theory of norm change", 意味:"規範変化のサイクル理論。Sandholtzが、実施・討議・ルール変更の循環を通じて規範が発展・変質すると論じたモデル。", 例文:"彼は実施、討議、ルール変更の循環によって規範が発展する「規範変化のサイクル理論（the cycle theory of norm change）」を提示している。", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1863, 単語:"retrenchment", 意味:"（支出・関与の）削減、後退、撤退（論文では米国による民主主義・人権支援の縮小を指す）", 例文:"We argue that the retrenchment of these incentives does not foretell a wholesale reversal of norm adoption.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1864, 単語:"norm adaptation", 意味:"規範適応（権威主義体制が国際規範に合わせて制度・慣行を調整すること）", 例文:"We argue that norm adaptation among autocracies is likely to prove more resilient, even in an era of reduced international support for liberal norms.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1865, 単語:"co-optation", 意味:"抱き込み、懐柔（反対勢力やエリートを体制内に取り込むこと）", 例文:"A central reason that autocracies continue to engage selectively with liberal norms is their utility as instruments of domestic co-optation and control.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1866, 単語:"backsliding", 意味:"（民主主義の）後退、逆行", 例文:"The internal cohesion of the liberal international order has been strained by signs of democratic backsliding within some Western democracies themselves.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1867, 単語:"liberal international order", 意味:"リベラル国際秩序（人権・民主主義・自由市場・多国間主義を理念とする戦後秩序、略称LIO）", 例文:"The post–Cold War period witnessed a significant expansion of the post–World War II liberal international order (LIO) grounded in the mutually reinforcing ideals of human rights, democracy, free markets, and multilateralism.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1868, 単語:"electoral autocracy", 意味:"選挙権威主義（競争的だが自由・公正でない選挙を実施する権威主義体制）", 例文:"Similarly in electoral autocracies, while recent years have shown more variation, the gains from the post–Cold War era appear to remain sticky.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1869, 単語:"façade", 意味:"見せかけ、虚飾、ファサード（論文では liberal façade＝自由主義的な見せかけ）", 例文:"That there are few examples of autocracies fully abandoning liberal façades underscores how costly repression is.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1870, 単語:"rollback", 意味:"巻き戻し、撤回、（改革の）後退", 例文:"As US support for democracy and human rights recedes, will this retreat prompt a global rollback of liberal reforms?", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1871, 単語:"mobilizational", 意味:"（社会）動員のための、動員を促す", 例文:"Once liberal reforms are introduced, they generate constituencies and mobilizational opportunities that make reversal costly.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1872, 単語:"norm socialization", 意味:"規範の社会化（アクターが国際規範を学習・内面化していく過程）", 例文:"These strategies reflected a broader pattern of tactical concession, role-playing, and rhetorical engagement that is characteristic of the early stages of norm socialization, when external pressure is the primary motive for action.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1873, 単語:"third wave of democracy", 意味:"民主化の第三の波（ハンティントンによる、1970年代以降に世界的に広がった民主化の潮流）", 例文:"Increased international democracy promotion unfolded alongside a broader transformation known as the third wave of democracy.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
 ];
 
 
