@@ -848,7 +848,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-06-25 14:04 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-06-25 20:36 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2818,6 +2818,18 @@ const SAMPLE_WORDS = [
   { 番号:1962, 単語:"hollow out", 意味:"空洞化させる、中身を骨抜きにする", 例文:"Wholesale exclusion of last resort military measures itself would fundamentally weaken, or 'hollow out', the norm.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"general" },
   { 番号:1963, 単語:"erosion", 意味:"侵食、（合意・規範などの）漸進的な劣化・掘り崩し", 例文:"several significant figures – including ICISS Co-Chair Gareth Evans and UN Secretary-Generals Kofi Annan and Ban Ki-moon – expressed concern over the erosion of consensus.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"general" },
   { 番号:1964, 単語:"conflation", 意味:"混同、別個のものを一緒くたにすること", 例文:"Contestation around the third pillar largely emerges from a conflation of the broader international responsibility to respond, which includes a range of political, diplomatic, humanitarian, and generally peaceful means, with a narrow focus on the military aspect.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"general" },
+  { 番号:1965, 単語:"norm anti-preneur", 意味:"規範アンチプレナー／規範反対者（既存のリベラル規範の変化に防御的に抵抗する国家・非国家アクター。論文ではnorm entrepreneurの対概念）", 例文:"Unlike anti-preneurs, who act defensively to counter liberal norms, authoritarian states combine norm erosion with norm creation in a deliberate effort to reshape global orders.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1966, 単語:"competitive norm emergence", 意味:"競合的規範創発（既存規範を侵食しつつ、IO手続きの変更・新組織創設・国際決議内の支配的言説の創出を通じて対抗的な代替規範を確立していく過程）", 例文:"We conceptualize competitive norm emergence as the process by which actors (in our case authoritarian regimes) manage to affect changes to official IO procedures, create new organisations and regimes, or create new dominant discourses within international resolutions that actively promote authoritarian principles.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1967, 単語:"norm erosion", 意味:"規範の侵食（規範への広範な言説的不一致、または実践上の不遵守によって既存規範が弱まること）", 例文:"We observe liberal norm erosion if there is either widespread discursive disagreement or practical non-compliance with democratic principles, liberal values, and rule-of-law procedures.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1968, 単語:"discursive appropriation", 意味:"言説的横領・流用（権威主義国が民主主義・人権の言語や象徴的実践を借用しつつ、その批判的潜在力を抜き取って再構成する説得戦略）", 例文:"A related strategy is the discursive appropriation of liberal norms, whereby autocracies employ the language and symbolic practices of democracy and human rights, but reframe and reformulate them to strip them of their critical potential.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1969, 単語:"incentivation", 意味:"誘因供与、インセンティブ付与（飴と鞭で相手国の費用便益計算を変え、支持を取り付ける物質的戦略）", 例文:"Just like liberal-democratic norm entrepreneurs, authoritarian actors rely on a combination of persuasion and incentivation to embed norms within international institutions.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1970, 単語:"securitization", 意味:"安全保障化（争点を存立を脅かす『安全保障問題』として構成し、例外的措置を正当化する言説実践。コペンハーゲン学派）", 例文:"For instance, one framing method is securitization, whereby actors attempt to label issues as security issues.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1971, 単語:"norm linkage", 意味:"規範リンケージ（ある規範を他の規範や広範な原理・物語に結びつけ、整合性・信頼性・緊急性を高める説得戦略）", 例文:"One persuasion tool is linking norms to other norms, broader principles, and narratives in order to increase its coherence, credibility and urgency.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1972, 単語:"mimesis", 意味:"ミメーシス、模倣（実質を伴わずにリベラル・民主的実践を演じ、正統性と地位を獲得すること）", 例文:"This tactic results in what some scholars have described as mimesis: the performance of liberal-democratic practices to gain legitimacy and status without adhering to their substantive content.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1973, 単語:"like-minded coalition", 意味:"同志連合、有志連合（理念を共有する権威主義レジームの連合。LMGやCSTOなど）", 例文:"It argues that like-minded coalitions of authoritarian regimes strategically cooperate to integrate normative and material power to reshape international norms in favor of state control and societal development.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1974, 単語:"naming and shaming", 意味:"ネーミング・アンド・シェイミング（人権侵害国を名指しで非難し、評判を通じて圧力をかける手法）", 例文:"...pushes for restriction of country-specific human rights resolutions and naming and shaming procedures, and advocates for cooperative human rights promotion based on absolute respect for sovereignty and non-interference principles.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:1975, 単語:"splinternet", 意味:"スプリンターネット（並行・競合レジームの乱立により国家境界に沿って分断されたインターネット）", 例文:"The creation of parallel and competitive internet governance regimes signal the move towards a splinternet that is increasingly fragmented.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"technology" },
+  { 番号:1976, 単語:"communitarian", 意味:"共同体主義的（個人の自由より集団・国家・社会の発展や安定を優先する）", 例文:"Authoritarian states are increasingly shaping global normative orders by promoting state-centric and communitarian alternatives to liberal norms in global governance institutions.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
 ];
 
 
