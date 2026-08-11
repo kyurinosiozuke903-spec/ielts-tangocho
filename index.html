@@ -848,7 +848,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Notionから取得した単語データ（最終同期: 2026-08-11 12:02 JST）────
+// ─── Notionから取得した単語データ（最終同期: 2026-08-11 18:54 JST）────
 // このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
 const SAMPLE_WORDS = [
   { 番号:1, 単語:"bend away", 意味:"身をそらす；よける", 例文:"He instinctively bent away when someone tried to tickle him.", 品詞:"phrase", 習熟度:"苦手", skills:"reading", 分野:"medical" },
@@ -2963,6 +2963,18 @@ const SAMPLE_WORDS = [
   { 番号:2107, 単語:"perennial", 意味:"長年続く、繰り返される、恒常的な", 例文:"In both instances, Canada was identified as having played a leading role in encouraging agreement across the perennial North-South divide and in achieving a compromise text that reflected Canada's interests.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"general" },
   { 番号:2108, 単語:"cleavage", 意味:"亀裂、分裂、対立軸", 例文:"The politics of UNHCR's ExCom has increasingly mirrored the politics of the UN General Assembly, especially with cleavages between states in the Global South, who host 75 per cent of the world's refugees, and states in the Global North, who provide 90 per cent of funding to UNHCR.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
   { 番号:2109, 単語:"hold the pen", 意味:"起草役を握る、文書のドラフトを主導する（外交・交渉の慣用表現）", 例文:"One respondent noted how Canada was able to influence the outcome of specific processes by dedicating human resources to support the process and \"holding the pen\" to draft the outcome document.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2110, 単語:"moral suasion", 意味:"道徳的説得（制裁や強制力ではなく規範的圧力で行動変容を促すこと。論文では国連人権システムの執行力の上限として使用）", 例文:"The system's capacity to enforce compliance with human rights standards and accountability to rights holders has always been limited to moral suasion.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2111, 単語:"quasi-judicial", 意味:"準司法的な（裁判所ではない機関が審査・判定など司法に類する機能を持つこと）", 例文:"The latter, in turn, empowered the Sub-Commission to meet in private with states […] and refer situations to the CHR for further study and reporting, which gave the Commission for the first time a \"quasi-judicial\" function.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2112, 単語:"spurious", 意味:"見せかけの、もっともらしいが偽りの（spurious excuseで「口実」）", 例文:"It was a spurious excuse, to be sure, and a blow to the Western efforts to use the Commission to enforce compliance with human rights standards and respond to crises.", 品詞:"adjective", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2113, 単語:"expediency", 意味:"（原則を犠牲にした）便宜、ご都合主義、打算", 例文:"[…] the case studies aim to capture the complexities associated with operating in a forum where member states routinely prioritize their political interests, expediencies, and alliances over human rights principles and humanitarian considerations.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2114, 単語:"lacuna", 意味:"欠落、空白（複数形はlacunae。論文では規範の理想と出身国の現実との乖離を指す）", 例文:"Aga Khan's analysis of the UDHR highlighted the lacuna between the aspirations of human rights norms and the realities in countries of origin.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2115, 単語:"fester", 意味:"（傷が）化膿する、（問題が放置されて）悪化する・こじれる", 例文:"In the study report, the special rapporteur warned that the situation of mass displacement, if left unaddressed or inadequately addressed, would fester and become even more pronounced.", 品詞:"verb", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2116, 単語:"reprisal", 意味:"報復（攻撃）、仕返し", 例文:"During and post-genocide, many Hutu refugees feared reprisal attacks from RPF supporters and the strain on neighbouring countries was significant.", 品詞:"noun", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2117, 単語:"ruffle feathers", 意味:"波風を立てる、人の反感を買う", 例文:"Beaulne recommended – and Ottawa agreed – that Canada call for the original resolution to be voted on without debate […] and that an amendment be added to the NAM resolution granting the UN Secretariat the \"authority to gather new information and keep [the] situation under review,\" a move that ruffled even more feathers.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2118, 単語:"let sleeping dogs lie", 意味:"寝た子を起こさない、藪をつついて蛇を出さない", 例文:"UNHCR officials indicated to Canadian diplomats that their preference was to \"let sleeping dogs lie,\" but that if the resolution was to go ahead that any discussion of the link between human rights violations and mass exodus be restricted to the deliberations of the Commission […].", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2119, 単語:"the genie is out of the bottle", 意味:"魔神は瓶から出てしまった＝一度起きた変化・公になった事態はもう元に戻せない", 例文:"But the genie was out of the bottle.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2120, 単語:"kick the hornet's nest", 意味:"蜂の巣をつつく＝強い反発・騒動を招く行動をあえてとる", 例文:"If it is going to kick a hornet's nest, it should be prepared to get stung.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
+  { 番号:2121, 単語:"sting in the tail", 意味:"最後に待ち受ける痛手、結末に潜む嫌な一撃", 例文:"It was a sting in the tail for Canada's efforts.", 品詞:"phrase", 習熟度:"苦手", skills:"論文", 分野:"society" },
 ];
 
 
