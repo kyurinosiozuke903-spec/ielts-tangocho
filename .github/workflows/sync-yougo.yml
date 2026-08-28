@@ -1,0 +1,50 @@
+name: Sync Notion 用語・事例DB to yougo/index.html
+
+on:
+  schedule:
+    - cron: "30 1 * * *"   # 10:30 JST
+    - cron: "30 9 * * *"   # 18:30 JST（回転の直前）
+  workflow_dispatch:
+
+# 既存の sync.yml と同じグループ名にして、同時 push による衝突を防ぐ
+concurrency:
+  group: sync-notion
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Sync Notion to yougo/index.html
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_YOUGO_DB: ${{ secrets.NOTION_YOUGO_DB }}
+        run: python sync_yougo.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- yougo/index.html; then
+            echo "No changes detected"
+          else
+            git add yougo/index.html
+            git commit -m "chore: sync 用語・事例 from Notion ($(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST'))"
+            git pull --rebase --autostash
+            git push
+            echo "Pushed updated yougo/index.html"
+          fi
