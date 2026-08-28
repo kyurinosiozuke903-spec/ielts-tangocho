@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>📗 用語・事例 – 設問2ドリル</title>
+<style>
+  :root {
+    --bg: #f2f4f3;
+    --card-bg: #ffffff;
+    --accent: #0f766e;
+    --accent-light: #d7efec;
+    --accent-dark: #115e59;
+    --text: #16211f;
+    --text-muted: #6b7280;
+    --border: #e3e6e5;
+    --warn: #b45309;
+    --danger: #dc2626;
+    --shadow: 0 4px 24px rgba(0,0,0,0.07);
+    --radius: 16px;
+    --tr: 0.22s ease;
+    --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { overscroll-behavior: none; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+    min-height: 100dvh;
+    padding-bottom: calc(68px + var(--safe-bottom));
+    font-size: 15px; line-height: 1.7;
+  }
+  button, textarea, input { font-family: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ─── Header ─── */
+  .header {
+    background: var(--card-bg); border-bottom: 1px solid var(--border);
+    padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+  .header-left { display: flex; align-items: center; gap: 10px; }
+  .header-logo { font-size: 20px; }
+  .header-title { font-size: 16px; font-weight: 700; letter-spacing: 0.01em; }
+  .header-sub { font-size: 11px; color: var(--text-muted); }
+  .header-right { display: flex; gap: 6px; }
+  .btn-icon {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px 10px; cursor: pointer; font-size: 13px; color: var(--text-muted);
+    display: flex; align-items: center; gap: 5px; transition: var(--tr); white-space: nowrap;
+  }
+  .btn-icon:active { background: var(--accent-light); color: var(--accent-dark); border-color: var(--accent); }
+
+  /* ─── Countdown strip ─── */
+  .exam-strip {
+    background: var(--accent-dark); color: #d7efec; text-align: center;
+    font-size: 11.5px; padding: 5px 12px; letter-spacing: 0.03em;
+  }
+
+  /* ─── Bottom Nav ─── */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--card-bg); border-top: 1px solid var(--border);
+    display: flex; z-index: 200; padding-bottom: var(--safe-bottom);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.06);
+  }
+  .nav-item {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    padding: 10px 0 6px; gap: 3px; background: none; border: none; cursor: pointer;
+    color: var(--text-muted); font-size: 10px; font-weight: 600; transition: var(--tr);
+  }
+  .nav-item.active { color: var(--accent); }
+  .nav-item .nav-icon { font-size: 19px; }
+
+  /* ─── Layout ─── */
+  .app-body { max-width: 700px; margin: 0 auto; padding: 14px 12px; }
+  .view { display: none; } .view.active { display: block; }
+  .card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 16px; margin-bottom: 12px;
+  }
+  .muted { color: var(--text-muted); font-size: 12.5px; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+
+  /* ─── Chips / meta ─── */
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    padding: 5px 12px; border-radius: 20px; border: 1.5px solid var(--border);
+    font-size: 12px; font-weight: 600; cursor: pointer; transition: var(--tr);
+    background: transparent; color: var(--text-muted);
+  }
+  .chip.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark); }
+  .tag {
+    display: inline-block; padding: 2px 9px; border-radius: 6px; font-size: 11px;
+    font-weight: 700; background: var(--bg); color: var(--text-muted); border: 1px solid var(--border);
+  }
+  .tag.kind-用語 { background: var(--accent-light); color: var(--accent-dark); border-color: #a7d9d3; }
+  .tag.kind-事例 { background: #fdeee0; color: #9a4a06; border-color: #f3d6bb; }
+  .tag.asked { background: #fef2f2; color: #b91c1c; border-color: #fecaca; }
+
+  /* ─── Rotation ─── */
+  .rot-progress { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .term-name {
+    font-family: var(--serif); font-size: 27px; font-weight: 600; line-height: 1.35;
+    margin: 10px 0 4px; letter-spacing: 0.01em;
+  }
+  .prompt-hint {
+    font-size: 12px; color: var(--text-muted); border-left: 3px solid var(--accent-light);
+    padding-left: 10px; margin: 12px 0 8px;
+  }
+  textarea.answer {
+    width: 100%; min-height: 130px; padding: 12px 13px; border: 1.5px solid var(--border);
+    border-radius: 12px; font-size: 15px; line-height: 1.8; resize: vertical;
+    background: #fbfcfc; color: var(--text); outline: none;
+  }
+  textarea.answer:focus { border-color: var(--accent); background: #fff; }
+  .meter { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--text-muted); margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .meter .over { color: var(--warn); font-weight: 700; }
+  .btn {
+    width: 100%; padding: 13px; border: none; border-radius: 12px; background: var(--accent);
+    color: #fff; font-weight: 700; font-size: 15px; cursor: pointer; transition: var(--tr);
+  }
+  .btn:active { background: var(--accent-dark); }
+  .btn:disabled { opacity: 0.4; cursor: default; }
+  .btn.ghost { background: transparent; color: var(--accent-dark); border: 1.5px solid var(--accent); }
+  .btn.small { padding: 9px; font-size: 13px; }
+  .btn-row { display: flex; gap: 8px; margin-top: 10px; }
+
+  .answer-panel { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border); }
+  .answer-label { font-size: 11px; font-weight: 700; color: var(--accent-dark); letter-spacing: 0.08em; margin-bottom: 6px; }
+  .answer-body { font-size: 15px; line-height: 1.85; }
+  .answer-sub { margin-top: 10px; font-size: 13.5px; color: var(--text-muted); }
+  .answer-sub b { color: var(--text); }
+  .prev-answer {
+    margin-top: 12px; padding: 10px 12px; background: var(--bg); border-radius: 10px;
+    font-size: 13.5px; line-height: 1.75; white-space: pre-wrap; color: var(--text-muted);
+  }
+  .grade-row { display: flex; gap: 6px; margin-top: 14px; }
+  .grade-btn {
+    flex: 1; padding: 10px 4px; border-radius: 10px; border: 1.5px solid var(--border);
+    background: #fff; font-size: 11.5px; font-weight: 700; cursor: pointer; color: var(--text-muted);
+  }
+  .grade-btn.g0 { border-color: #fecaca; color: #b91c1c; }
+  .grade-btn.g1 { border-color: #fde3b3; color: #a16207; }
+  .grade-btn.g2 { border-color: #fef08a; color: #854d0e; }
+  .grade-btn.g3 { border-color: #bbf7d0; color: #15803d; }
+
+  /* ─── Mock exam ─── */
+  .timer {
+    font-size: 34px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em; margin: 4px 0 2px;
+  }
+  .timer.low { color: var(--danger); }
+  .pick-item {
+    display: flex; align-items: flex-start; gap: 10px; padding: 11px 12px; border: 1.5px solid var(--border);
+    border-radius: 12px; margin-bottom: 8px; cursor: pointer; transition: var(--tr); background: #fff;
+  }
+  .pick-item.picked { border-color: var(--accent); background: var(--accent-light); }
+  .pick-item .num { font-size: 12px; font-weight: 700; color: var(--text-muted); min-width: 16px; }
+  .pick-name { font-family: var(--serif); font-size: 17px; font-weight: 600; }
+  .mock-q { margin-bottom: 16px; }
+  .mock-q .q-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+  .mock-q .q-no { font-size: 12px; font-weight: 700; color: var(--accent); }
+  .score-row { display: flex; gap: 6px; margin-top: 8px; }
+  .score-btn {
+    flex: 1; padding: 8px 0; border-radius: 9px; border: 1.5px solid var(--border);
+    background: #fff; font-size: 13px; font-weight: 700; color: var(--text-muted); cursor: pointer;
+  }
+  .score-btn.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark); }
+  .total {
+    text-align: center; font-size: 22px; font-weight: 700; margin: 6px 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ─── List / stats ─── */
+  .search {
+    width: 100%; padding: 11px 13px; border: 1.5px solid var(--border); border-radius: 12px;
+    font-size: 14px; outline: none; background: #fff; margin-bottom: 10px;
+  }
+  .search:focus { border-color: var(--accent); }
+  .list-item { padding: 12px 0; border-bottom: 1px solid var(--border); cursor: pointer; }
+  .list-item:last-child { border-bottom: none; }
+  .list-name { font-family: var(--serif); font-size: 16.5px; font-weight: 600; }
+  .list-desc { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+  .list-desc.clamp { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+  .stat-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; font-size: 12px; }
+  .stat-label { width: 84px; color: var(--text-muted); }
+  .stat-track { flex: 1; height: 7px; background: var(--bg); border-radius: 4px; overflow: hidden; }
+  .stat-fill { height: 100%; border-radius: 4px; background: var(--accent); transition: width 0.5s ease; }
+  .stat-count { width: 52px; text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .fill-苦手 { background: #ef4444; } .fill-うろ覚え { background: #f59e0b; }
+  .fill-ほぼ覚えた { background: #eab308; } .fill-覚えた { background: #10b981; }
+
+  /* ─── Drawer ─── */
+  .drawer-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.35);
+    z-index: 300; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+  .drawer {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--card-bg); border-radius: 20px 20px 0 0;
+    padding: 18px 16px calc(24px + var(--safe-bottom));
+    z-index: 301; transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+    max-height: 85vh; overflow-y: auto;
+  }
+  .drawer-overlay.open .drawer { transform: translateY(0); }
+  .drawer-handle { width: 36px; height: 4px; background: #d1d5db; border-radius: 2px; margin: 0 auto 16px; }
+  .drawer-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; }
+  .filter-group { margin-bottom: 16px; }
+  .filter-label { font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 7px; letter-spacing: 0.06em; }
+  .switch-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+  .empty { text-align: center; padding: 40px 16px; color: var(--text-muted); font-size: 14px; }
+  .hidden-file-input { display: none; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <span class="header-logo">📗</span>
+    <div>
+      <div class="header-title">用語・事例</div>
+      <div class="header-sub" id="header-sub">読み込み中…</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="btn-icon" onclick="openDrawer()">⚙️ 絞込</button>
+    <button class="btn-icon" onclick="exportProgress()">⬇︎</button>
+    <button class="btn-icon" onclick="document.getElementById('import-file').click()">⬆︎</button>
+    <input type="file" id="import-file" class="hidden-file-input" accept=".json,application/json" onchange="importProgress(event)">
+  </div>
+</div>
+<div class="exam-strip" id="exam-strip"></div>
+
+<div class="app-body">
+
+  <!-- ══ 回転 ══ -->
+  <section class="view active" id="view-rotate">
+    <div class="card" id="rot-card"></div>
+  </section>
+
+  <!-- ══ 模試 ══ -->
+  <section class="view" id="view-mock">
+    <div id="mock-area"></div>
+  </section>
+
+  <!-- ══ 一覧 ══ -->
+  <section class="view" id="view-list">
+    <div class="card" id="stats-card"></div>
+    <div class="card">
+      <input class="search" id="search" placeholder="用語・説明を検索" oninput="renderList()">
+      <div id="list-area"></div>
+    </div>
+  </section>
+
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-item active" data-view="rotate" onclick="switchView('rotate')"><span class="nav-icon">🔁</span>回転</button>
+  <button class="nav-item" data-view="mock" onclick="switchView('mock')"><span class="nav-icon">📝</span>模試</button>
+  <button class="nav-item" data-view="list" onclick="switchView('list')"><span class="nav-icon">📚</span>一覧</button>
+</nav>
+
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer(event)">
+  <div class="drawer" onclick="event.stopPropagation()">
+    <div class="drawer-handle"></div>
+    <div class="drawer-title">絞り込み</div>
+    <div class="filter-group"><div class="filter-label">種別</div><div class="chips" id="f-kind"></div></div>
+    <div class="filter-group"><div class="filter-label">出自</div><div class="chips" id="f-source"></div></div>
+    <div class="filter-group" id="cluster-group"><div class="filter-label">クラスタ</div><div class="chips" id="f-cluster"></div></div>
+    <div class="filter-group"><div class="filter-label">習熟度</div><div class="chips" id="f-prof"></div></div>
+    <div class="filter-group">
+      <div class="switch-row">
+        <div>
+          <div style="font-size:14px;font-weight:600">既出語を除く</div>
+          <div class="muted">過去問（24・25・26）で出題済みの語を隠す</div>
+        </div>
+        <div class="chips"><button class="chip" id="f-asked" onclick="toggleAsked()">除かない</button></div>
+      </div>
+    </div>
+    <button class="btn" onclick="closeDrawer()">閉じる</button>
+  </div>
+</div>
+
+<script>
+// ─── Notion 用語・事例DB から取得（最終同期: 未同期 / 用語11・事例4）────
+// このブロックは GitHub Actions により自動生成されます。手動で編集しないでください。
+const SYNCED_AT = "未同期（初期データ）";
+const CLUSTER_TARGETS = {"安保": 30, "IPE": 30, "規範・理論": 20};
+const TERMS = [
+  { 名前:"WTO体制の例外措置", 説明:"自由貿易原則に対し、急激な輸入増、不公正貿易、生命・健康・環境、安全保障などを理由に限定的な貿易制限を認める制度。セーフガード、アンチダンピング、相殺関税、GATT20条・21条など。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"コンストラクティビズム", 説明:"国家利益・アイデンティティ・脅威認識は物質能力だけで決まらず、規範・理念・相互作用によって社会的に構成されるとみる国際関係理論。オナフ、ウェントらが代表。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"シーレーン", 説明:"貿易品、エネルギー、軍事物資などを運ぶ主要な海上交通路。ホルムズ海峡やマラッカ海峡などのチョークポイントの安全確保は国家の経済・安全保障に直結する。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"デモクラティック・ピース", 説明:"成熟した民主国家同士は戦争をしにくいという命題。制度的制約と、妥協・非暴力を重視する規範の共有から説明する。思想的起源はカント、現代の実証研究はマイケル・ドイルなど。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"世界貿易機関（WTO）", 説明:"1995年1月1日に設立された国際機関。GATTを基礎に、物品・サービス・知的財産を含む貿易ルールの運用、交渉、紛争解決を担う。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"多角主義", 説明:"多数国が共通のルールと制度の下で貿易交渉・紛争処理を行う原則。国別の力関係だけでなく、一般化された行動原則に基づく。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"相互核抑止", 説明:"敵の先制核攻撃を受けても報復できる第二撃能力を双方が保持し、耐え難い損害への恐れから核攻撃を思いとどまる状態。相互確証破壊（MAD）が代表的な形。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"相互関税", 説明:"貿易相手国ごとに異なる関税率を設定し、相手国の関税・非関税措置などを理由に自国側の関税を引き上げる政策。WTOの最恵国待遇や多角的交渉との緊張を生む。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"無差別原則", 説明:"WTO体制の原則。加盟国間を差別しない最恵国待遇と、輸入品を国内品より不利に扱わない内国民待遇から成る。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"自由貿易", 説明:"関税・数量制限など国境を越える取引への障壁を削減し、財・サービスの交換を市場原理に委ねる考え方。戦間期の保護貿易とブロック経済への反省から戦後貿易体制の柱になった。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"覇権安定論", 説明:"卓越した物質能力と意思を持つ覇権国が、開放市場・安定通貨・安全保障などの国際公共財を供給すると国際秩序が安定するという理論。キンドルバーガー、ギルピン、クラズナーらが発展させた。", 種別:"用語", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"ホルムズ海峡", 説明:"ペルシャ湾とオマーン湾を結ぶ海上交通の要衝。世界の石油輸送に占める重要性が高く、封鎖や軍事的緊張がエネルギー供給と価格に大きな影響を与える。", 種別:"事例", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"北朝鮮と英国の核兵器に対する脅威認識", 説明:"米国が英国の核兵器より北朝鮮の核兵器を強く脅威視する比較。物質的な核能力だけでなく、同盟・敵対関係やアイデンティティが脅威認識を構成することを示す。", 種別:"事例", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"冷戦期の米ソ核抑止", 説明:"米国とソ連が第二撃能力を保持し、相手の報復による壊滅的損害を恐れて全面核戦争を回避した事例。相互核抑止と相互確証破壊の代表例。", 種別:"事例", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+  { 名前:"戦間期のブロック経済", 説明:"1930年代、英帝国特恵関税圏など各国が排他的な経済圏を形成し、保護貿易を強めた事例。世界貿易の縮小と国家間対立の激化を通じ、戦後の自由貿易体制形成の反省材料となった。", 種別:"事例", 出自:"26", クラスタ:"", 提唱者:"", 年代:"", 事例:"", 既出:true },
+];
+
+// ═══════════════════════════════════════════════════
+const EXAM_DATE = new Date("2026-09-15T09:00:00+09:00");
+const PROF_LEVELS = ["苦手", "うろ覚え", "ほぼ覚えた", "覚えた"];
+const KEY_PROF = "yougo-prof-v1";
+const KEY_ANS = "yougo-answers-v1";
+const KEY_MOCK = "yougo-mock-v1";
+
+let prof = load(KEY_PROF, {});
+let savedAnswers = load(KEY_ANS, {});
+let mockHistory = load(KEY_MOCK, []);
+
+let filters = { kind: "すべて", source: "すべて", cluster: "すべて", prof: "すべて", hideAsked: false };
+let view = "rotate";
+let rotOrder = [], rotIdx = 0, revealed = false, rotStart = null;
+let mock = null;
+
+function load(k, fallback) {
+  try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; }
+  catch (e) { return fallback; }
+}
+function save(k, v) {
+  try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {}
+}
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function profOf(t) { return prof[t.名前] || "苦手"; }
+// 二重引用符のHTML属性の中の、単一引用符で囲んだJS文字列に安全に埋め込む
+function jsAttr(s) {
+  return esc(String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/'/g, "\\'"));
+}
+
+// ─── 絞り込み ───────────────────────────────────────
+function filtered() {
+  return TERMS.filter(t => {
+    if (!t.名前) return false;
+    if (filters.kind !== "すべて" && t.種別 !== filters.kind) return false;
+    if (filters.source !== "すべて" && t.出自 !== filters.source) return false;
+    if (filters.cluster !== "すべて" && t.クラスタ !== filters.cluster) return false;
+    if (filters.prof !== "すべて" && profOf(t) !== filters.prof) return false;
+    if (filters.hideAsked && t.既出) return false;
+    return true;
+  });
+}
+function uniq(list) { return [...new Set(list.filter(Boolean))]; }
+
+// ─── ヘッダー ───────────────────────────────────────
+function renderHeader() {
+  const n = TERMS.filter(t => t.名前).length;
+  const nt = TERMS.filter(t => t.種別 === "用語").length;
+  document.getElementById("header-sub").textContent = `用語${nt}・事例${n - nt}｜同期 ${SYNCED_AT}`;
+  const days = Math.ceil((EXAM_DATE - new Date()) / 86400000);
+  const strip = document.getElementById("exam-strip");
+  strip.textContent = days > 0
+    ? `専門科目 9/15（火）9:00 まで あと ${days} 日　—　設問2は 定義2〜3文 ＋ 提唱者/起源 ＋ 事例1、約9分/語`
+    : `設問2の型：定義2〜3文 ＋ 提唱者/起源 ＋ 事例1`;
+}
+
+// ─── 画面切替 ───────────────────────────────────────
+function switchView(v) {
+  view = v;
+  document.querySelectorAll(".view").forEach(el => el.classList.remove("active"));
+  document.getElementById("view-" + v).classList.add("active");
+  document.querySelectorAll(".nav-item").forEach(el => el.classList.toggle("active", el.dataset.view === v));
+  window.scrollTo(0, 0);
+  if (v === "rotate") renderRotate();
+  if (v === "mock") renderMock();
+  if (v === "list") { renderStats(); renderList(); }
+}
+
+// ═══ 回転 ═══════════════════════════════════════════
+function buildRotOrder(shuffle) {
+  const pool = filtered();
+  const weight = { "苦手": 0, "うろ覚え": 1, "ほぼ覚えた": 2, "覚えた": 3 };
+  rotOrder = pool.slice();
+  if (shuffle) {
+    for (let i = rotOrder.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [rotOrder[i], rotOrder[j]] = [rotOrder[j], rotOrder[i]];
+    }
+  }
+  rotOrder.sort((a, b) => weight[profOf(a)] - weight[profOf(b)]);
+  rotIdx = 0; revealed = false; rotStart = null;
+}
+
+function renderRotate() {
+  if (!rotOrder.length) buildRotOrder(true);
+  const el = document.getElementById("rot-card");
+  if (!rotOrder.length) {
+    el.innerHTML = `<div class="empty">条件に合うカードがありません。<br>絞り込みを変えるか、Notion側でカードを追加してください。</div>`;
+    return;
+  }
+  if (rotIdx >= rotOrder.length) {
+    el.innerHTML = `<div class="empty"><div style="font-size:32px;margin-bottom:8px">✓</div>
+      ${rotOrder.length}枚を1周しました。<br><br>
+      <button class="btn" onclick="buildRotOrder(true);renderRotate()">苦手優先でもう1周</button></div>`;
+    return;
+  }
+
+  const t = rotOrder[rotIdx];
+  const prev = savedAnswers[t.名前];
+  if (!rotStart) rotStart = Date.now();
+
+  el.innerHTML = `
+    <div class="row">
+      <div class="chips">
+        <span class="tag kind-${esc(t.種別)}">${esc(t.種別)}</span>
+        ${t.クラスタ ? `<span class="tag">${esc(t.クラスタ)}</span>` : ""}
+        ${t.出自 ? `<span class="tag">出自 ${esc(t.出自)}</span>` : ""}
+        ${t.既出 ? `<span class="tag asked">既出</span>` : ""}
+      </div>
+      <div class="rot-progress"><span id="rot-timer">0:00</span>　${rotIdx + 1} / ${rotOrder.length}</div>
+    </div>
+
+    <div class="term-name">${esc(t.名前)}</div>
+    <div class="prompt-hint">${t.種別 === "事例"
+      ? "この事例はどの理論・概念で説明できるか。事実関係（年・主体）→ 当てはめ の順で書く。"
+      : "定義2〜3文 → 提唱者・起源 → 具体例1 の順で書く。"}</div>
+
+    <textarea class="answer" id="rot-answer" placeholder="ここに手を動かして書く（見てから思い出すのではなく、書いてから答えを見る）" oninput="updateMeter()">${esc(prev || "")}</textarea>
+    <div class="meter"><span id="rot-count">0字</span><span>目安 90〜150字</span></div>
+
+    ${revealed ? renderAnswerPanel(t, prev) : `<button class="btn" style="margin-top:12px" onclick="reveal()">答えを見る</button>`}
+
+    <div class="btn-row">
+      <button class="btn ghost small" onclick="stepRot(-1)">← 前へ</button>
+      <button class="btn ghost small" onclick="buildRotOrder(true);renderRotate()">シャッフル</button>
+      <button class="btn ghost small" onclick="stepRot(1)">次へ →</button>
+    </div>`;
+  updateMeter();
+}
+
+function renderAnswerPanel(t, prev) {
+  const cur = profOf(t);
+  return `
+    <div class="answer-panel">
+      <div class="answer-label">模範解答（Notion の説明）</div>
+      <div class="answer-body">${esc(t.説明) || '<span class="muted">説明が未記入です。Notion側で埋めてください。</span>'}</div>
+      ${(t.提唱者 || t.年代) ? `<div class="answer-sub">提唱者・起源：<b>${esc(t.提唱者) || "—"}</b>${t.年代 ? `　／　年代：<b>${esc(t.年代)}</b>` : ""}</div>` : `<div class="answer-sub" style="color:var(--warn)">提唱者・起源が未記入。ルーブリックの2点分です。</div>`}
+      ${t.事例 ? `<div class="answer-sub">紐づく事例：<b>${esc(t.事例)}</b></div>` : ""}
+      ${prev ? `<div class="answer-sub" style="margin-top:12px">前回書いた答え</div><div class="prev-answer">${esc(prev)}</div>` : ""}
+      <div class="grade-row">
+        ${PROF_LEVELS.map((p, i) => `<button class="grade-btn g${i}" style="${cur === p ? "box-shadow:inset 0 0 0 2px currentColor" : ""}" onclick="grade('${p}')">${p}</button>`).join("")}
+      </div>
+    </div>`;
+}
+
+function reveal() {
+  const t = rotOrder[rotIdx];
+  const txt = document.getElementById("rot-answer").value.trim();
+  if (txt) { savedAnswers[t.名前] = txt; save(KEY_ANS, savedAnswers); }
+  revealed = true;
+  renderRotate();
+}
+
+function grade(level) {
+  const t = rotOrder[rotIdx];
+  if (t) { prof[t.名前] = level; save(KEY_PROF, prof); }
+  stepRot(1);
+}
+
+function stepRot(d) {
+  const box = document.getElementById("rot-answer");
+  if (box) {
+    const t = rotOrder[rotIdx], txt = box.value.trim();
+    if (txt) { savedAnswers[t.名前] = txt; save(KEY_ANS, savedAnswers); }
+  }
+  rotIdx = Math.max(0, rotIdx + d);
+  revealed = false; rotStart = null;
+  renderRotate();
+}
+
+function updateMeter() {
+  const box = document.getElementById("rot-answer");
+  const out = document.getElementById("rot-count");
+  if (!box || !out) return;
+  const n = box.value.replace(/\s/g, "").length;
+  out.textContent = n + "字";
+  out.className = n > 200 ? "over" : "";
+}
+
+// ═══ 模試（設問2） ══════════════════════════════════
+function renderMock() {
+  const el = document.getElementById("mock-area");
+  if (!mock) { el.innerHTML = mockSetupHTML(); return; }
+  if (!mock.submitted) { el.innerHTML = mockRunHTML(); return; }
+  el.innerHTML = mockResultHTML();
+}
+
+function mockPool() {
+  return filtered().filter(t => t.種別 === "用語" && t.説明);
+}
+
+function mockSetupHTML() {
+  const pool = mockPool();
+  const hist = mockHistory.slice(0, 5).map(h =>
+    `<div class="row" style="padding:7px 0;border-bottom:1px solid var(--border)">
+       <span class="muted">${esc(h.date)}</span><b>${h.total} / 50</b></div>`).join("");
+  return `
+    <div class="card">
+      <div style="font-weight:700;font-size:16px;margin-bottom:6px">設問2 模試</div>
+      <div class="muted">8語を出題 → 5語を選択 → 45分。本番と同じ手順です。出題元は現在の絞り込み条件（用語のみ・説明ありのみ）で ${pool.length} 語。</div>
+      ${pool.length < 8 ? `<div class="muted" style="color:var(--warn);margin-top:8px">8語に足りないため、${Math.min(pool.length, 8)}語で出題します。</div>` : ""}
+      <button class="btn" style="margin-top:14px" onclick="startMock()" ${pool.length < 2 ? "disabled" : ""}>8語を出す</button>
+    </div>
+    ${mockHistory.length ? `<div class="card"><div style="font-weight:700;margin-bottom:6px">これまでの結果</div>${hist}</div>` : ""}`;
+}
+
+function startMock() {
+  const pool = mockPool().slice();
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  mock = { candidates: pool.slice(0, 8), picked: [], started: false, endsAt: null, answers: {}, scores: {}, submitted: false };
+  renderMock();
+}
+
+function togglePick(idx) {
+  const name = mock.candidates[idx].名前;
+  const i = mock.picked.indexOf(name);
+  if (i >= 0) mock.picked.splice(i, 1);
+  else if (mock.picked.length < 5) mock.picked.push(name);
+  renderMock();
+}
+
+function mockRunHTML() {
+  if (!mock.started) {
+    return `
+      <div class="card">
+        <div style="font-weight:700;font-size:16px;margin-bottom:4px">5語を選ぶ</div>
+        <div class="muted" style="margin-bottom:12px">${mock.picked.length} / 5 語を選択</div>
+        ${mock.candidates.map((t, i) => `
+          <div class="pick-item ${mock.picked.includes(t.名前) ? "picked" : ""}" onclick="togglePick(${i})">
+            <span class="num">${i + 1}</span>
+            <div><div class="pick-name">${esc(t.名前)}</div>
+            ${t.クラスタ ? `<span class="tag" style="margin-top:4px">${esc(t.クラスタ)}</span>` : ""}</div>
+          </div>`).join("")}
+        <button class="btn" style="margin-top:6px" onclick="beginTimer()" ${mock.picked.length === 0 ? "disabled" : ""}>45分で開始</button>
+        <button class="btn ghost small" style="margin-top:8px" onclick="mock=null;renderMock()">やめる</button>
+      </div>`;
+  }
+  const picked = mock.picked.map(n => TERMS.find(t => t.名前 === n));
+  return `
+    <div class="card">
+      <div class="timer" id="mock-timer">45:00</div>
+      <div class="muted" style="text-align:center">1語あたり約9分。書き終えたら提出。</div>
+    </div>
+    ${picked.map((t, i) => `
+      <div class="card mock-q">
+        <div class="q-head"><span class="q-no">(${i + 1})</span><span class="pick-name">${esc(t.名前)}</span></div>
+        <textarea class="answer" data-name="${esc(t.名前)}" oninput="mock.answers[this.dataset.name]=this.value" placeholder="定義2〜3文 → 提唱者・起源 → 具体例1">${esc(mock.answers[t.名前] || "")}</textarea>
+      </div>`).join("")}
+    <button class="btn" onclick="submitMock()">提出して自己採点</button>`;
+}
+
+function beginTimer() {
+  mock.started = true;
+  mock.endsAt = Date.now() + 45 * 60 * 1000;
+  renderMock();
+}
+
+function submitMock() {
+  document.querySelectorAll("[data-name]").forEach(el => { mock.answers[el.dataset.name] = el.value; });
+  mock.submitted = true;
+  renderMock(); window.scrollTo(0, 0);
+}
+
+function mockResultHTML() {
+  const picked = mock.picked.map(n => TERMS.find(t => t.名前 === n));
+  const total = Object.values(mock.scores).reduce((a, b) => a + b, 0);
+  const graded = Object.keys(mock.scores).length;
+  return `
+    <div class="card">
+      <div class="total">${total} / ${picked.length * 10}</div>
+      <div class="muted" style="text-align:center">${graded} / ${picked.length} 語を採点済み。6点以下の語は自動で「苦手」になります。</div>
+      <div class="btn-row">
+        <button class="btn ghost small" onclick="saveMock()">結果を保存して終了</button>
+        <button class="btn ghost small" onclick="mock=null;renderMock()">保存せず終了</button>
+      </div>
+    </div>
+    ${picked.map((t, i) => `
+      <div class="card">
+        <div class="q-head"><span class="q-no">(${i + 1})</span><span class="pick-name">${esc(t.名前)}</span></div>
+        <div class="answer-label" style="margin-top:10px">自分の答案</div>
+        <div class="prev-answer">${esc(mock.answers[t.名前] || "（未記入）")}</div>
+        <div class="answer-label" style="margin-top:12px">模範解答</div>
+        <div class="answer-body">${esc(t.説明)}</div>
+        ${(t.提唱者 || t.年代) ? `<div class="answer-sub">提唱者・起源：<b>${esc(t.提唱者) || "—"}</b>${t.年代 ? `　／　年代：<b>${esc(t.年代)}</b>` : ""}</div>` : ""}
+        ${t.事例 ? `<div class="answer-sub">紐づく事例：<b>${esc(t.事例)}</b></div>` : ""}
+        <div class="score-row">
+          ${[0, 4, 6, 8, 10].map(s =>
+            `<button class="score-btn ${mock.scores[t.名前] === s ? "active" : ""}" onclick="setScore(${i},${s})">${s}</button>`).join("")}
+        </div>
+      </div>`).join("")}`;
+}
+
+function setScore(idx, s) {
+  const name = mock.picked[idx];
+  mock.scores[name] = s;
+  if (s <= 6) { prof[name] = "苦手"; save(KEY_PROF, prof); }
+  renderMock();
+}
+
+function saveMock() {
+  const total = Object.values(mock.scores).reduce((a, b) => a + b, 0);
+  mockHistory.unshift({
+    date: new Date().toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" }),
+    total, terms: mock.picked.map(n => ({ 名前: n, score: mock.scores[n] ?? null }))
+  });
+  mockHistory = mockHistory.slice(0, 20);
+  save(KEY_MOCK, mockHistory);
+  mock = null; renderMock();
+}
+
+// ─── タイマー ───────────────────────────────────────
+setInterval(() => {
+  if (view === "rotate" && rotStart) {
+    const el = document.getElementById("rot-timer");
+    if (el) {
+      const s = Math.floor((Date.now() - rotStart) / 1000);
+      el.textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+      el.style.color = s > 540 ? "var(--warn)" : "";
+    }
+  }
+  if (view === "mock" && mock && mock.started && !mock.submitted) {
+    const el = document.getElementById("mock-timer");
+    if (el) {
+      const left = Math.max(0, Math.floor((mock.endsAt - Date.now()) / 1000));
+      el.textContent = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`;
+      el.classList.toggle("low", left < 300);
+      if (left === 0) submitMock();
+    }
+  }
+}, 500);
+
+// ═══ 一覧・統計 ═════════════════════════════════════
+function renderStats() {
+  const pool = filtered();
+  const el = document.getElementById("stats-card");
+  const counts = {}; PROF_LEVELS.forEach(p => counts[p] = 0);
+  pool.forEach(t => counts[profOf(t)]++);
+  const max = Math.max(1, pool.length);
+
+  const clusters = uniq(TERMS.map(t => t.クラスタ));
+  let clusterHTML = "";
+  if (clusters.length) {
+    clusterHTML = `<div class="filter-label" style="margin:14px 0 8px">クラスタ別（目標 80語）</div>` +
+      Object.keys(CLUSTER_TARGETS).concat(clusters.filter(c => !(c in CLUSTER_TARGETS))).map(c => {
+        const n = TERMS.filter(t => t.クラスタ === c && t.種別 === "用語").length;
+        const target = CLUSTER_TARGETS[c] || n || 1;
+        return `<div class="stat-row"><div class="stat-label">${esc(c)}</div>
+          <div class="stat-track"><div class="stat-fill" style="width:${Math.min(100, n / target * 100)}%"></div></div>
+          <div class="stat-count">${n} / ${target}</div></div>`;
+      }).join("");
+  } else {
+    clusterHTML = `<div class="muted" style="margin-top:12px">Notion に「クラスタ」プロパティ（安保／IPE／規範・理論）を足すと、80語の内訳がここに出ます。</div>`;
+  }
+
+  el.innerHTML = `
+    <div class="row"><div style="font-weight:700">習熟度（表示中 ${pool.length} 枚）</div></div>
+    <div style="margin-top:10px">
+    ${PROF_LEVELS.map(p => `<div class="stat-row"><div class="stat-label">${p}</div>
+      <div class="stat-track"><div class="stat-fill fill-${p}" style="width:${counts[p] / max * 100}%"></div></div>
+      <div class="stat-count">${counts[p]}</div></div>`).join("")}
+    </div>
+    ${clusterHTML}
+    ${(() => {
+      const terms = TERMS.filter(t => t.種別 === "用語");
+      const done = terms.filter(t => t.提唱者).length;
+      return `<div class="filter-label" style="margin:14px 0 8px">提唱者・起源の記入</div>
+        <div class="stat-row"><div class="stat-label">記入済み</div>
+        <div class="stat-track"><div class="stat-fill" style="width:${terms.length ? done / terms.length * 100 : 0}%"></div></div>
+        <div class="stat-count">${done} / ${terms.length}</div></div>`;
+    })()}`;
+}
+
+function renderList() {
+  const q = (document.getElementById("search").value || "").trim().toLowerCase();
+  const pool = filtered().filter(t =>
+    !q || t.名前.toLowerCase().includes(q) || (t.説明 || "").toLowerCase().includes(q));
+  const el = document.getElementById("list-area");
+  if (!pool.length) { el.innerHTML = `<div class="empty">該当なし</div>`; return; }
+  el.innerHTML = pool.map((t, i) => `
+    <div class="list-item" onclick="this.querySelector('.list-desc').classList.toggle('clamp')">
+      <div class="row">
+        <div class="list-name">${esc(t.名前)}</div>
+        <span class="tag">${esc(profOf(t))}</span>
+      </div>
+      <div class="list-desc clamp">${esc(t.説明) || "（説明が未記入）"}</div>
+    </div>`).join("");
+}
+
+// ═══ 絞り込みUI ═════════════════════════════════════
+function chipHTML(id, values, current) {
+  return ["すべて", ...values].map(v =>
+    `<button class="chip ${current === v ? "active" : ""}" onclick="setFilter('${id}','${jsAttr(v)}')">${esc(v)}</button>`).join("");
+}
+function renderDrawer() {
+  document.getElementById("f-kind").innerHTML = chipHTML("kind", uniq(TERMS.map(t => t.種別)), filters.kind);
+  document.getElementById("f-source").innerHTML = chipHTML("source", uniq(TERMS.map(t => t.出自)), filters.source);
+  const clusters = uniq(TERMS.map(t => t.クラスタ));
+  document.getElementById("cluster-group").style.display = clusters.length ? "block" : "none";
+  document.getElementById("f-cluster").innerHTML = chipHTML("cluster", clusters, filters.cluster);
+  document.getElementById("f-prof").innerHTML = chipHTML("prof", PROF_LEVELS, filters.prof);
+  const ab = document.getElementById("f-asked");
+  ab.textContent = filters.hideAsked ? "除いている" : "除かない";
+  ab.classList.toggle("active", filters.hideAsked);
+}
+function setFilter(id, v) { filters[id] = v; afterFilterChange(); }
+function toggleAsked() { filters.hideAsked = !filters.hideAsked; afterFilterChange(); }
+function afterFilterChange() {
+  renderDrawer(); buildRotOrder(true);
+  if (view === "rotate") renderRotate();
+  if (view === "list") { renderStats(); renderList(); }
+  if (view === "mock" && !mock) renderMock();
+}
+function openDrawer() { renderDrawer(); document.getElementById("drawer-overlay").classList.add("open"); }
+function closeDrawer(e) { if (!e || e.target.id === "drawer-overlay") document.getElementById("drawer-overlay").classList.remove("open"); }
+
+// ═══ バックアップ ═══════════════════════════════════
+function exportProgress() {
+  const blob = new Blob([JSON.stringify({ prof, savedAnswers, mockHistory }, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `yougo-backup-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+}
+function importProgress(ev) {
+  const file = ev.target.files[0]; if (!file) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const d = JSON.parse(r.result);
+      prof = Object.assign({}, prof, d.prof || {});
+      savedAnswers = Object.assign({}, savedAnswers, d.savedAnswers || {});
+      if (Array.isArray(d.mockHistory)) mockHistory = d.mockHistory.concat(mockHistory).slice(0, 20);
+      save(KEY_PROF, prof); save(KEY_ANS, savedAnswers); save(KEY_MOCK, mockHistory);
+      afterFilterChange(); alert("読み込みました");
+    } catch (e) { alert("ファイルを読めませんでした"); }
+  };
+  r.readAsText(file);
+  ev.target.value = "";
+}
+
+// ═══ 起動 ═══════════════════════════════════════════
+renderHeader();
+buildRotOrder(true);
+renderRotate();
+renderDrawer();
+</script>
+</body>
+</html>
