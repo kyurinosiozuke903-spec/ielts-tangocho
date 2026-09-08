@@ -1,0 +1,49 @@
+name: Sync Notion 用語DB・新 to network/data/terms.json
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # 11:00 JST
+    - cron: "0 10 * * *"  # 19:00 JST
+  workflow_dispatch:
+
+concurrency:
+  group: sync-notion
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Sync Notion to network/data/terms.json
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_YOUGO_NEW_DB: ${{ secrets.NOTION_YOUGO_NEW_DB }}
+        run: python sync_network.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- network/data/terms.json; then
+            echo "No changes detected"
+          else
+            git add network/data/terms.json
+            git commit -m "chore: sync 用語DB・新 from Notion ($(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST'))"
+            git pull --rebase --autostash
+            git push
+            echo "Pushed updated network/data/terms.json"
+          fi
