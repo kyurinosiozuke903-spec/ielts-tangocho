@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f2f4f3">
+<title>🕸 提唱者ネットワーク – 用語DB・新</title>
+<style>
+  :root {
+    --bg: #f2f4f3; --card-bg: #ffffff; --accent: #0f766e; --accent-light: #d7efec; --accent-dark: #115e59;
+    --text: #16211f; --text-muted: #6b7280; --border: #e3e6e5; --warn: #b45309;
+    --realism: #b45309; --liberal: #0f766e; --constr: #7c3aed; --critical: #be123c; --other: #64748b;
+    --shadow: 0 4px 24px rgba(0,0,0,0.07); --radius: 16px;
+    --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; overscroll-behavior: none; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; display: flex; flex-direction: column; }
+  button, input { font-family: inherit; }
+  a { color: var(--accent-dark); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+  .header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; box-shadow: 0 1px 8px rgba(0,0,0,0.06); z-index: 20; }
+  .header-left { display: flex; align-items: center; gap: 9px; min-width: 0; }
+  .header-title { font-size: 15px; font-weight: 700; white-space: nowrap; }
+  .header-sub { font-size: 11px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .btn-icon { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 7px 10px; cursor: pointer; font-size: 13px; color: var(--text-muted); white-space: nowrap; }
+  .btn-icon:active, .btn-icon.active { background: var(--accent-light); color: var(--accent-dark); border-color: var(--accent); }
+
+  .panel { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 8px 12px 10px; z-index: 15; }
+  .searchrow { display: flex; gap: 8px; }
+  .searchrow input { flex: 1; padding: 9px 12px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 15px; background: #fbfcfc; color: var(--text); outline: none; min-width: 0; }
+  .searchrow input:focus { border-color: var(--accent); background: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .chips.scroll { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; -webkit-overflow-scrolling: touch; }
+  .chip { padding: 4px 11px; border-radius: 20px; border: 1.5px solid var(--border); font-size: 12px; font-weight: 600; cursor: pointer; background: transparent; color: var(--text-muted); white-space: nowrap; line-height: 1.5; }
+  .chip.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark); }
+  .chip.school[data-school="リアリズム"].active { border-color: var(--realism); color: var(--realism); background: #fdf1e3; }
+  .chip.school[data-school="リベラリズム"].active { border-color: var(--liberal); color: var(--liberal); background: var(--accent-light); }
+  .chip.school[data-school="コンストラクティビズム"].active { border-color: var(--constr); color: var(--constr); background: #f0eafc; }
+  .chip.school[data-school="批判理論"].active { border-color: var(--critical); color: var(--critical); background: #fdeaf0; }
+  .chip.school[data-school="その他"].active { border-color: var(--other); color: var(--other); background: #eef1f5; }
+  .chip.hit { border-color: var(--accent); color: var(--accent-dark); }
+  .adv { display: none; }
+  .adv.open { display: block; }
+
+  .stage { position: relative; flex: 1; min-height: 0; }
+  svg#graph { width: 100%; height: 100%; display: block; touch-action: none; background: radial-gradient(circle at 50% 40%, #ffffff 0%, var(--bg) 70%); }
+  .link { stroke: #9aa8a5; stroke-opacity: 0.55; }
+  .link.role-代表 { stroke-opacity: 0.5; }
+  .link.role-関連 { stroke-dasharray: 5 4; stroke-opacity: 0.4; }
+  .link.role-整理 { stroke-dasharray: 1 5; stroke-opacity: 0.3; }
+  .link.hi { stroke: var(--accent); stroke-opacity: 0.95; }
+  .link.dim { stroke-opacity: 0.08; }
+  .node { cursor: pointer; }
+  .node circle, .node rect { stroke-width: 1.6; }
+  .node.term circle { stroke: #fff; }
+  .node.person circle { fill: #fff; stroke: #334155; }
+  .node.inst rect { fill: #fff; stroke: #334155; stroke-dasharray: 3 2; }
+  .node.sel circle, .node.sel rect { stroke: var(--accent-dark); stroke-width: 3.5; }
+  .node.dim { opacity: 0.18; }
+  .node text { fill: var(--text); paint-order: stroke; stroke: #fff; stroke-width: 3.2px; stroke-linejoin: round; pointer-events: none; }
+  .node.person text, .node.inst text { font-weight: 700; }
+  .node text.hidden { display: none; }
+
+  .overlay { position: absolute; left: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 6px; z-index: 5; }
+  .zoombtn { width: 38px; height: 38px; border-radius: 12px; border: 1px solid var(--border); background: rgba(255,255,255,0.92); font-size: 17px; cursor: pointer; color: var(--text-muted); }
+  .legend { position: absolute; right: 10px; top: 10px; background: rgba(255,255,255,0.92); border: 1px solid var(--border); border-radius: 12px; padding: 8px 10px; font-size: 11px; color: var(--text-muted); line-height: 1.6; max-width: 46vw; }
+  .legend b { color: var(--text); font-weight: 700; }
+  .legend .sw { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+  .status { position: absolute; left: 50%; top: 12px; transform: translateX(-50%); background: rgba(255,255,255,0.94); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 12px; color: var(--text-muted); z-index: 6; }
+  .status.hide { display: none; }
+
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 62%; overflow-y: auto; background: var(--card-bg); border-top: 1px solid var(--border); border-radius: 18px 18px 0 0; box-shadow: 0 -6px 28px rgba(0,0,0,0.12); padding: 14px 16px calc(18px + var(--safe-bottom)); z-index: 10; transform: translateY(102%); transition: transform 0.2s ease; }
+  .sheet.open { transform: translateY(0); }
+  .sheet-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+  .sheet h2 { font-family: var(--serif); font-size: 19px; font-weight: 600; line-height: 1.4; }
+  .sheet .latin { font-size: 12px; color: var(--text-muted); }
+  .sheet .close { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 5px 10px; font-size: 13px; color: var(--text-muted); cursor: pointer; }
+  .tag { display: inline-block; padding: 2px 9px; border-radius: 6px; font-size: 11px; font-weight: 700; background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); margin: 4px 4px 0 0; }
+  .tag.school { background: var(--accent-light); color: var(--accent-dark); border-color: #a7d9d3; }
+  .tag.warnt { background: #fff7ed; color: var(--warn); border-color: #fed7aa; }
+  .dlabel { font-size: 11.5px; color: var(--text-muted); font-weight: 700; margin-top: 12px; }
+  .dbody { font-size: 13.5px; line-height: 1.75; }
+  .dsrc { font-size: 12.5px; color: var(--accent-dark); word-break: break-word; }
+  .dsrc a { word-break: break-all; }
+  .links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .lk { border: 1.5px solid var(--border); background: var(--card-bg); border-radius: 10px; padding: 4px 10px; font-size: 13px; cursor: pointer; color: var(--text); text-align: left; line-height: 1.5; }
+  .lk .r { color: var(--text-muted); font-size: 11px; margin-left: 4px; }
+  .lk.role-提唱, .lk.role-機関 { border-color: #a7d9d3; }
+  .lk.role-関連 { border-style: dashed; color: var(--text-muted); }
+  .lk.role-整理 { border-style: dotted; color: var(--text-muted); }
+  .sheet-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .act { border: 1.5px solid var(--accent); background: var(--accent-light); color: var(--accent-dark); border-radius: 12px; padding: 8px 14px; font-size: 13px; font-weight: 700; cursor: pointer; }
+  .act.ghost { border-color: var(--border); background: var(--bg); color: var(--text-muted); font-weight: 600; }
+  .note { font-size: 12px; color: var(--warn); margin-top: 4px; }
+  .err { position: absolute; left: 12px; right: 12px; top: 12px; max-height: calc(100% - 24px); overflow-y: auto; z-index: 30;
+         background: var(--card-bg); border: 1px solid #fed7aa; border-left: 4px solid var(--warn); border-radius: 14px;
+         padding: 14px 16px; box-shadow: var(--shadow); font-size: 13.5px; line-height: 1.75; }
+  .err h3 { font-size: 15px; font-weight: 700; color: var(--warn); margin-bottom: 6px; }
+  .err code { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 1px 5px; font-size: 12px; word-break: break-all; }
+  .err ul { margin: 8px 0 0 18px; }
+  .err li { margin-bottom: 4px; }
+  .err .urls { margin-top: 10px; font-size: 12px; }
+  .err .urls a { display: block; word-break: break-all; margin-top: 3px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-left">
+    <span style="font-size:18px">🕸</span>
+    <div style="min-width:0">
+      <div class="header-title">提唱者ネットワーク</div>
+      <div class="header-sub" id="sub">読み込み中…</div>
+    </div>
+  </div>
+  <button class="btn-icon" id="toggleadv" type="button" aria-expanded="false">⚙ 絞込</button>
+</div>
+
+<div class="panel">
+  <div class="searchrow">
+    <input id="q" type="search" placeholder="人物・用語・原綴りで検索" autocomplete="off" aria-label="検索">
+    <button class="btn-icon" id="reset" type="button">全体</button>
+  </div>
+  <div class="chips scroll" id="hits" hidden></div>
+  <div class="adv" id="adv">
+    <div class="chips scroll" id="schools"></div>
+    <div class="chips scroll" id="tags"></div>
+    <div class="chips" id="opts"></div>
+  </div>
+</div>
+
+<div class="stage">
+  <svg id="graph" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="提唱者と用語のネットワーク図">
+    <g id="viewport">
+      <g id="links"></g>
+      <g id="nodes"></g>
+    </g>
+  </svg>
+  <div class="status" id="status">整列中…</div>
+  <div class="legend" id="legend"></div>
+  <div class="overlay">
+    <button class="zoombtn" id="zin" type="button" aria-label="拡大">＋</button>
+    <button class="zoombtn" id="zout" type="button" aria-label="縮小">−</button>
+    <button class="zoombtn" id="zfit" type="button" aria-label="全体表示">⤢</button>
+  </div>
+  <div class="sheet" id="sheet" role="dialog" aria-label="詳細"></div>
+</div>
+
+<script>
+"use strict";
+// ─── 定数 ──────────────────────────────────────────────
+const W = 1200, H = 900;          // レイアウト世界の基準サイズ（面積はこれを保つ）
+let LW = W, LH = H;               // 実際のレイアウト世界。表示領域の縦横比に合わせる
+const SCHOOLS = ["リアリズム", "リベラリズム", "コンストラクティビズム", "批判理論", "その他"];
+const SCHOOL_COLOR = { "リアリズム": "#b45309", "リベラリズム": "#0f766e", "コンストラクティビズム": "#7c3aed", "批判理論": "#be123c", "その他": "#64748b", "": "#94a3b8" };
+const TAGS = ["人権", "貿易", "環境", "安全保障", "保健", "科学技術", "国内政治", "国際政治"];
+const ROLE_DIST = { "提唱": 95, "機関": 95, "代表": 110, "関連": 135, "整理": 175 };
+
+// ─── 状態 ──────────────────────────────────────────────
+let DATA = null, MASTER = null;
+const state = { q: "", schools: new Set(), tags: new Set(), chapter: "", showOrg: false, showLoose: false, focus: null, sel: null };
+const view = { k: 1, x: 0, y: 0 };
+let G = { nodes: [], links: [], byId: {} };
+const VB = { w: W, h: H };   // 表示領域（CSSピクセル）。レイアウト世界は W×H のまま。
+function measure() {
+  const el = $("graph");
+  VB.w = el.clientWidth || W; VB.h = el.clientHeight || H;
+  el.setAttribute("viewBox", `0 0 ${VB.w} ${VB.h}`);
+  const area = W * H, aspect = Math.max(0.35, Math.min(2.8, VB.w / VB.h));
+  LW = Math.round(Math.sqrt(area * aspect)); LH = Math.round(Math.sqrt(area / aspect));
+}
+
+// ─── 補助 ──────────────────────────────────────────────
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+function linkify(text) {
+  return esc(text).replace(/(https?:\/\/[^\s｜）)]+)/g, (u) => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`)
+    .replace(/DOI\s+(10\.[^\s;；)）]+)/g, (m, d) => `DOI <a href="https://doi.org/${d}" target="_blank" rel="noopener">${d}</a>`);
+}
+function rand(seed) { let h = 2166136261; for (let i = 0; i < seed.length; i++) { h ^= seed.charCodeAt(i); h = Math.imul(h, 16777619); } return () => { h += 0x6D2B79F5; let t = h; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const svgEl = (n) => document.createElementNS("http://www.w3.org/2000/svg", n);
+
+// 提唱者マスタに無い語を、原綴り・別名の文字列一致で人物に仮結線する
+function fallbackProposers(term) {
+  const t = term.提唱者 || "", out = [];
+  for (const p of Object.values(MASTER.people)) {
+    const keys = [p.latin, p.name, ...(p.aliases || [])].filter((k) => k && k.length >= 3);
+    if (keys.some((k) => t.includes(k))) out.push({ id: p.id, role: "関連" });
+  }
+  return out;
+}
+function entryOf(term) {
+  const e = MASTER.terms[term.id];
+  if (e) return e;
+  return { name: term.名前, proposers: fallbackProposers(term), none: false, src: [], note: "", unmapped: true };
+}
+
+// ─── グラフ構築 ────────────────────────────────────────
+function buildGraph() {
+  const prev = {}; G.nodes.forEach((n) => { prev[n.id] = n; });
+  const nodes = [], links = [], byId = {};
+  const add = (n) => { const old = prev[n.id]; if (old) { n.x = old.x; n.y = old.y; } byId[n.id] = n; nodes.push(n); return n; };
+
+  const terms = DATA.terms.filter((t) => {
+    if (state.schools.size && !state.schools.has(t.理論学派 || "その他")) return false;
+    if (state.tags.size && !(t.事例系統 || []).some((x) => state.tags.has(x))) return false;
+    if (state.chapter && !(entryOf(t).src || []).includes(state.chapter)) return false;
+    return true;
+  });
+
+  const pending = [];
+  terms.forEach((t) => {
+    const e = entryOf(t);
+    const ps = e.proposers.filter((p) => state.showOrg || p.role !== "整理");
+    if (!ps.length && !state.showLoose) return;
+    const node = { id: "t:" + t.id, type: "term", label: t.名前, term: t, entry: e, deg: 0 };
+    add(node); pending.push([node, ps]);
+  });
+  pending.forEach(([tn, ps]) => ps.forEach((p) => {
+    const person = MASTER.people[p.id], inst = MASTER.institutions[p.id];
+    if (!person && !inst) return;
+    const id = (person ? "p:" : "i:") + p.id;
+    const an = byId[id] || add({ id, type: person ? "person" : "inst", label: (person || inst).name, actor: person || inst, isPerson: !!person, deg: 0 });
+    links.push({ source: an, target: tn, role: p.role });
+    an.deg++; tn.deg++;
+  }));
+
+  // フォーカス: 選んだノードと直接つながるものだけ
+  if (state.focus && byId[state.focus]) {
+    const keep = new Set([state.focus]);
+    links.forEach((l) => { if (l.source.id === state.focus) keep.add(l.target.id); if (l.target.id === state.focus) keep.add(l.source.id); });
+    const fn = nodes.filter((n) => keep.has(n.id)), fb = {};
+    fn.forEach((n) => { fb[n.id] = n; n.deg = 0; });
+    const fl = links.filter((l) => fb[l.source.id] && fb[l.target.id]);
+    fl.forEach((l) => { l.source.deg++; l.target.deg++; });
+    G = { nodes: fn, links: fl, byId: fb };
+  } else G = { nodes, links, byId };
+
+  G.nodes.forEach((n) => {
+    n.r = n.type === "term" ? Math.min(16, 5.5 + 1.7 * Math.sqrt(n.deg)) : Math.min(20, 7 + 2.2 * Math.sqrt(n.deg));
+    if (n.x == null) { const r = rand(n.id); const a = r() * Math.PI * 2, d = 0.12 + r() * 0.3; n.x = LW / 2 + Math.cos(a) * d * LW; n.y = LH / 2 + Math.sin(a) * d * LH; }
+    n.vx = 0; n.vy = 0;
+  });
+  // 学派: 用語はDBの値、人物・機関はつながる用語の多数決
+  G.nodes.forEach((n) => { if (n.type === "term") n.school = n.term.理論学派 || "その他"; });
+  const tally = {};
+  G.links.forEach((l) => { const a = l.source, t = l.target; (tally[a.id] = tally[a.id] || {}); const s2 = t.school; if (s2) tally[a.id][s2] = (tally[a.id][s2] || 0) + (l.role === "整理" ? 0.3 : 1); });
+  G.nodes.forEach((n) => { if (n.type !== "term") { const c = tally[n.id]; n.school = c ? Object.entries(c).sort((a, b) => b[1] - a[1])[0][0] : ""; } });
+  const size = {}; G.nodes.forEach((n) => { if (n.school) size[n.school] = (size[n.school] || 0) + 1; });
+  const present = SCHOOLS.filter((s2) => size[s2]);
+  G.anchors = {};
+  present.forEach((s2, i) => {
+    const a = -Math.PI / 2 + (i * 2 * Math.PI) / present.length;
+    // 大きい塊ほど引力を弱めて広がる余地を作る
+    const g = Math.max(0.3, Math.min(1, 22 / size[s2]));
+    G.anchors[s2] = { x: LW / 2 + Math.cos(a) * LW * 0.28, y: LH / 2 + Math.sin(a) * LH * 0.28, g };
+  });
+
+  G.adj = {}; G.nodes.forEach((n) => { G.adj[n.id] = new Set(); });
+  G.links.forEach((l) => { G.adj[l.source.id].add(l.target.id); G.adj[l.target.id].add(l.source.id); });
+  if (state.sel && !G.byId[state.sel]) state.sel = null;
+  if (state.focus && !G.byId[state.focus]) state.focus = null;
+}
+
+// ─── 力学計算（自前・依存なし） ────────────────────────
+function layout(iters, a0) {
+  const ns = G.nodes, ls = G.links, n = ns.length;
+  if (!n) return;
+  for (let step = 0; step < iters; step++) {
+    const alpha = Math.max(0.02, (a0 == null ? 1 : a0) * (1 - step / iters));
+    for (let i = 0; i < n; i++) { // 反発
+      const a = ns[i];
+      for (let j = i + 1; j < n; j++) {
+        const b = ns[j];
+        let dx = b.x - a.x, dy = b.y - a.y, d2 = dx * dx + dy * dy;
+        if (d2 < 1) { dx = (i - j) * 0.5 + 0.6; dy = 0.4; d2 = dx * dx + dy * dy; }
+        const d = Math.sqrt(d2), f = (3100 * alpha) / d2, fx = (dx / d) * f, fy = (dy / d) * f;
+        a.vx -= fx; a.vy -= fy; b.vx += fx; b.vy += fy;
+        const min = a.r + b.r + 8; // 重なり回避
+        if (d < min) { const p = ((min - d) / d) * 0.5; a.vx -= dx * p; a.vy -= dy * p; b.vx += dx * p; b.vy += dy * p; }
+      }
+    }
+    for (const l of ls) { // ばね
+      const a = l.source, b = l.target;
+      const dx = b.x - a.x, dy = b.y - a.y, d = Math.max(1, Math.hypot(dx, dy));
+      const L = ROLE_DIST[l.role] || 120, f = ((d - L) / d) * 0.09 * alpha;
+      a.vx += dx * f; a.vy += dy * f; b.vx -= dx * f; b.vy -= dy * f;
+    }
+    for (const a of ns) { // 学派クラスタ＋中心への引力＋減衰
+      const an = G.anchors && G.anchors[a.school];
+      if (an) { const g = 0.024 * an.g; a.vx += (an.x - a.x) * g * alpha; a.vy += (an.y - a.y) * g * alpha; }
+      a.vx += (LW / 2 - a.x) * 0.007 * alpha; a.vy += (LH / 2 - a.y) * 0.007 * alpha;
+      if (a.fixed) { a.vx = 0; a.vy = 0; continue; }
+      a.x += (a.vx *= 0.62); a.y += (a.vy *= 0.62);
+      a.x = Math.max(30, Math.min(LW - 30, a.x)); a.y = Math.max(30, Math.min(LH - 30, a.y));
+    }
+  }
+}
+
+// 画面の縦横比に合わせて配置を引き伸ばす（縦長の画面で上下が余るのを防ぐ）
+function spread() {
+  if (G.nodes.length < 4) return;
+  const xs = G.nodes.map((n) => n.x), ys = G.nodes.map((n) => n.y);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const bw = x1 - x0, bh = y1 - y0;
+  if (bw < 40 || bh < 40) return;
+  const target = VB.w / VB.h, cur = bw / bh;
+  if (cur > target * 1.05) { const f = Math.min(1.7, cur / target), cy = (y0 + y1) / 2; G.nodes.forEach((n) => { n.y = cy + (n.y - cy) * f; }); }
+  else if (cur < target * 0.95) { const f = Math.min(1.7, target / cur), cx = (x0 + x1) / 2; G.nodes.forEach((n) => { n.x = cx + (n.x - cx) * f; }); }
+}
+
+// ─── 描画 ──────────────────────────────────────────────
+function drawGraph() {
+  const gl = $("links"), gn = $("nodes");
+  gl.textContent = ""; gn.textContent = "";
+  G.links.forEach((l) => {
+    const e = svgEl("line");
+    e.setAttribute("class", "link role-" + l.role);
+    e.setAttribute("stroke-width", l.role === "提唱" || l.role === "機関" ? 1.9 : 1.3);
+    l.el = e; gl.appendChild(e);
+  });
+  G.nodes.forEach((n) => {
+    const g = svgEl("g");
+    g.setAttribute("class", "node " + n.type);
+    g.setAttribute("data-id", n.id);
+    if (n.type === "inst") {
+      const r = svgEl("rect"); const s = n.r * 1.7;
+      const col = SCHOOL_COLOR[n.school] || SCHOOL_COLOR[""];
+      r.setAttribute("fill", col); r.setAttribute("fill-opacity", 0.12); r.setAttribute("stroke", col);
+      r.setAttribute("x", -s / 2); r.setAttribute("y", -s / 2); r.setAttribute("width", s); r.setAttribute("height", s); r.setAttribute("rx", 3);
+      g.appendChild(r);
+    } else {
+      const c = svgEl("circle"); c.setAttribute("r", n.r);
+      const col = SCHOOL_COLOR[n.school] || SCHOOL_COLOR[""];
+      if (n.type === "term") { c.setAttribute("fill", col); if (n.entry.unmapped) c.setAttribute("stroke-dasharray", "3 2"); }
+      else { c.setAttribute("fill", col); c.setAttribute("fill-opacity", 0.16); c.setAttribute("stroke", col); }
+      g.appendChild(c);
+    }
+    const t = svgEl("text");
+    t.setAttribute("text-anchor", "middle"); t.setAttribute("dy", -(n.r + 5));
+    t.textContent = n.label.length > 22 ? n.label.slice(0, 21) + "…" : n.label;
+    n.el = g; n.text = t; g.appendChild(t); gn.appendChild(g);
+  });
+  tick(); applyHighlight(); updateStatus();
+}
+function tick() {
+  G.links.forEach((l) => { const e = l.el; if (!e) return; e.setAttribute("x1", l.source.x); e.setAttribute("y1", l.source.y); e.setAttribute("x2", l.target.x); e.setAttribute("y2", l.target.y); });
+  G.nodes.forEach((n) => { if (n.el) n.el.setAttribute("transform", `translate(${n.x.toFixed(1)},${n.y.toFixed(1)})`); });
+}
+function applyView() {
+  $("viewport").setAttribute("transform", `translate(${view.x.toFixed(1)},${view.y.toFixed(1)}) scale(${view.k.toFixed(3)})`);
+  const fs = Math.max(7, Math.min(15, 11 / view.k));
+  G.nodes.forEach((n) => { if (n.text) n.text.setAttribute("font-size", fs); });
+  updateLabels();
+}
+function updateLabels() {
+  const near = state.sel && G.adj[state.sel] ? G.adj[state.sel] : null;
+  const fs = Math.max(7, Math.min(15, 11 / view.k)) * view.k;   // 画面上の文字サイズ
+  const scored = G.nodes.map((n) => {
+    const hit = state.q && n.label.toLowerCase().includes(state.q);
+    let pri = n.deg;
+    if (near && near.has(n.id)) pri += 500;
+    if (hit) pri += 800;
+    if (n.id === state.sel) pri += 1000;
+    if (n.type !== "term") pri += 3;      // 人物名を優先
+    if (n.deg === 0) pri += 2;            // 孤立した語も名前が要る
+    return { n, pri };
+  }).sort((a, b) => b.pri - a.pri);
+  const boxes = [], m = 40;
+  for (const { n } of scored) {
+    const sx = n.x * view.k + view.x, sy = n.y * view.k + view.y - (n.r + 5) * view.k;
+    if (sx < -m || sy < -m || sx > VB.w + m || sy > VB.h + m) { n.text.setAttribute("class", "hidden"); continue; }
+    const w = Math.min(n.label.length, 22) * fs * 0.58, h = fs * 1.25;
+    const b = [sx - w / 2, sy - h, sx + w / 2, sy + 2];
+    if (boxes.some((o) => b[0] < o[2] && b[2] > o[0] && b[1] < o[3] && b[3] > o[1])) { n.text.setAttribute("class", "hidden"); continue; }
+    boxes.push(b); n.text.setAttribute("class", "");
+  }
+}
+function applyHighlight() {
+  const sel = state.sel && G.byId[state.sel] ? state.sel : null;
+  const near = sel ? G.adj[sel] : null;
+  G.nodes.forEach((n) => {
+    const cls = ["node", n.type];
+    if (sel) { if (n.id === sel) cls.push("sel"); else if (!near || !near.has(n.id)) cls.push("dim"); }
+    else if (state.q && !n.label.toLowerCase().includes(state.q) && !(n.actor && (n.actor.latin || "").toLowerCase().includes(state.q))) cls.push("dim");
+    n.el.setAttribute("class", cls.join(" "));
+  });
+  G.links.forEach((l) => {
+    const cls = ["link", "role-" + l.role];
+    if (sel) cls.push(l.source.id === sel || l.target.id === sel ? "hi" : "dim");
+    l.el.setAttribute("class", cls.join(" "));
+  });
+  updateLabels();
+}
+function updateStatus() {
+  const nT = G.nodes.filter((n) => n.type === "term").length;
+  const nA = G.nodes.length - nT;
+  const un = G.nodes.filter((n) => n.type === "term" && n.entry.unmapped).length;
+  $("status").textContent = `用語 ${nT}・提唱者 ${nA}・線 ${G.links.length}${un ? `　未整理 ${un}` : ""}${state.focus ? "　フォーカス中" : ""}`;
+  $("status").classList.remove("hide");
+}
+
+// ─── ズーム・パン ──────────────────────────────────────
+function svgPoint(ev) {
+  const r = $("graph").getBoundingClientRect();
+  const sx = r.width ? VB.w / r.width : 1, sy = r.height ? VB.h / r.height : 1;
+  return { x: (ev.clientX - r.left) * sx, y: (ev.clientY - r.top) * sy };
+}
+function toGraph(p) { return { x: (p.x - view.x) / view.k, y: (p.y - view.y) / view.k }; }
+function zoomAt(p, k) {
+  const g = toGraph(p); const nk = Math.max(0.35, Math.min(4, k));
+  view.k = nk; view.x = p.x - g.x * nk; view.y = p.y - g.y * nk; applyView();
+}
+function fit() {
+  if (!G.nodes.length) { view.k = 1; view.x = 0; view.y = 0; return applyView(); }
+  const xs = G.nodes.map((n) => n.x), ys = G.nodes.map((n) => n.y);
+  const x0 = Math.min(...xs) - 60, x1 = Math.max(...xs) + 60, y0 = Math.min(...ys) - 60, y1 = Math.max(...ys) + 60;
+  const k = Math.max(0.35, Math.min(2.2, Math.min(VB.w / (x1 - x0), VB.h / (y1 - y0))));
+  view.k = k; view.x = VB.w / 2 - ((x0 + x1) / 2) * k; view.y = VB.h / 2 - ((y0 + y1) / 2) * k; applyView();
+}
+function centerOn(n, k) {
+  view.k = k || Math.max(view.k, 1.2);
+  view.x = VB.w / 2 - n.x * view.k; view.y = VB.h / 2 - n.y * view.k * 0.8; applyView();
+}
+
+let drag = null, pointers = new Map(), pinch = null;
+$("graph").addEventListener("pointerdown", (ev) => {
+  $("graph").setPointerCapture(ev.pointerId);
+  pointers.set(ev.pointerId, svgPoint(ev));
+  if (pointers.size === 2) { const [a, b] = [...pointers.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: view.k }; drag = null; return; }
+  const g = ev.target.closest ? ev.target.closest(".node") : null;
+  const p = svgPoint(ev);
+  if (g) { const n = G.byId[g.getAttribute("data-id")]; drag = { node: n, moved: false, start: toGraph(p) }; n.fixed = true; }
+  else drag = { pan: true, moved: false, x: p.x - view.x, y: p.y - view.y };
+});
+$("graph").addEventListener("pointermove", (ev) => {
+  if (!pointers.has(ev.pointerId)) return;
+  const p = svgPoint(ev); pointers.set(ev.pointerId, p);
+  if (pinch && pointers.size === 2) { const [a, b] = [...pointers.values()]; const d = Math.hypot(a.x - b.x, a.y - b.y); zoomAt({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }, pinch.k * (d / pinch.d)); return; }
+  if (!drag) return;
+  drag.moved = true;
+  if (drag.pan) { view.x = p.x - drag.x; view.y = p.y - drag.y; applyView(); }
+  else { const g = toGraph(p); drag.node.x = g.x; drag.node.y = g.y; layout(4); tick(); }
+});
+function endPointer(ev) {
+  pointers.delete(ev.pointerId);
+  if (pointers.size < 2) pinch = null;
+  if (drag && drag.node) { drag.node.fixed = false; if (!drag.moved) select(drag.node.id); }
+  else if (drag && drag.pan && !drag.moved) select(null);
+  drag = null;
+}
+$("graph").addEventListener("pointerup", endPointer);
+$("graph").addEventListener("pointercancel", endPointer);
+$("graph").addEventListener("wheel", (ev) => { ev.preventDefault(); zoomAt(svgPoint(ev), view.k * (ev.deltaY < 0 ? 1.12 : 0.89)); }, { passive: false });
+$("zin").onclick = () => zoomAt({ x: VB.w / 2, y: VB.h / 2 }, view.k * 1.3);
+$("zout").onclick = () => zoomAt({ x: VB.w / 2, y: VB.h / 2 }, view.k / 1.3);
+$("zfit").onclick = () => fit();
+
+// ─── 詳細シート ────────────────────────────────────────
+function select(id) {
+  state.sel = id && G.byId[id] ? id : null;
+  applyHighlight(); renderSheet();
+  if (state.sel) centerOn(G.byId[state.sel]);
+}
+function neighborsOf(id) {
+  const out = [];
+  G.links.forEach((l) => { if (l.source.id === id) out.push({ n: l.target, role: l.role }); else if (l.target.id === id) out.push({ n: l.source, role: l.role }); });
+  const order = { "提唱": 0, "機関": 1, "代表": 2, "関連": 3, "整理": 4 };
+  return out.sort((a, b) => (order[a.role] ?? 9) - (order[b.role] ?? 9) || a.n.label.localeCompare(b.n.label, "ja"));
+}
+function renderSheet() {
+  const sheet = $("sheet");
+  if (!state.sel) { sheet.classList.remove("open"); sheet.innerHTML = ""; return; }
+  const n = G.byId[state.sel], nb = neighborsOf(n.id);
+  const chips = nb.map((x) => `<button type="button" class="lk role-${x.role}" data-go="${esc(x.n.id)}">${esc(x.n.label)}${x.role !== "提唱" ? `<span class="r">${esc(x.role)}</span>` : ""}</button>`).join("");
+  let head, body;
+  if (n.type === "term") {
+    const t = n.term, e = n.entry;
+    head = `<h2>${esc(t.名前)}</h2><div>${t.理論学派 ? `<span class="tag school">${esc(t.理論学派)}</span>` : ""}${(t.事例系統 || []).map((x) => `<span class="tag">${esc(x)}</span>`).join("")}${e.unmapped ? '<span class="tag warnt">未整理</span>' : ""}${e.none ? '<span class="tag warnt">提唱者を特定しない語</span>' : ""}</div>`;
+    body = `<div class="dlabel">定義</div><div class="dbody">${esc(t.定義)}</div>
+      ${t.事例 ? `<div class="dlabel">事例・本書での扱い</div><div class="dbody">${esc(t.事例)}</div>` : ""}
+      <div class="dlabel">提唱者欄（Notion原文）</div><div class="dbody dsrc">${linkify(t.提唱者 || "未記入")}</div>
+      ${e.note ? `<div class="note">メモ：${esc(e.note)}</div>` : ""}
+      <div class="dlabel">つながり${(e.src || []).length ? `　／　出典：${esc(e.src.join("・"))}` : ""}</div><div class="links">${chips || '<span class="dbody">なし</span>'}</div>`;
+  } else {
+    const a = n.actor;
+    head = `<h2>${esc(a.name)}</h2>${n.isPerson ? `<div class="latin">${esc(a.latin || "")}${a.year != null ? `　／　この用語集での初出 ${a.year}年` : ""}</div>` : `<div class="latin">${esc(a.kind)}・${esc(a.family)}</div>`}`;
+    body = `${n.isPerson && a.note ? `<div class="note">要確認：${esc(a.note)}</div>` : ""}
+      <div class="dlabel">担当する語（${nb.length}）</div><div class="links">${chips}</div>`;
+  }
+  sheet.innerHTML = `<div class="sheet-head"><div>${head}</div><button class="close" type="button" data-close>閉じる</button></div>${body}
+    <div class="sheet-actions">
+      <button class="act" type="button" data-focus>${state.focus === n.id ? "フォーカス解除" : "これを中心に見る"}</button>
+      ${n.type === "term" && n.term.url ? `<a class="act ghost" href="${esc(n.term.url)}" target="_blank" rel="noopener">Notionで開く</a>` : ""}
+    </div>`;
+  sheet.classList.add("open");
+}
+$("sheet").addEventListener("click", (ev) => {
+  if (ev.target.closest("[data-close]")) return select(null);
+  const go = ev.target.closest("[data-go]");
+  if (go) return select(go.getAttribute("data-go"));
+  if (ev.target.closest("[data-focus]")) {
+    const id = state.sel;
+    state.focus = state.focus === id ? null : id;
+    rebuild(); if (state.focus) select(id); else { select(id); }
+  }
+});
+
+// ─── 絞り込みUI ────────────────────────────────────────
+function renderControls() {
+  $("schools").innerHTML = SCHOOLS.map((s) => `<button type="button" class="chip school${state.schools.has(s) ? " active" : ""}" data-school="${esc(s)}">${esc(s)}</button>`).join("");
+  $("tags").innerHTML = TAGS.map((t) => `<button type="button" class="chip${state.tags.has(t) ? " active" : ""}" data-tag="${esc(t)}">${esc(t)}</button>`).join("");
+  $("opts").innerHTML = [
+    `<button type="button" class="chip${state.chapter === "序章" ? " active" : ""}" data-chapter="序章">序章のみ</button>`,
+    `<button type="button" class="chip${state.chapter === "第1章" ? " active" : ""}" data-chapter="第1章">第1章のみ</button>`,
+    `<button type="button" class="chip${state.showOrg ? " active" : ""}" data-opt="org">本書の整理も線にする</button>`,
+    `<button type="button" class="chip${state.showLoose ? " active" : ""}" data-opt="loose">提唱者なしの語も出す</button>`,
+  ].join("");
+  $("legend").innerHTML = `<div><b>丸</b>＝用語（色＝理論学派）</div>${SCHOOLS.map((s) => `<div><span class="sw" style="background:${SCHOOL_COLOR[s]}"></span>${esc(s)}</div>`).join("")}<div style="margin-top:4px"><b>白丸</b>＝人物／<b>白角</b>＝機関・文書</div><div><b>実線</b>＝提唱・原典／<b>破線</b>＝関連</div>`;
+}
+document.addEventListener("click", (ev) => {
+  const s = ev.target.closest("[data-school]"); if (s) { const v = s.getAttribute("data-school"); state.schools.has(v) ? state.schools.delete(v) : state.schools.add(v); return rebuild(true); }
+  const t = ev.target.closest("[data-tag]"); if (t) { const v = t.getAttribute("data-tag"); state.tags.has(v) ? state.tags.delete(v) : state.tags.add(v); return rebuild(true); }
+  const c = ev.target.closest("[data-chapter]"); if (c) { const v = c.getAttribute("data-chapter"); state.chapter = state.chapter === v ? "" : v; return rebuild(true); }
+  const o = ev.target.closest("[data-opt]"); if (o) { const v = o.getAttribute("data-opt"); if (v === "org") state.showOrg = !state.showOrg; else state.showLoose = !state.showLoose; return rebuild(true); }
+  const h = ev.target.closest("[data-hit]"); if (h) return select(h.getAttribute("data-hit"));
+});
+$("toggleadv").onclick = (e) => { const open = $("adv").classList.toggle("open"); e.currentTarget.classList.toggle("active", open); e.currentTarget.setAttribute("aria-expanded", String(open)); };
+$("reset").onclick = () => { state.focus = null; state.sel = null; $("q").value = ""; state.q = ""; renderHits(); rebuild(true); };
+$("q").addEventListener("input", (e) => { state.q = e.target.value.trim().toLowerCase(); renderHits(); applyHighlight(); });
+function renderHits() {
+  const box = $("hits");
+  if (!state.q) { box.hidden = true; box.innerHTML = ""; return; }
+  const hits = G.nodes.filter((n) => n.label.toLowerCase().includes(state.q) || (n.actor && (n.actor.latin || "").toLowerCase().includes(state.q))).slice(0, 10);
+  box.hidden = false;
+  box.innerHTML = hits.length ? hits.map((n) => `<button type="button" class="chip hit" data-hit="${esc(n.id)}">${esc(n.label)}</button>`).join("") : '<span class="chip">該当なし</span>';
+}
+
+// ─── 再構築 ────────────────────────────────────────────
+function rebuild(refit) {
+  buildGraph();
+  layout(G.nodes.length > 120 ? 380 : 240);
+  spread(); layout(45, 0.25);
+  drawGraph();
+  renderControls(); renderHits(); renderSheet();
+  if (refit !== false) fit(); else applyView();
+  applyHighlight();
+}
+
+// ─── 起動 ──────────────────────────────────────────────
+function dataUrl(rel) { return new URL(rel, location.href).href; }
+async function loadJSON(rel) {
+  const url = dataUrl(rel);
+  let res;
+  try {
+    res = await fetch(url + "?t=" + Date.now(), { cache: "no-store" });
+  } catch (e) {
+    throw new Error(location.protocol === "file:"
+      ? `${rel} を読めません。ファイルを直接開くとブラウザがデータの読み込みを止めます。`
+      : `${rel} に接続できませんでした（${e.message}）。`);
+  }
+  if (!res.ok) throw new Error(`${rel} が ${res.status}${res.statusText ? " " + res.statusText : ""} を返しました。ファイルの場所を確認してください。`);
+  const text = await res.text();
+  try { return JSON.parse(text); }
+  catch (e) { throw new Error(`${rel} をJSONとして読めませんでした（先頭: ${text.slice(0, 60).replace(/\s+/g, " ")}…）。`); }
+}
+function showError(msg) {
+  $("sub").textContent = "読み込み失敗";
+  $("status").classList.add("hide");
+  const local = location.protocol === "file:";
+  document.querySelector(".stage").insertAdjacentHTML("beforeend", `<div class="err">
+    <h3>データを読み込めませんでした</h3>
+    <div>${esc(msg)}</div>
+    <ul>
+      ${local ? "<li><b>ファイルを直接開いています。</b>GitHubに置いて公開URLから開くか、network フォルダで <code>python3 -m http.server</code> を実行して <code>http://localhost:8000/</code> を開いてください。</li>" : ""}
+      <li><code>index.html</code> と同じ階層に <code>data/terms.json</code>・<code>data/proposers.json</code> があるか確認してください（<code>network/index.html</code> と <code>network/data/…</code>）。</li>
+      <li>GitHubに置いた直後は、Pagesの反映に1〜2分かかります。</li>
+    </ul>
+    <div class="urls">開こうとしたファイル：
+      <a href="${esc(dataUrl("./data/terms.json"))}" target="_blank" rel="noopener">${esc(dataUrl("./data/terms.json"))}</a>
+      <a href="${esc(dataUrl("./data/proposers.json"))}" target="_blank" rel="noopener">${esc(dataUrl("./data/proposers.json"))}</a>
+    </div>
+    <div class="sheet-actions"><button class="act" type="button" onclick="location.reload()">再読み込み</button></div>
+  </div>`);
+}
+
+(async () => {
+  try {
+    const [terms, master] = await Promise.all([loadJSON("./data/terms.json"), loadJSON("./data/proposers.json")]);
+    if (!terms || !Array.isArray(terms.terms) || !terms.terms.length) throw new Error("data/terms.json に用語が入っていません。sync_network.py（GitHub Actions）を1回実行してください。");
+    if (!master || !master.people || !master.terms) throw new Error("data/proposers.json の形式が想定と違います。network/tools/build_master.js で作り直してください。");
+    DATA = terms; MASTER = master;
+    measure();
+    $("sub").textContent = `用語DB・新 ${DATA.terms.length}語　最終同期 ${DATA.syncedAt || "不明"}`;
+    rebuild();
+    let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { const before = LW / LH; measure(); if (Math.abs(LW / LH - before) > 0.15) { G.nodes.forEach((n) => { n.x = null; }); rebuild(true); } else fit(); }, 250); });
+  } catch (e) {
+    showError(e && e.message ? e.message : String(e));
+  }
+})();
+</script>
+</body>
+</html>

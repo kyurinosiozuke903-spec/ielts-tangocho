@@ -1,0 +1,2204 @@
+{
+ "_meta": {
+  "title": "提唱者マスタ（下書き）",
+  "generated": "2026-09-08",
+  "source": "network/tools/master_src.js × data/terms.json",
+  "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
+  "schools": [
+   "リアリズム",
+   "リベラリズム",
+   "コンストラクティビズム",
+   "批判理論",
+   "その他"
+  ],
+  "roles": [
+   "提唱",
+   "代表",
+   "関連",
+   "整理",
+   "機関"
+  ]
+ },
+ "people": {
+  "keohane": {
+   "id": "keohane",
+   "name": "ロバート・コヘイン",
+   "latin": "Robert O. Keohane",
+   "aliases": [
+    "Keohane"
+   ],
+   "year": 1977,
+   "note": ""
+  },
+  "nye": {
+   "id": "nye",
+   "name": "ジョセフ・ナイ",
+   "latin": "Joseph S. Nye",
+   "aliases": [
+    "Nye"
+   ],
+   "year": 1977,
+   "note": "ソフト・パワーの初出年はDBが断定していない（序章はNye 2005を参照）"
+  },
+  "krasner": {
+   "id": "krasner",
+   "name": "スティーヴン・クラズナー",
+   "latin": "Stephen D. Krasner",
+   "aliases": [
+    "Krasner"
+   ],
+   "year": 1982,
+   "note": ""
+  },
+  "ruggie": {
+   "id": "ruggie",
+   "name": "ジョン・ラギー",
+   "latin": "John G. Ruggie",
+   "aliases": [
+    "Ruggie"
+   ],
+   "year": 2011,
+   "note": "指導原則の人権理事会支持年。グローバル・コンパクト関与の年はDBに記載なし"
+  },
+  "abbott": {
+   "id": "abbott",
+   "name": "アボット",
+   "latin": "Kenneth W. Abbott",
+   "aliases": [
+    "Abbott"
+   ],
+   "year": 2009,
+   "note": ""
+  },
+  "snidal": {
+   "id": "snidal",
+   "name": "スナイダル",
+   "latin": "Duncan Snidal",
+   "aliases": [
+    "Snidal"
+   ],
+   "year": 2009,
+   "note": ""
+  },
+  "genschel": {
+   "id": "genschel",
+   "name": "ゲンシェル",
+   "latin": "Philipp Genschel",
+   "aliases": [],
+   "year": 2015,
+   "note": ""
+  },
+  "zangl": {
+   "id": "zangl",
+   "name": "ツァングル",
+   "latin": "Bernhard Zangl",
+   "aliases": [],
+   "year": 2015,
+   "note": ""
+  },
+  "hawkins": {
+   "id": "hawkins",
+   "name": "ホーキンス",
+   "latin": "Darren G. Hawkins",
+   "aliases": [],
+   "year": 2006,
+   "note": ""
+  },
+  "lake": {
+   "id": "lake",
+   "name": "レイク",
+   "latin": "David A. Lake",
+   "aliases": [],
+   "year": 2006,
+   "note": ""
+  },
+  "nielson": {
+   "id": "nielson",
+   "name": "ニールソン",
+   "latin": "Daniel L. Nielson",
+   "aliases": [],
+   "year": 2006,
+   "note": ""
+  },
+  "tierney": {
+   "id": "tierney",
+   "name": "ティアニー",
+   "latin": "Michael J. Tierney",
+   "aliases": [],
+   "year": 2006,
+   "note": ""
+  },
+  "rosenau": {
+   "id": "rosenau",
+   "name": "ローズノー",
+   "latin": "James N. Rosenau",
+   "aliases": [
+    "Rosenau"
+   ],
+   "year": 1992,
+   "note": ""
+  },
+  "czempiel": {
+   "id": "czempiel",
+   "name": "チェンピール",
+   "latin": "Ernst-Otto Czempiel",
+   "aliases": [
+    "Czempiel"
+   ],
+   "year": 1992,
+   "note": ""
+  },
+  "mitrany": {
+   "id": "mitrany",
+   "name": "ミトラニー",
+   "latin": "David Mitrany",
+   "aliases": [
+    "Mitrany"
+   ],
+   "year": 1943,
+   "note": ""
+  },
+  "march": {
+   "id": "march",
+   "name": "マーチ",
+   "latin": "James G. March",
+   "aliases": [],
+   "year": null,
+   "note": "DBに刊行年の記載なし"
+  },
+  "olsen": {
+   "id": "olsen",
+   "name": "オルセン",
+   "latin": "Johan P. Olsen",
+   "aliases": [],
+   "year": null,
+   "note": "DBに刊行年の記載なし"
+  },
+  "alter": {
+   "id": "alter",
+   "name": "アルター",
+   "latin": "Karen J. Alter",
+   "aliases": [],
+   "year": 2009,
+   "note": ""
+  },
+  "meunier": {
+   "id": "meunier",
+   "name": "ムニエ",
+   "latin": "Sophie Meunier",
+   "aliases": [],
+   "year": 2009,
+   "note": ""
+  },
+  "ostrom": {
+   "id": "ostrom",
+   "name": "エリノア・オストロム",
+   "latin": "Elinor Ostrom",
+   "aliases": [
+    "Ostrom"
+   ],
+   "year": 2010,
+   "note": ""
+  },
+  "risse": {
+   "id": "risse",
+   "name": "リッセ",
+   "latin": "Thomas Risse",
+   "aliases": [
+    "Risse"
+   ],
+   "year": 2000,
+   "note": ""
+  },
+  "barnett": {
+   "id": "barnett",
+   "name": "バーネット",
+   "latin": "Michael Barnett",
+   "aliases": [
+    "Barnett"
+   ],
+   "year": 1999,
+   "note": ""
+  },
+  "finnemore": {
+   "id": "finnemore",
+   "name": "フィネモア",
+   "latin": "Martha Finnemore",
+   "aliases": [
+    "Finnemore"
+   ],
+   "year": 1999,
+   "note": ""
+  },
+  "phaas": {
+   "id": "phaas",
+   "name": "ピーター・ハース",
+   "latin": "Peter M. Haas",
+   "aliases": [
+    "Haas"
+   ],
+   "year": 1990,
+   "note": "序章はHaas（1990）、補足原典は1992"
+  },
+  "wallerstein": {
+   "id": "wallerstein",
+   "name": "ウォーラーステイン",
+   "latin": "Immanuel Wallerstein",
+   "aliases": [
+    "Wallerstein"
+   ],
+   "year": null,
+   "note": "DBは初出年を未確認として記載していない"
+  },
+  "williamson": {
+   "id": "williamson",
+   "name": "ジョン・ウィリアムソン",
+   "latin": "John Williamson",
+   "aliases": [
+    "Williamson"
+   ],
+   "year": 1989,
+   "note": "会議は1989年、刊行は1990年"
+  },
+  "weiss": {
+   "id": "weiss",
+   "name": "トマス・ワイス",
+   "latin": "Thomas G. Weiss",
+   "aliases": [
+    "Weiss"
+   ],
+   "year": 2009,
+   "note": ""
+  },
+  "carayannis": {
+   "id": "carayannis",
+   "name": "カラヤニス",
+   "latin": "Tatiana Carayannis",
+   "aliases": [],
+   "year": 2009,
+   "note": ""
+  },
+  "jolly": {
+   "id": "jolly",
+   "name": "ジョリー",
+   "latin": "Richard Jolly",
+   "aliases": [],
+   "year": 2009,
+   "note": ""
+  },
+  "forsythe": {
+   "id": "forsythe",
+   "name": "フォーサイス",
+   "latin": "David P. Forsythe",
+   "aliases": [
+    "Forsythe"
+   ],
+   "year": 2017,
+   "note": "原綴りのフルネームはDBに記載なし（姓のみ）"
+  },
+  "coate": {
+   "id": "coate",
+   "name": "コート",
+   "latin": "Roger A. Coate",
+   "aliases": [
+    "Coate"
+   ],
+   "year": 2017,
+   "note": "原綴りのフルネームはDBに記載なし（姓のみ）"
+  },
+  "pease": {
+   "id": "pease",
+   "name": "ピーズ",
+   "latin": "Kelly-Kate Pease",
+   "aliases": [
+    "Pease"
+   ],
+   "year": 2017,
+   "note": "原綴りのフルネームはDBに記載なし（姓のみ）"
+  },
+  "matsumoto": {
+   "id": "matsumoto",
+   "name": "松本悟",
+   "latin": "",
+   "aliases": [],
+   "year": 2013,
+   "note": ""
+  },
+  "oshiba": {
+   "id": "oshiba",
+   "name": "大芝亮",
+   "latin": "",
+   "aliases": [],
+   "year": 2013,
+   "note": ""
+  },
+  "scharpf": {
+   "id": "scharpf",
+   "name": "シャルプフ",
+   "latin": "Fritz W. Scharpf",
+   "aliases": [
+    "Scharpf"
+   ],
+   "year": 1999,
+   "note": ""
+  },
+  "schmidt": {
+   "id": "schmidt",
+   "name": "シュミット",
+   "latin": "Vivien A. Schmidt",
+   "aliases": [
+    "Schmidt"
+   ],
+   "year": 2013,
+   "note": ""
+  },
+  "zurn": {
+   "id": "zurn",
+   "name": "ツュルン",
+   "latin": "Michael Zürn",
+   "aliases": [
+    "Zürn",
+    "Zurn"
+   ],
+   "year": 2013,
+   "note": "序章参照は2013、著書は2018"
+  },
+  "endo": {
+   "id": "endo",
+   "name": "遠藤乾",
+   "latin": "",
+   "aliases": [],
+   "year": 2010,
+   "note": ""
+  },
+  "uemura": {
+   "id": "uemura",
+   "name": "上村雄彦",
+   "latin": "",
+   "aliases": [],
+   "year": 2021,
+   "note": ""
+  },
+  "sassen": {
+   "id": "sassen",
+   "name": "サッセン",
+   "latin": "Saskia Sassen",
+   "aliases": [
+    "Sassen"
+   ],
+   "year": 2003,
+   "note": ""
+  },
+  "young": {
+   "id": "young",
+   "name": "オラン・ヤング",
+   "latin": "Oran R. Young",
+   "aliases": [
+    "Young"
+   ],
+   "year": 1996,
+   "note": ""
+  },
+  "murphy": {
+   "id": "murphy",
+   "name": "マーフィー",
+   "latin": "Murphy",
+   "aliases": [
+    "Murphy"
+   ],
+   "year": 2015,
+   "note": "原綴りのフルネームはDBに記載なし"
+  },
+  "navari": {
+   "id": "navari",
+   "name": "コーネリア・ナヴァリ",
+   "latin": "Cornelia Navari",
+   "aliases": [
+    "ナヴァリ"
+   ],
+   "year": 2002,
+   "note": ""
+  },
+  "kaldor": {
+   "id": "kaldor",
+   "name": "メアリー・カルドー",
+   "latin": "Mary Kaldor",
+   "aliases": [
+    "Kaldor"
+   ],
+   "year": null,
+   "note": "DBは原典の版・刊行年を未照合としている"
+  },
+  "hayek": {
+   "id": "hayek",
+   "name": "ハイエク",
+   "latin": "Friedrich Hayek",
+   "aliases": [],
+   "year": null,
+   "note": "DBに刊行年の記載なし"
+  },
+  "friedman": {
+   "id": "friedman",
+   "name": "フリードマン",
+   "latin": "Milton Friedman",
+   "aliases": [],
+   "year": null,
+   "note": "DBに刊行年の記載なし"
+  },
+  "lukes": {
+   "id": "lukes",
+   "name": "ルークス",
+   "latin": "Steven Lukes",
+   "aliases": [
+    "Lukes"
+   ],
+   "year": 2005,
+   "note": "序章参照年。DBは原典全文を未照合としている"
+  },
+  "krisch": {
+   "id": "krisch",
+   "name": "クリッシュ",
+   "latin": "Nico Krisch",
+   "aliases": [
+    "Krisch"
+   ],
+   "year": 2017,
+   "note": "序章参照年。DBは原典全文を未照合としている"
+  },
+  "yamada": {
+   "id": "yamada",
+   "name": "山田哲也",
+   "latin": "",
+   "aliases": [],
+   "year": 2021,
+   "note": ""
+  },
+  "nishitani": {
+   "id": "nishitani",
+   "name": "西谷真規子",
+   "latin": "",
+   "aliases": [],
+   "year": 2021,
+   "note": ""
+  },
+  "annan": {
+   "id": "annan",
+   "name": "コフィ・アナン",
+   "latin": "Kofi Annan",
+   "aliases": [
+    "Annan"
+   ],
+   "year": 1999,
+   "note": ""
+  },
+  "duvall": {
+   "id": "duvall",
+   "name": "デュヴァル",
+   "latin": "Raymond Duvall",
+   "aliases": [
+    "Duvall"
+   ],
+   "year": 2005,
+   "note": ""
+  },
+  "manners": {
+   "id": "manners",
+   "name": "マナーズ",
+   "latin": "Ian Manners",
+   "aliases": [
+    "Manners"
+   ],
+   "year": 2002,
+   "note": "序章参照年。DBは原典全文を未照合としている"
+  },
+  "habermas": {
+   "id": "habermas",
+   "name": "ハーバーマス",
+   "latin": "Jürgen Habermas",
+   "aliases": [
+    "Habermas"
+   ],
+   "year": null,
+   "note": "DBに刊行年の記載なし"
+  },
+  "slaughter": {
+   "id": "slaughter",
+   "name": "スローター",
+   "latin": "Anne-Marie Slaughter",
+   "aliases": [
+    "Slaughter"
+   ],
+   "year": 2004,
+   "note": ""
+  },
+  "roosevelt": {
+   "id": "roosevelt",
+   "name": "エレノア・ルーズベルト",
+   "latin": "Eleanor Roosevelt",
+   "aliases": [],
+   "year": 1948,
+   "note": ""
+  },
+  "nakanishi": {
+   "id": "nakanishi",
+   "name": "中西寛",
+   "latin": "",
+   "aliases": [],
+   "year": 2003,
+   "note": ""
+  },
+  "cox": {
+   "id": "cox",
+   "name": "ロバート・コックス",
+   "latin": "Robert W. Cox",
+   "aliases": [
+    "Cox"
+   ],
+   "year": 1986,
+   "note": "序章参照年。DBは原典全文を未照合としている"
+  },
+  "gramsci": {
+   "id": "gramsci",
+   "name": "グラムシ",
+   "latin": "Antonio Gramsci",
+   "aliases": [
+    "Gramsci"
+   ],
+   "year": null,
+   "note": "DBに刊行年の記載なし"
+  }
+ },
+ "institutions": {
+  "un": {
+   "id": "un",
+   "name": "国連（システム全体・取り組み）",
+   "kind": "機関",
+   "family": "国連"
+  },
+  "un_ga": {
+   "id": "un_ga",
+   "name": "国連総会（決議・採択文書）",
+   "kind": "機関",
+   "family": "国連"
+  },
+  "un_hrc": {
+   "id": "un_hrc",
+   "name": "国連人権理事会（旧人権委員会・特別手続）",
+   "kind": "機関",
+   "family": "国連"
+  },
+  "un_sg": {
+   "id": "un_sg",
+   "name": "国連事務総長告示（ST/SGB）",
+   "kind": "文書",
+   "family": "国連"
+  },
+  "un_charter": {
+   "id": "un_charter",
+   "name": "国連憲章（1945）",
+   "kind": "文書",
+   "family": "国連"
+  },
+  "league_cov": {
+   "id": "league_cov",
+   "name": "国際連盟規約（1919）",
+   "kind": "条約",
+   "family": "条約・国際法"
+  },
+  "bretton_woods": {
+   "id": "bretton_woods",
+   "name": "ブレトン・ウッズ協定（1944）",
+   "kind": "条約",
+   "family": "貿易・通貨レジーム"
+  },
+  "wb_board": {
+   "id": "wb_board",
+   "name": "世界銀行理事会（決議 IBRD 93-10 / IDA 93-6）",
+   "kind": "機関",
+   "family": "貿易・通貨レジーム"
+  },
+  "world_bank": {
+   "id": "world_bank",
+   "name": "世界銀行（構造調整貸付）",
+   "kind": "機関",
+   "family": "貿易・通貨レジーム"
+  },
+  "cgg": {
+   "id": "cgg",
+   "name": "グローバル・ガバナンス委員会『地球リーダーシップ』（1995）",
+   "kind": "文書",
+   "family": "国際委員会"
+  }
+ },
+ "termIdByName": {
+  "リアリズム": "8b5ef2399cb94dec9625afcabb6faf20",
+  "勢力均衡・多極性": "53823aba9a8e4b588cfc20178214f9db",
+  "覇権・一極構造": "4dc435c2f94248dcb73fc3a9711ad71a",
+  "ソフト・パワー": "b083c46adce0431e8dedb7e7b1c831b2",
+  "トランスガバメンタル・ネットワーク": "bdd2ae9e406f464a913c9420bd28a3f9",
+  "ネオリベラル制度論": "94b6e225518f40dbb261fe781f545c04",
+  "機能主義（functionalism）": "3b9bc618efff4d078be982c70b40940e",
+  "国家機能の「退化」と「進化」（国際組織化）": "d2092f0566234e089f8ca8c223d6b8db",
+  "国際共同体（中西寛）": "66c85fd99476479abe93da3ff0d75797",
+  "集団安全保障（国際連盟・国連）": "2bf4e1db5dea4d589d393cadf6526da7",
+  "世界人権宣言と「宣言→条約」型の国際人権規範形成": "2cb3277e8617437bb554864caed3bf5b",
+  "多孔的国家・国家の細分化": "2ef1e7a6b5e344efb124c74a2513a718",
+  "複合的相互依存": "19ece82a3b1c44c1b9545dd7f8149d9e",
+  "本人・代理人（プリンシパル・エージェント）関係": "b70bcdd9b27c44b2b15a72df32574fd4",
+  "コンストラクティビズム（構成主義）": "8cf261fc45da456ab733a1a52358172d",
+  "規範的パワー": "cd11f0b9303b49e4add0d6d63f1a7e7b",
+  "国際機構を通じた規範形成（伝統的理解とGG論の問題提起）": "28b41db6b8bc4fbe8647f30879ad5db1",
+  "国際事務局（国際官僚機構）の自律性": "d228509f6b8c49a9a3fac49cdfd512d5",
+  "事務総長告示（ST/SGB）の外部効果・グッド・プラクティスによる規範化": "a83c7c5fe8dd40808d9629e380b9a32d",
+  "生産的権力と権力の四分類": "16c5e2327af143d594cc8126a16d2860",
+  "知識の権力": "2973621b35f9424583581a816ae1583b",
+  "知識共同体（認識共同体／epistemic community）": "50e478fc714749c490b67e44fef1201b",
+  "適切さの論理（logic of appropriateness）": "eb93088c5c4843c3a3a5335790c3560d",
+  "討議の論理（logic of arguing）": "56d4911228c24481a7bd55c1cf8512bd",
+  "ネオグラムシアン（新グラムシ主義）": "3bb52d160975426b95f4ef25200c3e44",
+  "世界システム論": "b2ff487645284fa29736fae2bd191181",
+  "批判理論と問題解決理論": "cf6afb45e09145f4844838bdcbe22184",
+  "NGO・市民社会": "d75a3be8a69f48cc8bd8b34f0ff1920b",
+  "UNESCO脱退問題（米英の脱退・復帰）": "c94215b01b224718be82dfac06ad6853",
+  "アナーキー（無政府状態）": "ab8e2ff3a6c14d60b8408fd665794627",
+  "インフォーマル・ガバナンス": "1fe17ac928dc449a81742bde36d66e3f",
+  "インプット正統性・スループット正統性・アウトプット正統性": "cfa7d67655d9432b8c9c452bbdabe85f",
+  "ウェストファリア体制": "fef239d828ec42a5a7deea65ed8ca079",
+  "オーケストレーション・間接的ガバナンス": "e7714a1819e742cc90129f8e2f56e94f",
+  "ガバナンス・モード": "34da39b4ee90469d8e13a307a34b5b07",
+  "ガバナンスの三角形": "64f0d4b4a4d84816922771ba00a4f402",
+  "ガバナンスの正統性・民主的統制": "b943af2d6d3243d0a262bc8e7d83b282",
+  "グローバル・ガバナンス": "fdaec94b973544fb844ecd797611f968",
+  "グローバル・タックス": "231faf5514164646a1a705927a49282d",
+  "グローバル化（グローバリゼーション）": "bc998ea5c9c04dbaa6d90498fca39ee5",
+  "グローバル公共財": "e8513c553f1a4a7c9d480da2caabba53",
+  "ソフト・ローとハード・ロー": "1c880e344ab847ecabc7afdfbb621a48",
+  "トランスナショナル・レジーム": "0176df8de1834aeeb165da114da30e52",
+  "ビジネスと人権に関する指導原則": "2cf530e5680840da935f87da85f03872",
+  "プライベート・スタンダード": "c7268d9b826445c086dfc9742ded3761",
+  "プライベート・レジーム": "a35db39bd3c840659c5f99ac16b495d0",
+  "ミレニアム開発目標（MDGs）": "9e4431aec66644289ee636a966b4e4df",
+  "レジーム・コンプレックス（レジーム複合体）": "4a9cc8245cfa40198840f2fac23f37a6",
+  "ワシントン・コンセンサス": "c06cd3fd70a34d1b8d7428da1bf14095",
+  "企業の社会的責任（CSR）": "99ee08dcce0a4b58b405364c51f49e17",
+  "気候変動の緩和・適応・気候工学": "f60dea64ba774adebc55f4c413c69e81",
+  "規範遵守（compliance）と実効性": "0163cf34093043c190b60e7e062f3e1d",
+  "協調的安全保障・ヨーロッパ協調": "9ba1db6ffcb74803a2e1830db70d840e",
+  "結果の論理（logic of consequences）": "39808c114a7e4486ad4c745d442c78f6",
+  "権威・グローバル・ガバナー": "decc06be148d4fb5a2b4517cda1f7fb5",
+  "権威の流動化（liquid authority）": "ff3850aec2e646e4a2b5d1dfd6258237",
+  "権力の三次元・アジェンダ設定": "5ccb8c0dc6c14ae0b3564c99da71a996",
+  "公共政策ネットワーク・官民パートナーシップ": "7b5aa57910e040bda6752a0d08b9f78a",
+  "構造調整貸付・政策コンディショナリティ": "73ca5f0b74bd4c6f8a2ce627f91e898f",
+  "国家主権・主権平等・内政不干渉": "4fb3d6ace47b4f1aa2e1cb7d012ed6ba",
+  "国際レジーム": "be10670d06dd4f7b806960f7b5fd089d",
+  "国際関係の法化": "07ef66b21e0646169c06e4d2bfa8836c",
+  "国際機構・地域機構": "bae31774d43541b18530b3afbacf0add",
+  "国際機構の正統性（合法性との区別・3段階）": "8cbd33059d604d3687757de8ec11196a",
+  "国際機構の偏向（バイアス）とその是正": "f500af81c522435389aff3764743a2bf",
+  "国際機構論とグローバル・ガバナンス論の関係": "fe47e9b8d38c49c99a248d051b7b0f91",
+  "国際行政連合": "cf10acca56374ac99cc0e9805926eb21",
+  "国際秩序・世界秩序": "360dd4d6a9be4e9e80151e0ee4be8b6b",
+  "国連グローバル・コンパクト": "ed92d39429004a65a2007a54a5935792",
+  "国連の「3つの顔」（第1・第2・第3の国連）": "4a083ee625904f5e92ad3fed3f36585e",
+  "国連の下部機関・専門機関（UNHCR・UNDP・IMF・世界銀行）": "69ccc1e19c6a4d6a8e7b8d97df481185",
+  "持続可能な開発目標（SDGs）": "61b2e47ad9254fa7b6dc3866efb20716",
+  "主権コスト": "726ce5e4e7664f038d3c123ed4aa072c",
+  "遵守・調整・正統性のトリレンマ": "63b2caa8c65a4b24b6e15ab1262901b8",
+  "新しい社会運動": "cabb840f0dae4f38abe306c19c8fa863",
+  "新しい戦争・紛争の複合化": "a4ab70a7d0b044418e358ae7be20dc79",
+  "新自由主義（経済政策）": "e31c605271c04c8f98b771a71a52250e",
+  "世界銀行インスペクション・パネル": "9d0a9429d684432195c507917fd4d00a",
+  "政府なき統治（governance without government）": "4d2d9e4706b1497da54b5e2c59fce2bb",
+  "多国籍企業": "4f84a01353e547e880348e3fd169fcac",
+  "多主体性": "b5185c3bd67f4260ac9f8e14284e5996",
+  "多層的ガバナンス（マルチレベル・ガバナンス）": "93d45183d82f4fe59fb76e27b969af0a",
+  "多争点性・問題領域の複合化": "97fff55b9319491889f197cfdd6201d4",
+  "多中心的ガバナンス": "468060a0c6f94c13b6d53fc83ad5beb2",
+  "脱国家化（denationalization）": "c895eb6480e248bc8283d62875362e6a",
+  "地域主義・ナショナリズム・ポピュリズム": "ea9e38d09d52428f8de55c784526c221",
+  "地域貿易協定（RTA）": "057d1bd5ba084719ab86204877caf5ba",
+  "超国家的ガバナンス": "09c5fb28b24a423d90802474ab0020b9",
+  "特別報告者（国連人権理事会の特別手続）とOHCHR": "edf5629d6ca341cd801cdd094388b5cc",
+  "非国家主体": "912e9cbee0c3406ba953bf643a70b105"
+ },
+ "terms": {
+  "d75a3be8a69f48cc8bd8b34f0ff1920b": {
+   "name": "NGO・市民社会",
+   "proposers": [
+    {
+     "id": "weiss",
+     "role": "関連"
+    },
+    {
+     "id": "carayannis",
+     "role": "関連"
+    },
+    {
+     "id": "jolly",
+     "role": "関連"
+    },
+    {
+     "id": "matsumoto",
+     "role": "関連"
+    },
+    {
+     "id": "oshiba",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章",
+    "第1章"
+   ],
+   "note": ""
+  },
+  "c94215b01b224718be82dfac06ad6853": {
+   "name": "UNESCO脱退問題（米英の脱退・復帰）",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": true,
+   "src": [
+    "第1章"
+   ],
+   "note": "歴史的事件"
+  },
+  "ab8e2ff3a6c14d60b8408fd665794627": {
+   "name": "アナーキー（無政府状態）",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "1fe17ac928dc449a81742bde36d66e3f": {
+   "name": "インフォーマル・ガバナンス",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "cfa7d67655d9432b8c9c452bbdabe85f": {
+   "name": "インプット正統性・スループット正統性・アウトプット正統性",
+   "proposers": [
+    {
+     "id": "scharpf",
+     "role": "提唱"
+    },
+    {
+     "id": "schmidt",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": "インプット／アウトプット＝Scharpf（1999）、スループット＝Schmidt（2013）"
+  },
+  "fef239d828ec42a5a7deea65ed8ca079": {
+   "name": "ウェストファリア体制",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "e7714a1819e742cc90129f8e2f56e94f": {
+   "name": "オーケストレーション・間接的ガバナンス",
+   "proposers": [
+    {
+     "id": "abbott",
+     "role": "提唱"
+    },
+    {
+     "id": "genschel",
+     "role": "提唱"
+    },
+    {
+     "id": "snidal",
+     "role": "提唱"
+    },
+    {
+     "id": "zangl",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "64f0d4b4a4d84816922771ba00a4f402": {
+   "name": "ガバナンスの三角形",
+   "proposers": [
+    {
+     "id": "abbott",
+     "role": "提唱"
+    },
+    {
+     "id": "snidal",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "b943af2d6d3243d0a262bc8e7d83b282": {
+   "name": "ガバナンスの正統性・民主的統制",
+   "proposers": [
+    {
+     "id": "zurn",
+     "role": "関連"
+    },
+    {
+     "id": "scharpf",
+     "role": "関連"
+    },
+    {
+     "id": "schmidt",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章",
+    "第1章"
+   ],
+   "note": ""
+  },
+  "34da39b4ee90469d8e13a307a34b5b07": {
+   "name": "ガバナンス・モード",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "fdaec94b973544fb844ecd797611f968": {
+   "name": "グローバル・ガバナンス",
+   "proposers": [
+    {
+     "id": "rosenau",
+     "role": "提唱"
+    },
+    {
+     "id": "czempiel",
+     "role": "提唱"
+    },
+    {
+     "id": "cgg",
+     "role": "機関"
+    },
+    {
+     "id": "endo",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章",
+    "第1章"
+   ],
+   "note": ""
+  },
+  "231faf5514164646a1a705927a49282d": {
+   "name": "グローバル・タックス",
+   "proposers": [
+    {
+     "id": "uemura",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": "第18章の著者は上村雄彦"
+  },
+  "e8513c553f1a4a7c9d480da2caabba53": {
+   "name": "グローバル公共財",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "bc998ea5c9c04dbaa6d90498fca39ee5": {
+   "name": "グローバル化（グローバリゼーション）",
+   "proposers": [
+    {
+     "id": "sassen",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "1c880e344ab847ecabc7afdfbb621a48": {
+   "name": "ソフト・ローとハード・ロー",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "0176df8de1834aeeb165da114da30e52": {
+   "name": "トランスナショナル・レジーム",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "2cf530e5680840da935f87da85f03872": {
+   "name": "ビジネスと人権に関する指導原則",
+   "proposers": [
+    {
+     "id": "ruggie",
+     "role": "提唱"
+    },
+    {
+     "id": "un_hrc",
+     "role": "機関"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "c7268d9b826445c086dfc9742ded3761": {
+   "name": "プライベート・スタンダード",
+   "proposers": [
+    {
+     "id": "abbott",
+     "role": "関連"
+    },
+    {
+     "id": "snidal",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "a35db39bd3c840659c5f99ac16b495d0": {
+   "name": "プライベート・レジーム",
+   "proposers": [
+    {
+     "id": "abbott",
+     "role": "関連"
+    },
+    {
+     "id": "snidal",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "9e4431aec66644289ee636a966b4e4df": {
+   "name": "ミレニアム開発目標（MDGs）",
+   "proposers": [
+    {
+     "id": "un",
+     "role": "機関"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "4a9cc8245cfa40198840f2fac23f37a6": {
+   "name": "レジーム・コンプレックス（レジーム複合体）",
+   "proposers": [
+    {
+     "id": "alter",
+     "role": "代表"
+    },
+    {
+     "id": "meunier",
+     "role": "代表"
+    },
+    {
+     "id": "young",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "c06cd3fd70a34d1b8d7428da1bf14095": {
+   "name": "ワシントン・コンセンサス",
+   "proposers": [
+    {
+     "id": "williamson",
+     "role": "提唱"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "9d0a9429d684432195c507917fd4d00a": {
+   "name": "世界銀行インスペクション・パネル",
+   "proposers": [
+    {
+     "id": "wb_board",
+     "role": "機関"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "726ce5e4e7664f038d3c123ed4aa072c": {
+   "name": "主権コスト",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "99ee08dcce0a4b58b405364c51f49e17": {
+   "name": "企業の社会的責任（CSR）",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "7b5aa57910e040bda6752a0d08b9f78a": {
+   "name": "公共政策ネットワーク・官民パートナーシップ",
+   "proposers": [
+    {
+     "id": "ruggie",
+     "role": "関連"
+    },
+    {
+     "id": "abbott",
+     "role": "関連"
+    },
+    {
+     "id": "snidal",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "9ba1db6ffcb74803a2e1830db70d840e": {
+   "name": "協調的安全保障・ヨーロッパ協調",
+   "proposers": [
+    {
+     "id": "murphy",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "4fb3d6ace47b4f1aa2e1cb7d012ed6ba": {
+   "name": "国家主権・主権平等・内政不干渉",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "4a083ee625904f5e92ad3fed3f36585e": {
+   "name": "国連の「3つの顔」（第1・第2・第3の国連）",
+   "proposers": [
+    {
+     "id": "weiss",
+     "role": "提唱"
+    },
+    {
+     "id": "carayannis",
+     "role": "提唱"
+    },
+    {
+     "id": "jolly",
+     "role": "提唱"
+    },
+    {
+     "id": "forsythe",
+     "role": "関連"
+    },
+    {
+     "id": "coate",
+     "role": "関連"
+    },
+    {
+     "id": "pease",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "69ccc1e19c6a4d6a8e7b8d97df481185": {
+   "name": "国連の下部機関・専門機関（UNHCR・UNDP・IMF・世界銀行）",
+   "proposers": [
+    {
+     "id": "un_ga",
+     "role": "機関"
+    },
+    {
+     "id": "bretton_woods",
+     "role": "機関"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "ed92d39429004a65a2007a54a5935792": {
+   "name": "国連グローバル・コンパクト",
+   "proposers": [
+    {
+     "id": "un",
+     "role": "機関"
+    },
+    {
+     "id": "ruggie",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": "Ruggieは関与者（単独の創設者ではない）"
+  },
+  "be10670d06dd4f7b806960f7b5fd089d": {
+   "name": "国際レジーム",
+   "proposers": [
+    {
+     "id": "krasner",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "f500af81c522435389aff3764743a2bf": {
+   "name": "国際機構の偏向（バイアス）とその是正",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    },
+    {
+     "id": "zurn",
+     "role": "関連"
+    },
+    {
+     "id": "barnett",
+     "role": "関連"
+    },
+    {
+     "id": "finnemore",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "8cbd33059d604d3687757de8ec11196a": {
+   "name": "国際機構の正統性（合法性との区別・3段階）",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": true,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "bae31774d43541b18530b3afbacf0add": {
+   "name": "国際機構・地域機構",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    },
+    {
+     "id": "weiss",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章",
+    "第1章"
+   ],
+   "note": ""
+  },
+  "fe47e9b8d38c49c99a248d051b7b0f91": {
+   "name": "国際機構論とグローバル・ガバナンス論の関係",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": "山田哲也の章そのものの議論"
+  },
+  "360dd4d6a9be4e9e80151e0ee4be8b6b": {
+   "name": "国際秩序・世界秩序",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "cf10acca56374ac99cc0e9805926eb21": {
+   "name": "国際行政連合",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": true,
+   "src": [
+    "第1章"
+   ],
+   "note": "歴史的制度"
+  },
+  "07ef66b21e0646169c06e4d2bfa8836c": {
+   "name": "国際関係の法化",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "ea9e38d09d52428f8de55c784526c221": {
+   "name": "地域主義・ナショナリズム・ポピュリズム",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章",
+    "第1章"
+   ],
+   "note": ""
+  },
+  "057d1bd5ba084719ab86204877caf5ba": {
+   "name": "地域貿易協定（RTA）",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "468060a0c6f94c13b6d53fc83ad5beb2": {
+   "name": "多中心的ガバナンス",
+   "proposers": [
+    {
+     "id": "ostrom",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "b5185c3bd67f4260ac9f8e14284e5996": {
+   "name": "多主体性",
+   "proposers": [
+    {
+     "id": "nishitani",
+     "role": "整理"
+    },
+    {
+     "id": "abbott",
+     "role": "関連"
+    },
+    {
+     "id": "snidal",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "97fff55b9319491889f197cfdd6201d4": {
+   "name": "多争点性・問題領域の複合化",
+   "proposers": [
+    {
+     "id": "nishitani",
+     "role": "整理"
+    },
+    {
+     "id": "keohane",
+     "role": "関連"
+    },
+    {
+     "id": "nye",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "4f84a01353e547e880348e3fd169fcac": {
+   "name": "多国籍企業",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "93d45183d82f4fe59fb76e27b969af0a": {
+   "name": "多層的ガバナンス（マルチレベル・ガバナンス）",
+   "proposers": [
+    {
+     "id": "zurn",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "61b2e47ad9254fa7b6dc3866efb20716": {
+   "name": "持続可能な開発目標（SDGs）",
+   "proposers": [
+    {
+     "id": "un_ga",
+     "role": "機関"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "4d2d9e4706b1497da54b5e2c59fce2bb": {
+   "name": "政府なき統治（governance without government）",
+   "proposers": [
+    {
+     "id": "rosenau",
+     "role": "提唱"
+    },
+    {
+     "id": "czempiel",
+     "role": "提唱"
+    },
+    {
+     "id": "navari",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章",
+    "第1章"
+   ],
+   "note": ""
+  },
+  "a4ab70a7d0b044418e358ae7be20dc79": {
+   "name": "新しい戦争・紛争の複合化",
+   "proposers": [
+    {
+     "id": "kaldor",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "cabb840f0dae4f38abe306c19c8fa863": {
+   "name": "新しい社会運動",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "e31c605271c04c8f98b771a71a52250e": {
+   "name": "新自由主義（経済政策）",
+   "proposers": [
+    {
+     "id": "hayek",
+     "role": "関連"
+    },
+    {
+     "id": "friedman",
+     "role": "関連"
+    },
+    {
+     "id": "williamson",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章",
+    "第1章"
+   ],
+   "note": "思想的源流＝Hayek・Friedman、政策パッケージ＝Williamson"
+  },
+  "73ca5f0b74bd4c6f8a2ce627f91e898f": {
+   "name": "構造調整貸付・政策コンディショナリティ",
+   "proposers": [
+    {
+     "id": "world_bank",
+     "role": "機関"
+    },
+    {
+     "id": "matsumoto",
+     "role": "関連"
+    },
+    {
+     "id": "oshiba",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章",
+    "第1章"
+   ],
+   "note": ""
+  },
+  "5ccb8c0dc6c14ae0b3564c99da71a996": {
+   "name": "権力の三次元・アジェンダ設定",
+   "proposers": [
+    {
+     "id": "lukes",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "ff3850aec2e646e4a2b5d1dfd6258237": {
+   "name": "権威の流動化（liquid authority）",
+   "proposers": [
+    {
+     "id": "krisch",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "decc06be148d4fb5a2b4517cda1f7fb5": {
+   "name": "権威・グローバル・ガバナー",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "f60dea64ba774adebc55f4c413c69e81": {
+   "name": "気候変動の緩和・適応・気候工学",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "edf5629d6ca341cd801cdd094388b5cc": {
+   "name": "特別報告者（国連人権理事会の特別手続）とOHCHR",
+   "proposers": [
+    {
+     "id": "un_hrc",
+     "role": "機関"
+    },
+    {
+     "id": "un_ga",
+     "role": "機関"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "39808c114a7e4486ad4c745d442c78f6": {
+   "name": "結果の論理（logic of consequences）",
+   "proposers": [
+    {
+     "id": "risse",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": "比較整理の原典はRisse（2000）"
+  },
+  "c895eb6480e248bc8283d62875362e6a": {
+   "name": "脱国家化（denationalization）",
+   "proposers": [
+    {
+     "id": "sassen",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "0163cf34093043c190b60e7e062f3e1d": {
+   "name": "規範遵守（compliance）と実効性",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "09c5fb28b24a423d90802474ab0020b9": {
+   "name": "超国家的ガバナンス",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "63b2caa8c65a4b24b6e15ab1262901b8": {
+   "name": "遵守・調整・正統性のトリレンマ",
+   "proposers": [
+    {
+     "id": "nishitani",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": "西谷真規子の序章の整理そのもの"
+  },
+  "912e9cbee0c3406ba953bf643a70b105": {
+   "name": "非国家主体",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "8cf261fc45da456ab733a1a52358172d": {
+   "name": "コンストラクティビズム（構成主義）",
+   "proposers": [
+    {
+     "id": "ruggie",
+     "role": "関連"
+    },
+    {
+     "id": "risse",
+     "role": "関連"
+    },
+    {
+     "id": "barnett",
+     "role": "関連"
+    },
+    {
+     "id": "duvall",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "a83c7c5fe8dd40808d9629e380b9a32d": {
+   "name": "事務総長告示（ST/SGB）の外部効果・グッド・プラクティスによる規範化",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    },
+    {
+     "id": "annan",
+     "role": "関連"
+    },
+    {
+     "id": "un_sg",
+     "role": "機関"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "d228509f6b8c49a9a3fac49cdfd512d5": {
+   "name": "国際事務局（国際官僚機構）の自律性",
+   "proposers": [
+    {
+     "id": "barnett",
+     "role": "代表"
+    },
+    {
+     "id": "finnemore",
+     "role": "代表"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "28b41db6b8bc4fbe8647f30879ad5db1": {
+   "name": "国際機構を通じた規範形成（伝統的理解とGG論の問題提起）",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    },
+    {
+     "id": "matsumoto",
+     "role": "関連"
+    },
+    {
+     "id": "oshiba",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "16c5e2327af143d594cc8126a16d2860": {
+   "name": "生産的権力と権力の四分類",
+   "proposers": [
+    {
+     "id": "barnett",
+     "role": "提唱"
+    },
+    {
+     "id": "duvall",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "2973621b35f9424583581a816ae1583b": {
+   "name": "知識の権力",
+   "proposers": [
+    {
+     "id": "phaas",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "50e478fc714749c490b67e44fef1201b": {
+   "name": "知識共同体（認識共同体／epistemic community）",
+   "proposers": [
+    {
+     "id": "phaas",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "cd11f0b9303b49e4add0d6d63f1a7e7b": {
+   "name": "規範的パワー",
+   "proposers": [
+    {
+     "id": "manners",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "56d4911228c24481a7bd55c1cf8512bd": {
+   "name": "討議の論理（logic of arguing）",
+   "proposers": [
+    {
+     "id": "risse",
+     "role": "提唱"
+    },
+    {
+     "id": "habermas",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "eb93088c5c4843c3a3a5335790c3560d": {
+   "name": "適切さの論理（logic of appropriateness）",
+   "proposers": [
+    {
+     "id": "march",
+     "role": "提唱"
+    },
+    {
+     "id": "olsen",
+     "role": "提唱"
+    },
+    {
+     "id": "risse",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "8b5ef2399cb94dec9625afcabb6faf20": {
+   "name": "リアリズム",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "53823aba9a8e4b588cfc20178214f9db": {
+   "name": "勢力均衡・多極性",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "4dc435c2f94248dcb73fc3a9711ad71a": {
+   "name": "覇権・一極構造",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "b083c46adce0431e8dedb7e7b1c831b2": {
+   "name": "ソフト・パワー",
+   "proposers": [
+    {
+     "id": "nye",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "bdd2ae9e406f464a913c9420bd28a3f9": {
+   "name": "トランスガバメンタル・ネットワーク",
+   "proposers": [
+    {
+     "id": "slaughter",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "94b6e225518f40dbb261fe781f545c04": {
+   "name": "ネオリベラル制度論",
+   "proposers": [
+    {
+     "id": "keohane",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "2cb3277e8617437bb554864caed3bf5b": {
+   "name": "世界人権宣言と「宣言→条約」型の国際人権規範形成",
+   "proposers": [
+    {
+     "id": "un_ga",
+     "role": "機関"
+    },
+    {
+     "id": "roosevelt",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "d2092f0566234e089f8ca8c223d6b8db": {
+   "name": "国家機能の「退化」と「進化」（国際組織化）",
+   "proposers": [
+    {
+     "id": "navari",
+     "role": "提唱"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "66c85fd99476479abe93da3ff0d75797": {
+   "name": "国際共同体（中西寛）",
+   "proposers": [
+    {
+     "id": "nakanishi",
+     "role": "提唱"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "2ef1e7a6b5e344efb124c74a2513a718": {
+   "name": "多孔的国家・国家の細分化",
+   "proposers": [
+    {
+     "id": "slaughter",
+     "role": "関連"
+    },
+    {
+     "id": "nishitani",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": "「多孔的国家」は序章での説明表現"
+  },
+  "b70bcdd9b27c44b2b15a72df32574fd4": {
+   "name": "本人・代理人（プリンシパル・エージェント）関係",
+   "proposers": [
+    {
+     "id": "hawkins",
+     "role": "代表"
+    },
+    {
+     "id": "lake",
+     "role": "代表"
+    },
+    {
+     "id": "nielson",
+     "role": "代表"
+    },
+    {
+     "id": "tierney",
+     "role": "代表"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": "起源は経済学のエージェンシー理論"
+  },
+  "3b9bc618efff4d078be982c70b40940e": {
+   "name": "機能主義（functionalism）",
+   "proposers": [
+    {
+     "id": "mitrany",
+     "role": "提唱"
+    },
+    {
+     "id": "navari",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "19ece82a3b1c44c1b9545dd7f8149d9e": {
+   "name": "複合的相互依存",
+   "proposers": [
+    {
+     "id": "keohane",
+     "role": "提唱"
+    },
+    {
+     "id": "nye",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "2bf4e1db5dea4d589d393cadf6526da7": {
+   "name": "集団安全保障（国際連盟・国連）",
+   "proposers": [
+    {
+     "id": "league_cov",
+     "role": "機関"
+    },
+    {
+     "id": "un_charter",
+     "role": "機関"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第1章"
+   ],
+   "note": ""
+  },
+  "3bb52d160975426b95f4ef25200c3e44": {
+   "name": "ネオグラムシアン（新グラムシ主義）",
+   "proposers": [
+    {
+     "id": "cox",
+     "role": "代表"
+    },
+    {
+     "id": "gramsci",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "b2ff487645284fa29736fae2bd191181": {
+   "name": "世界システム論",
+   "proposers": [
+    {
+     "id": "wallerstein",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": ""
+  },
+  "cf6afb45e09145f4844838bdcbe22184": {
+   "name": "批判理論と問題解決理論",
+   "proposers": [
+    {
+     "id": "cox",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "序章"
+   ],
+   "note": "区別の関連論者としてCox（1986）"
+  }
+ }
+}
