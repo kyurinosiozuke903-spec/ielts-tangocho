@@ -18,7 +18,7 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html, body { height: 100%; overscroll-behavior: none; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; display: flex; flex-direction: column; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; display: flex; flex-direction: column; padding-bottom: calc(47px + var(--safe-bottom)); }
   button, input { font-family: inherit; }
   a { color: var(--accent-dark); }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -74,6 +74,52 @@
   .legend .sw { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
   .status { position: absolute; left: 50%; top: 12px; transform: translateX(-50%); background: rgba(255,255,255,0.94); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 12px; color: var(--text-muted); z-index: 6; }
   .status.hide { display: none; }
+
+  .view { position: absolute; inset: 0; overflow-y: auto; background: var(--bg); padding: 12px 12px 24px; display: none; z-index: 8; }
+  .view.on { display: block; }
+  .stage.list-mode svg#graph, .stage.list-mode .overlay, .stage.list-mode .legend, .stage.list-mode .status { display: none; }
+  .li { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }
+  .li:active { background: var(--accent-light); }
+  .li-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .li-name { font-family: var(--serif); font-size: 16px; font-weight: 600; line-height: 1.4; }
+  .li-def { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .li-who { font-size: 12px; color: var(--accent-dark); margin-top: 5px; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+  .li-group { font-size: 12.5px; font-weight: 700; color: var(--accent-dark); margin: 14px 0 6px; }
+  .qcard { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 18px 16px calc(20px + var(--safe-bottom)); }
+  .qhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--text-muted); }
+  .qterm { font-family: var(--serif); font-size: 24px; font-weight: 600; line-height: 1.45; margin: 14px 0 6px; }
+  .qhint { font-size: 12.5px; color: var(--text-muted); background: var(--bg); border-radius: 10px; padding: 8px 11px; line-height: 1.7; }
+  .qlabel { font-size: 11.5px; color: var(--text-muted); font-weight: 700; margin-top: 14px; }
+  .qbody { font-size: 14px; line-height: 1.85; }
+  .qbtns { display: flex; gap: 8px; margin-top: 18px; }
+  .qbtn { flex: 1; border: 1.5px solid var(--border); background: var(--card-bg); border-radius: 12px; padding: 12px 6px; font-size: 14px; font-weight: 700; cursor: pointer; color: var(--text); }
+  .qbtn.main { border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark); }
+  .qbtn.ng { border-color: #fecaca; color: #b91c1c; }
+  .qbtn.mid { border-color: #fed7aa; color: var(--warn); }
+  .qbtn.ok { border-color: #a7d9d3; color: var(--accent-dark); }
+  .bottom-nav { position: fixed; left: 0; right: 0; bottom: 0; display: flex; background: var(--card-bg); border-top: 1px solid var(--border); padding-bottom: var(--safe-bottom); z-index: 30; }
+  .nav-item { flex: 1; background: none; border: none; padding: 9px 0 8px; font-size: 11px; color: var(--text-muted); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .nav-item.active { color: var(--accent-dark); font-weight: 700; }
+  .nav-icon { font-size: 17px; }
+  .stage { padding-bottom: 0; }
+  .mcard { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 14px 15px; margin-bottom: 10px; }
+  .mtitle { font-weight: 700; font-size: 15.5px; margin-bottom: 5px; }
+  .pick { display: flex; align-items: flex-start; gap: 10px; border: 1.5px solid var(--border); border-radius: 12px; padding: 10px 12px; margin-bottom: 7px; cursor: pointer; }
+  .pick.on { border-color: var(--accent); background: var(--accent-light); }
+  .pick .num { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--bg); color: var(--text-muted); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .pick-name { font-family: var(--serif); font-size: 15px; font-weight: 600; line-height: 1.45; }
+  .timer { font-size: 30px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+  .timer.warn { color: var(--danger); }
+  .ans { width: 100%; min-height: 150px; margin-top: 8px; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 14px; line-height: 1.8; background: #fbfcfc; color: var(--text); resize: vertical; font-family: inherit; }
+  .ans:focus { outline: none; border-color: var(--accent); background: #fff; }
+  .qno { color: var(--text-muted); font-size: 12px; font-weight: 700; margin-right: 6px; }
+  .alabel { font-size: 11.5px; color: var(--text-muted); font-weight: 700; margin-top: 12px; }
+  .prev-ans { white-space: pre-wrap; font-size: 13.5px; line-height: 1.8; background: var(--bg); border-radius: 10px; padding: 10px 12px; margin-top: 4px; }
+  .scores { display: flex; gap: 6px; margin-top: 12px; }
+  .sbtn { flex: 1; border: 1.5px solid var(--border); background: var(--card-bg); border-radius: 10px; padding: 9px 0; font-size: 14px; font-weight: 700; cursor: pointer; color: var(--text-muted); }
+  .sbtn.on { border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark); }
+  .total { font-size: 34px; font-weight: 700; text-align: center; letter-spacing: 0.02em; }
+  .empty2 { text-align: center; color: var(--text-muted); padding: 40px 0; font-size: 13.5px; }
 
   .sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 62%; overflow-y: auto; background: var(--card-bg); border-top: 1px solid var(--border); border-radius: 18px 18px 0 0; box-shadow: 0 -6px 28px rgba(0,0,0,0.12); padding: 14px 16px calc(18px + var(--safe-bottom)); z-index: 10; transform: translateY(102%); transition: transform 0.2s ease; }
   .sheet.open { transform: translateY(0); }
@@ -148,8 +194,17 @@
     <button class="zoombtn" id="zout" type="button" aria-label="縮小">−</button>
     <button class="zoombtn" id="zfit" type="button" aria-label="全体表示">⤢</button>
   </div>
+  <section class="view" id="view-list"></section>
+  <section class="view" id="view-quiz"></section>
+  <section class="view" id="view-mock"></section>
   <div class="sheet" id="sheet" role="dialog" aria-label="詳細"></div>
 </div>
+<nav class="bottom-nav">
+  <button class="nav-item active" data-view="graph" type="button"><span class="nav-icon">🕸</span>関係図</button>
+  <button class="nav-item" data-view="list" type="button"><span class="nav-icon">📚</span>一覧</button>
+  <button class="nav-item" data-view="quiz" type="button"><span class="nav-icon">🔁</span>出題</button>
+  <button class="nav-item" data-view="mock" type="button"><span class="nav-icon">📝</span>模試</button>
+</nav>
 
 <script>
 "use strict";
@@ -163,7 +218,7 @@ const ROLE_DIST = { "提唱": 95, "機関": 95, "代表": 110, "関連": 135, "�
 
 // ─── 状態 ──────────────────────────────────────────────
 let DATA = null, MASTER = null;
-const state = { q: "", schools: new Set(), tags: new Set(), chapter: "", showOrg: false, showLoose: false, focus: null, sel: null };
+const state = { q: "", schools: new Set(), tags: new Set(), chapter: "", showOrg: false, showLoose: false, focus: null, sel: null, view: "graph", dirty: false };
 const view = { k: 1, x: 0, y: 0 };
 let G = { nodes: [], links: [], byId: {} };
 const VB = { w: W, h: H };   // 表示領域（CSSピクセル）。レイアウト世界は W×H のまま。
@@ -235,18 +290,30 @@ function entryOf(term) {
   return { name: term.名前, proposers: fallbackProposers(term), none: false, src: [], note: "", unmapped: true };
 }
 
+function filteredTerms() {
+  return DATA.terms.filter((t) => {
+    if (state.schools.size && !state.schools.has(t.理論学派 || "その他")) return false;
+    if (state.tags.size && !(t.事例系統 || []).some((x) => state.tags.has(x))) return false;
+    if (state.chapter && !(entryOf(t).src || []).includes(state.chapter)) return false;
+    return true;
+  });
+}
+
+// ─── 習熟度（この端末のブラウザに保存） ───────────────
+const PROF_KEY = "network-prof-v1";
+let PROF = {};
+try { PROF = JSON.parse(localStorage.getItem(PROF_KEY) || "{}"); } catch (e) { PROF = {}; }
+const saveProf = () => { try { localStorage.setItem(PROF_KEY, JSON.stringify(PROF)); } catch (e) {} };
+const PROF_LABEL = { ok: "○ できた", mid: "△ あいまい", ng: "× できない" };
+const PROF_ORDER = { ng: 0, "": 1, undefined: 1, mid: 2, ok: 3 };
+
 // ─── グラフ構築 ────────────────────────────────────────
 function buildGraph() {
   const prev = {}; G.nodes.forEach((n) => { prev[n.id] = n; });
   const nodes = [], links = [], byId = {};
   const add = (n) => { const old = prev[n.id]; if (old) { n.x = old.x; n.y = old.y; } byId[n.id] = n; nodes.push(n); return n; };
 
-  const terms = DATA.terms.filter((t) => {
-    if (state.schools.size && !state.schools.has(t.理論学派 || "その他")) return false;
-    if (state.tags.size && !(t.事例系統 || []).some((x) => state.tags.has(x))) return false;
-    if (state.chapter && !(entryOf(t).src || []).includes(state.chapter)) return false;
-    return true;
-  });
+  const terms = filteredTerms();
 
   const pending = [];
   terms.forEach((t) => {
@@ -546,6 +613,222 @@ $("sheet").addEventListener("click", (ev) => {
   }
 });
 
+// ─── 一覧 ──────────────────────────────────────────────
+function whoOf(t) {
+  const e = entryOf(t);
+  const names = (e.proposers || []).map((x) => {
+    const a = MASTER.people[x.id] || MASTER.institutions[x.id];
+    return a ? a.name + (x.role && x.role !== "提唱" ? `（${x.role}）` : "") : null;
+  }).filter(Boolean);
+  return names.length ? names.join("、") : (e.none ? "提唱者を特定しない語" : "未整理");
+}
+function renderList() {
+  const el = $("view-list");
+  let pool = filteredTerms();
+  if (state.q) pool = pool.filter((t) => (t.名前 + t.定義 + t.提唱者).toLowerCase().includes(state.q));
+  if (!pool.length) { el.innerHTML = `<div class="empty2">該当なし</div>`; return; }
+  const groups = {};
+  pool.forEach((t) => { (groups[t.理論学派 || "その他"] = groups[t.理論学派 || "その他"] || []).push(t); });
+  const done = pool.filter((t) => PROF[t.名前] === "ok").length;
+  el.innerHTML = `<div class="muted" style="margin:2px 0 10px">${pool.length}語　／　○ ${done}・△ ${pool.filter((t) => PROF[t.名前] === "mid").length}・× ${pool.filter((t) => PROF[t.名前] === "ng").length}・未 ${pool.filter((t) => !PROF[t.名前]).length}</div>` +
+    SCHOOLS.filter((sc) => groups[sc]).map((sc) => `<div class="li-group">${esc(sc)}（${groups[sc].length}）</div>` +
+      groups[sc].map((t) => `<div class="li" data-open="${esc(t.id)}">
+        <div class="li-head"><div class="li-name">${esc(t.名前)}</div><span class="tag">${esc(PROF[t.名前] ? PROF_LABEL[PROF[t.名前]].slice(0, 1) : "未")}</span></div>
+        <div class="li-def">${esc(t.定義)}</div>
+        <div class="li-who">提唱者：${esc(whoOf(t))}</div>
+      </div>`).join("")).join("");
+}
+
+// ─── 出題（回転） ──────────────────────────────────────
+const quiz = { order: [], idx: 0, open: false, weakOnly: false };
+function buildQuiz(reshuffle) {
+  let pool = filteredTerms();
+  if (state.q) pool = pool.filter((t) => (t.名前 + t.定義 + t.提唱者).toLowerCase().includes(state.q));
+  if (quiz.weakOnly) pool = pool.filter((t) => PROF[t.名前] !== "ok");
+  if (reshuffle) for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+  pool.sort((a, b) => (PROF_ORDER[PROF[a.名前]] ?? 1) - (PROF_ORDER[PROF[b.名前]] ?? 1));   // 苦手・未習を先に
+  quiz.order = pool; quiz.idx = 0; quiz.open = false;
+}
+function renderQuiz() {
+  const el = $("view-quiz");
+  if (!quiz.order.length) { el.innerHTML = `<div class="empty2">条件に合う語がありません。<br>絞込を変えてください。</div>`; return; }
+  if (quiz.idx >= quiz.order.length) {
+    el.innerHTML = `<div class="qcard"><div class="empty2"><div style="font-size:30px">✓</div>${quiz.order.length}語を1周しました。</div>
+      <div class="qbtns"><button class="qbtn main" data-quiz="again" type="button">苦手優先でもう1周</button></div></div>`;
+    return;
+  }
+  const t = quiz.order[quiz.idx], e = entryOf(t);
+  el.innerHTML = `<div class="qcard">
+    <div class="qhead">
+      <div>${t.理論学派 ? `<span class="tag school">${esc(t.理論学派)}</span>` : ""}${(t.事例系統 || []).slice(0, 2).map((x) => `<span class="tag">${esc(x)}</span>`).join("")}</div>
+      <div>${PROF[t.名前] ? esc(PROF_LABEL[PROF[t.名前]].slice(0, 1)) : "未"}　${quiz.idx + 1} / ${quiz.order.length}</div>
+    </div>
+    <div class="qterm">${esc(t.名前)}</div>
+    <div class="qhint">定義2〜3文 → 提唱者・原典 → 事例1 の順で口に出す。言えたら答えを開く。</div>
+    ${quiz.open ? `
+      <div class="qlabel">定義</div><div class="qbody">${esc(t.定義)}</div>
+      ${t.事例 ? `<div class="qlabel">事例</div><div class="qbody">${esc(t.事例)}</div>` : ""}
+      <div class="qlabel">提唱者・原典</div><div class="qbody dsrc">${linkify(t.提唱者 || "未記入")}</div>
+      <div class="qbtns">
+        <button class="qbtn ng" data-prof="ng" type="button">×</button>
+        <button class="qbtn mid" data-prof="mid" type="button">△</button>
+        <button class="qbtn ok" data-prof="ok" type="button">○</button>
+      </div>
+      <div class="qbtns"><button class="qbtn" data-quiz="graph" type="button">関係図で見る</button><button class="qbtn" data-quiz="skip" type="button">とばす</button></div>
+    ` : `<div class="qbtns"><button class="qbtn main" data-quiz="open" type="button">答えを見る</button></div>
+         <div class="qbtns"><button class="qbtn" data-quiz="weak" type="button">${quiz.weakOnly ? "○も含める" : "○以外だけ"}</button><button class="qbtn" data-quiz="skip" type="button">とばす</button></div>`}
+  </div>`;
+}
+
+// ─── 模試（設問2形式：8語提示→5語選択→45分→自己採点） ──
+const MOCK_KEY = "network-mock-v1";
+let mock = null, mockTimer = null, mockHistory = [];
+try { mockHistory = JSON.parse(localStorage.getItem(MOCK_KEY) || "[]"); } catch (e) { mockHistory = []; }
+const mockPool = () => filteredTerms().filter((t) => t.定義);
+const fmt = (ms) => { const s2 = Math.max(0, Math.round(ms / 1000)); return Math.floor(s2 / 60) + ":" + String(s2 % 60).padStart(2, "0"); };
+
+function startMock() {
+  const pool = mockPool().slice();
+  for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+  mock = { candidates: pool.slice(0, 8), picked: [], started: false, endsAt: null, answers: {}, scores: {}, submitted: false };
+  renderMock();
+}
+function beginTimer() {
+  mock.started = true;
+  mock.endsAt = Date.now() + 45 * 60 * 1000;
+  clearInterval(mockTimer);
+  mockTimer = setInterval(() => {
+    const el = $("mock-timer");
+    if (!mock || !mock.started || mock.submitted || !el) return clearInterval(mockTimer);
+    const left = mock.endsAt - Date.now();
+    el.textContent = fmt(left);
+    el.classList.toggle("warn", left < 5 * 60 * 1000);
+    if (left <= 0) { clearInterval(mockTimer); submitMock(); }
+  }, 1000);
+  renderMock();
+}
+function submitMock() {
+  document.querySelectorAll("[data-ans]").forEach((el) => { mock.answers[el.dataset.ans] = el.value; });
+  mock.submitted = true; clearInterval(mockTimer); renderMock();
+  $("view-mock").scrollTop = 0;
+}
+function endMock(save) {
+  if (save && mock) {
+    const total = Object.values(mock.scores).reduce((a, b) => a + b, 0);
+    mockHistory.unshift({ date: new Date().toLocaleDateString("ja-JP"), total, max: mock.picked.length * 10 });
+    mockHistory = mockHistory.slice(0, 8);
+    try { localStorage.setItem(MOCK_KEY, JSON.stringify(mockHistory)); } catch (e) {}
+  }
+  mock = null; clearInterval(mockTimer); renderMock();
+}
+function renderMock() {
+  const el = $("view-mock");
+  if (!mock) {
+    const pool = mockPool();
+    el.innerHTML = `<div class="mcard">
+      <div class="mtitle">設問2 模試</div>
+      <div class="muted">8語を出題 → 5語を選択 → 45分。本番と同じ手順です。出題元は現在の絞込条件で ${pool.length} 語。</div>
+      ${pool.length < 8 ? `<div class="note">8語に足りないため ${pool.length} 語で出題します。</div>` : ""}
+      <div class="qbtns"><button class="qbtn main" data-mock="start" type="button" ${pool.length < 2 ? "disabled" : ""}>8語を出す</button></div>
+    </div>
+    ${mockHistory.length ? `<div class="mcard"><div class="mtitle">これまでの結果</div>${mockHistory.map((h) => `<div class="qhead" style="padding:7px 0;border-bottom:1px solid var(--border)"><span>${esc(h.date)}</span><b>${h.total} / ${h.max || 50}</b></div>`).join("")}</div>` : ""}`;
+    return;
+  }
+  if (!mock.started) {
+    el.innerHTML = `<div class="mcard">
+      <div class="mtitle">5語を選ぶ</div>
+      <div class="muted" style="margin-bottom:10px">${mock.picked.length} / 5 語を選択</div>
+      ${mock.candidates.map((t, i) => `<div class="pick${mock.picked.includes(t.名前) ? " on" : ""}" data-pick="${i}">
+        <span class="num">${i + 1}</span>
+        <div><div class="pick-name">${esc(t.名前)}</div>${t.理論学派 ? `<span class="tag school">${esc(t.理論学派)}</span>` : ""}</div>
+      </div>`).join("")}
+      <div class="qbtns"><button class="qbtn main" data-mock="begin" type="button" ${mock.picked.length === 0 ? "disabled" : ""}>45分で開始</button></div>
+      <div class="qbtns"><button class="qbtn" data-mock="quit" type="button">やめる</button></div>
+    </div>`;
+    return;
+  }
+  const picked = mock.picked.map((n) => DATA.terms.find((t) => t.名前 === n)).filter(Boolean);
+  if (!mock.submitted) {
+    el.innerHTML = `<div class="mcard"><div class="timer" id="mock-timer">${fmt(mock.endsAt - Date.now())}</div>
+      <div class="muted" style="text-align:center">1語あたり約9分。書き終えたら提出。</div></div>
+      ${picked.map((t, i) => `<div class="mcard">
+        <div><span class="qno">(${i + 1})</span><span class="pick-name">${esc(t.名前)}</span></div>
+        <textarea class="ans" data-ans="${esc(t.名前)}" placeholder="定義2〜3文 → 提唱者・原典 → 事例1">${esc(mock.answers[t.名前] || "")}</textarea>
+      </div>`).join("")}
+      <div class="qbtns"><button class="qbtn main" data-mock="submit" type="button">提出して自己採点</button></div>`;
+    return;
+  }
+  const total = Object.values(mock.scores).reduce((a, b) => a + b, 0);
+  el.innerHTML = `<div class="mcard">
+      <div class="total">${total} / ${picked.length * 10}</div>
+      <div class="muted" style="text-align:center">${Object.keys(mock.scores).length} / ${picked.length} 語を採点済み。6点以下の語は自動で「×」になります。</div>
+      <div class="qbtns"><button class="qbtn main" data-mock="save" type="button">結果を保存して終了</button><button class="qbtn" data-mock="quit" type="button">保存せず終了</button></div>
+    </div>
+    ${picked.map((t, i) => `<div class="mcard">
+      <div><span class="qno">(${i + 1})</span><span class="pick-name">${esc(t.名前)}</span></div>
+      <div class="alabel">自分の答案</div><div class="prev-ans">${esc(mock.answers[t.名前] || "（未記入）")}</div>
+      <div class="alabel">模範解答（定義）</div><div class="qbody">${esc(t.定義)}</div>
+      <div class="alabel">提唱者・原典</div><div class="qbody dsrc">${linkify(t.提唱者 || "未記入")}</div>
+      ${t.事例 ? `<div class="alabel">事例</div><div class="qbody">${esc(t.事例)}</div>` : ""}
+      <div class="scores">${[0, 4, 6, 8, 10].map((sc) => `<button class="sbtn${mock.scores[t.名前] === sc ? " on" : ""}" data-score="${i}:${sc}" type="button">${sc}</button>`).join("")}</div>
+    </div>`).join("")}`;
+}
+
+// ─── ビュー切替 ────────────────────────────────────────
+function switchView(v) {
+  state.view = v;
+  document.querySelectorAll(".nav-item").forEach((b) => b.classList.toggle("active", b.dataset.view === v));
+  $("view-list").classList.toggle("on", v === "list");
+  $("view-quiz").classList.toggle("on", v === "quiz");
+  $("view-mock").classList.toggle("on", v === "mock");
+  document.querySelector(".stage").classList.toggle("list-mode", v !== "graph");
+  if (v === "list") renderList();
+  if (v === "quiz") { if (!quiz.order.length) buildQuiz(true); renderQuiz(); }
+  if (v === "mock") renderMock();
+  if (v === "graph" && state.dirty) { state.dirty = false; rebuild(true); }
+}
+document.addEventListener("click", (ev) => {
+  const nav = ev.target.closest("[data-view]"); if (nav) return switchView(nav.dataset.view);
+  const li = ev.target.closest("[data-open]");
+  if (li) { const t = DATA.terms.find((x) => x.id === li.dataset.open); if (!t) return;
+    switchView("graph"); if (!G.byId["t:" + t.id]) { state.showLoose = true; rebuild(true); } select("t:" + t.id); return; }
+  const pf = ev.target.closest("[data-prof]");
+  if (pf) { const t = quiz.order[quiz.idx]; if (!t) return; PROF[t.名前] = pf.dataset.prof; saveProf(); quiz.idx++; quiz.open = false; renderQuiz(); return; }
+  const pk = ev.target.closest("[data-pick]");
+  if (pk && mock && !mock.started) {
+    const name = mock.candidates[+pk.dataset.pick].名前, i = mock.picked.indexOf(name);
+    if (i >= 0) mock.picked.splice(i, 1); else if (mock.picked.length < 5) mock.picked.push(name);
+    return renderMock();
+  }
+  const sc = ev.target.closest("[data-score]");
+  if (sc && mock) {
+    const [i, v] = sc.dataset.score.split(":").map(Number);
+    const name = mock.picked[i];
+    mock.scores[name] = v;
+    if (v <= 6) { PROF[name] = "ng"; saveProf(); }
+    return renderMock();
+  }
+  const mk = ev.target.closest("[data-mock]");
+  if (mk) {
+    const a = mk.dataset.mock;
+    if (a === "start") return startMock();
+    if (a === "begin") return beginTimer();
+    if (a === "submit") return submitMock();
+    if (a === "save") return endMock(true);
+    if (a === "quit") return endMock(false);
+  }
+  const qb = ev.target.closest("[data-quiz]");
+  if (qb) {
+    const a = qb.dataset.quiz, t = quiz.order[quiz.idx];
+    if (a === "open") quiz.open = true;
+    else if (a === "skip") { quiz.idx++; quiz.open = false; }
+    else if (a === "again") buildQuiz(true);
+    else if (a === "weak") { quiz.weakOnly = !quiz.weakOnly; buildQuiz(true); }
+    else if (a === "graph" && t) { switchView("graph"); if (!G.byId["t:" + t.id]) { state.showLoose = true; rebuild(true); } return select("t:" + t.id); }
+    renderQuiz();
+  }
+});
+
 // ─── 絞り込みUI ────────────────────────────────────────
 function renderControls() {
   $("schools").innerHTML = SCHOOLS.map((s) => `<button type="button" class="chip school${state.schools.has(s) ? " active" : ""}" data-school="${esc(s)}">${esc(s)}</button>`).join("");
@@ -559,15 +842,16 @@ function renderControls() {
   $("legend").innerHTML = `<div><b>丸</b>＝用語（色＝理論学派）</div>${SCHOOLS.map((s) => `<div><span class="sw" style="background:${SCHOOL_COLOR[s]}"></span>${esc(s)}</div>`).join("")}<div style="margin-top:4px"><b>白丸</b>＝人物／<b>白角</b>＝機関・文書</div><div><b>実線</b>＝提唱・原典／<b>破線</b>＝関連</div>`;
 }
 document.addEventListener("click", (ev) => {
-  const s = ev.target.closest("[data-school]"); if (s) { const v = s.getAttribute("data-school"); state.schools.has(v) ? state.schools.delete(v) : state.schools.add(v); return rebuild(true); }
-  const t = ev.target.closest("[data-tag]"); if (t) { const v = t.getAttribute("data-tag"); state.tags.has(v) ? state.tags.delete(v) : state.tags.add(v); return rebuild(true); }
-  const c = ev.target.closest("[data-chapter]"); if (c) { const v = c.getAttribute("data-chapter"); state.chapter = state.chapter === v ? "" : v; return rebuild(true); }
-  const o = ev.target.closest("[data-opt]"); if (o) { const v = o.getAttribute("data-opt"); if (v === "org") state.showOrg = !state.showOrg; else state.showLoose = !state.showLoose; return rebuild(true); }
+  const s = ev.target.closest("[data-school]"); if (s) { const v = s.getAttribute("data-school"); state.schools.has(v) ? state.schools.delete(v) : state.schools.add(v); return refresh(true); }
+  const t = ev.target.closest("[data-tag]"); if (t) { const v = t.getAttribute("data-tag"); state.tags.has(v) ? state.tags.delete(v) : state.tags.add(v); return refresh(true); }
+  const c = ev.target.closest("[data-chapter]"); if (c) { const v = c.getAttribute("data-chapter"); state.chapter = state.chapter === v ? "" : v; return refresh(true); }
+  const o = ev.target.closest("[data-opt]"); if (o) { const v = o.getAttribute("data-opt"); if (v === "org") state.showOrg = !state.showOrg; else state.showLoose = !state.showLoose; return refresh(true); }
   const h = ev.target.closest("[data-hit]"); if (h) return select(h.getAttribute("data-hit"));
 });
 $("toggleadv").onclick = (e) => { const open = $("adv").classList.toggle("open"); e.currentTarget.classList.toggle("active", open); e.currentTarget.setAttribute("aria-expanded", String(open)); };
-$("reset").onclick = () => { state.focus = null; state.sel = null; $("q").value = ""; state.q = ""; renderHits(); rebuild(true); };
-$("q").addEventListener("input", (e) => { state.q = e.target.value.trim().toLowerCase(); renderHits(); applyHighlight(); });
+$("reset").onclick = () => { state.focus = null; state.sel = null; $("q").value = ""; state.q = ""; renderHits(); refresh(true); };
+document.addEventListener("input", (ev) => { const a = ev.target.closest("[data-ans]"); if (a && mock) mock.answers[a.dataset.ans] = a.value; });
+$("q").addEventListener("input", (e) => { state.q = e.target.value.trim().toLowerCase(); if (state.view === "list") return renderList(); if (state.view === "quiz") { buildQuiz(false); return renderQuiz(); } renderHits(); applyHighlight(); });
 function renderHits() {
   const box = $("hits");
   if (!state.q) { box.hidden = true; box.innerHTML = ""; return; }
@@ -577,6 +861,12 @@ function renderHits() {
 }
 
 // ─── 再構築 ────────────────────────────────────────────
+function refresh(refit) {
+  if (state.view === "mock") { if (!mock) renderMock(); state.dirty = true; return; }
+  if (state.view === "list") { renderList(); state.dirty = true; return; }
+  if (state.view === "quiz") { buildQuiz(false); renderQuiz(); state.dirty = true; return; }
+  rebuild(refit);
+}
 function rebuild(refit) {
   buildGraph();
   layout(G.nodes.length > 120 ? 380 : 240);
