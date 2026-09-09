@@ -6,6 +6,7 @@ on:
     - cron: "0 10 * * *"  # 19:00 JST
   workflow_dispatch:
 
+# 既存の sync.yml / sync-yougo.yml と同じグループ名にして、同時 push による衝突を防ぐ
 concurrency:
   group: sync-notion
   cancel-in-progress: false
@@ -34,14 +35,22 @@ jobs:
           NOTION_YOUGO_NEW_DB: ${{ secrets.NOTION_YOUGO_NEW_DB }}
         run: python sync_network.py
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Rebuild proposers.json
+        run: cd network/tools && node build_master.js
+
       - name: Commit and push if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- network/data/terms.json; then
+          if git diff --quiet -- network/data/terms.json network/data/proposers.json; then
             echo "No changes detected"
           else
-            git add network/data/terms.json
+            git add network/data/terms.json network/data/proposers.json
             git commit -m "chore: sync 用語DB・新 from Notion ($(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST'))"
             git pull --rebase --autostash
             git push
