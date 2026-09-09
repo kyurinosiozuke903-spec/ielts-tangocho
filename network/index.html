@@ -194,6 +194,41 @@ function fallbackProposers(term) {
   }
   return out;
 }
+// マスタ未登録の語を自動で配線する。提唱者欄の「和名（Latin Name）」から人物を仮生成し、
+// 既知の人物は名前・原綴り・別名の一致で拾う。Notionに語を足すだけで翌日には図に出る。
+function autowire() {
+  const known = Object.values(MASTER.people);
+  let people = 0, terms = 0;
+  const re = /([^\s（）()、。「」『』｜]{2,18})（([A-Z][A-Za-z.'\-\u00C0-\u024F]+(?:\s+[A-Za-z.'\-\u00C0-\u024F]+){1,3})）/g;
+  DATA.terms.forEach((t) => {
+    if (MASTER.terms[t.id]) return;
+    const txt = t.提唱者 || "";
+    const ids = [];
+    const push = (id) => { if (!ids.some((x) => x.id === id)) ids.push({ id, role: "関連" }); };
+    known.forEach((p) => {
+      const keys = [p.latin, p.name, ...(p.aliases || [])].filter((k) => k && k.length >= 3);
+      if (keys.some((k) => txt.includes(k))) push(p.id);
+    });
+    let m; re.lastIndex = 0;
+    while ((m = re.exec(txt))) {
+      let jp = m[1]; const latin = m[2];
+      jp = jp.replace(/^.*(?:は|も|＆|、|：|\/)/, "");                                  // 「…の定式化はマイケル・ドイル」→「マイケル・ドイル」
+      if (!/^[ァ-ヶー・A-Za-z.]{2,}$/.test(jp) && !/^[一-龥]{2,5}$/.test(jp)) continue;   // 書名・語句を除外
+      if (/\d/.test(jp) || /^(The|A|An)\s/.test(latin)) continue;
+      if (/(University|Press|Oxford|Cambridge|Journal|Review|Organization|Affairs|Politics|Studies|Security)/i.test(latin)) continue;
+      const hit = known.find((p) => p.latin === latin);
+      if (hit) { push(hit.id); continue; }
+      const id = "auto:" + latin.toLowerCase().replace(/[^a-z]/g, "");
+      if (!MASTER.people[id]) { MASTER.people[id] = { id, name: jp, latin, aliases: [], year: null, note: "提唱者欄から自動抽出（マスタ未登録）", auto: true }; people++; }
+      push(id);
+    }
+    MASTER.terms[t.id] = { name: t.名前, proposers: ids, none: !ids.length, src: [], note: "", unmapped: true };
+    terms++;
+  });
+  if (terms) console.log(`未登録 ${terms} 語を自動配線（仮の人物 ${people} 名）`);
+  return { people, terms };
+}
+
 function entryOf(term) {
   const e = MASTER.terms[term.id];
   if (e) return e;
@@ -595,6 +630,7 @@ function showError(msg) {
     if (!terms || !Array.isArray(terms.terms) || !terms.terms.length) throw new Error("data/terms.json に用語が入っていません。sync_network.py（GitHub Actions）を1回実行してください。");
     if (!master || !master.people || !master.terms) throw new Error("data/proposers.json の形式が想定と違います。network/tools/build_master.js で作り直してください。");
     DATA = terms; MASTER = master;
+    autowire();
     measure();
     $("sub").textContent = `用語DB・新 ${DATA.terms.length}語　最終同期 ${DATA.syncedAt || "不明"}`;
     rebuild();

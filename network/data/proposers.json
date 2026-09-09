@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-09-08",
+  "generated": "2026-09-09",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -566,6 +566,520 @@
    ],
    "year": null,
    "note": "DBに刊行年の記載なし"
+  },
+  "waltz": {
+   "id": "waltz",
+   "name": "ケネス・ウォルツ",
+   "latin": "Kenneth N. Waltz",
+   "aliases": [
+    "ウォルツ"
+   ],
+   "year": 1979,
+   "note": ""
+  },
+  "morgenthau": {
+   "id": "morgenthau",
+   "name": "モーゲンソー",
+   "latin": "Hans J. Morgenthau",
+   "aliases": [],
+   "year": 1948,
+   "note": ""
+  },
+  "herz": {
+   "id": "herz",
+   "name": "ジョン・ハーツ",
+   "latin": "John H. Herz",
+   "aliases": [
+    "ハーツ"
+   ],
+   "year": 1950,
+   "note": ""
+  },
+  "jervis": {
+   "id": "jervis",
+   "name": "ロバート・ジャーヴィス",
+   "latin": "Robert Jervis",
+   "aliases": [
+    "ジャーヴィス"
+   ],
+   "year": 1976,
+   "note": ""
+  },
+  "walt": {
+   "id": "walt",
+   "name": "スティーヴン・ウォルト",
+   "latin": "Stephen M. Walt",
+   "aliases": [
+    "ウォルト"
+   ],
+   "year": 1987,
+   "note": ""
+  },
+  "schweller": {
+   "id": "schweller",
+   "name": "シュウェラー",
+   "latin": "Randall L. Schweller",
+   "aliases": [],
+   "year": 1994,
+   "note": ""
+  },
+  "kindleberger": {
+   "id": "kindleberger",
+   "name": "キンドルバーガー",
+   "latin": "Charles P. Kindleberger",
+   "aliases": [],
+   "year": 1973,
+   "note": ""
+  },
+  "gilpin": {
+   "id": "gilpin",
+   "name": "ギルピン",
+   "latin": "Robert Gilpin",
+   "aliases": [],
+   "year": 1975,
+   "note": ""
+  },
+  "organski": {
+   "id": "organski",
+   "name": "オルガンスキー",
+   "latin": "A. F. K. Organski",
+   "aliases": [],
+   "year": 1958,
+   "note": ""
+  },
+  "kondratiev": {
+   "id": "kondratiev",
+   "name": "コンドラチェフ",
+   "latin": "Nikolai Kondratiev",
+   "aliases": [],
+   "year": null,
+   "note": "1920年代とのみ記載"
+  },
+  "modelski": {
+   "id": "modelski",
+   "name": "モデルスキー",
+   "latin": "George Modelski",
+   "aliases": [],
+   "year": 1987,
+   "note": ""
+  },
+  "rose": {
+   "id": "rose",
+   "name": "ギデオン・ローズ",
+   "latin": "Gideon Rose",
+   "aliases": [],
+   "year": 1998,
+   "note": ""
+  },
+  "merton": {
+   "id": "merton",
+   "name": "ロバート・マートン",
+   "latin": "Robert K. Merton",
+   "aliases": [],
+   "year": null,
+   "note": "刊行年の記載なし"
+  },
+  "ikenberry": {
+   "id": "ikenberry",
+   "name": "アイケンベリー",
+   "latin": "G. John Ikenberry",
+   "aliases": [],
+   "year": 2011,
+   "note": ""
+  },
+  "popper": {
+   "id": "popper",
+   "name": "カール・ポパー",
+   "latin": "Karl Popper",
+   "aliases": [],
+   "year": null,
+   "note": "刊行年の記載なし"
+  },
+  "kant": {
+   "id": "kant",
+   "name": "カント",
+   "latin": "Immanuel Kant",
+   "aliases": [],
+   "year": 1795,
+   "note": ""
+  },
+  "carr": {
+   "id": "carr",
+   "name": "E.H.カー",
+   "latin": "Edward Hallett Carr",
+   "aliases": [
+    "カー"
+   ],
+   "year": 1939,
+   "note": ""
+  },
+  "farrell": {
+   "id": "farrell",
+   "name": "ファレル",
+   "latin": "Henry Farrell",
+   "aliases": [],
+   "year": 2019,
+   "note": ""
+  },
+  "newman": {
+   "id": "newman",
+   "name": "ニューマン",
+   "latin": "Abraham L. Newman",
+   "aliases": [],
+   "year": 2019,
+   "note": ""
+  },
+  "grieco": {
+   "id": "grieco",
+   "name": "グリーコ",
+   "latin": "Joseph M. Grieco",
+   "aliases": [],
+   "year": 1988,
+   "note": ""
+  },
+  "deutsch": {
+   "id": "deutsch",
+   "name": "カール・ドイッチュ",
+   "latin": "Karl W. Deutsch",
+   "aliases": [
+    "ドイッチュ"
+   ],
+   "year": 1957,
+   "note": ""
+  },
+  "doyle": {
+   "id": "doyle",
+   "name": "マイケル・ドイル",
+   "latin": "Michael W. Doyle",
+   "aliases": [
+    "ドイル"
+   ],
+   "year": 1983,
+   "note": ""
+  },
+  "dbaldwin": {
+   "id": "dbaldwin",
+   "name": "デイヴィッド・ボールドウィン",
+   "latin": "David A. Baldwin",
+   "aliases": [],
+   "year": 1993,
+   "note": ""
+  },
+  "allison": {
+   "id": "allison",
+   "name": "グレアム・アリソン",
+   "latin": "Graham T. Allison",
+   "aliases": [
+    "アリソン"
+   ],
+   "year": 1971,
+   "note": ""
+  },
+  "lindblom": {
+   "id": "lindblom",
+   "name": "リンドブロム",
+   "latin": "Charles E. Lindblom",
+   "aliases": [],
+   "year": 1959,
+   "note": ""
+  },
+  "simon": {
+   "id": "simon",
+   "name": "ハーバート・サイモン",
+   "latin": "Herbert A. Simon",
+   "aliases": [
+    "サイモン"
+   ],
+   "year": 1947,
+   "note": ""
+  },
+  "wohlstetter": {
+   "id": "wohlstetter",
+   "name": "ロバータ・ウォルステッター",
+   "latin": "Roberta Wohlstetter",
+   "aliases": [],
+   "year": 1962,
+   "note": ""
+  },
+  "janis": {
+   "id": "janis",
+   "name": "アーヴィング・ジャニス",
+   "latin": "Irving L. Janis",
+   "aliases": [
+    "ジャニス"
+   ],
+   "year": 1972,
+   "note": ""
+  },
+  "kahneman": {
+   "id": "kahneman",
+   "name": "カーネマン",
+   "latin": "Daniel Kahneman",
+   "aliases": [],
+   "year": 1979,
+   "note": ""
+  },
+  "tversky": {
+   "id": "tversky",
+   "name": "トヴェルスキー",
+   "latin": "Amos Tversky",
+   "aliases": [],
+   "year": 1979,
+   "note": ""
+  },
+  "wendt": {
+   "id": "wendt",
+   "name": "アレクサンダー・ウェント",
+   "latin": "Alexander Wendt",
+   "aliases": [
+    "ウェント"
+   ],
+   "year": 1992,
+   "note": ""
+  },
+  "sikkink": {
+   "id": "sikkink",
+   "name": "キャサリン・シッキンク",
+   "latin": "Kathryn Sikkink",
+   "aliases": [
+    "シッキンク"
+   ],
+   "year": 1998,
+   "note": ""
+  },
+  "keck": {
+   "id": "keck",
+   "name": "マーガレット・ケック",
+   "latin": "Margaret E. Keck",
+   "aliases": [
+    "ケック"
+   ],
+   "year": 1998,
+   "note": ""
+  },
+  "ropp": {
+   "id": "ropp",
+   "name": "スティーヴン・ロップ",
+   "latin": "Stephen C. Ropp",
+   "aliases": [],
+   "year": 1999,
+   "note": ""
+  },
+  "schimmelfennig": {
+   "id": "schimmelfennig",
+   "name": "シンマルフェニッヒ",
+   "latin": "Frank Schimmelfennig",
+   "aliases": [],
+   "year": 2001,
+   "note": ""
+  },
+  "wiener": {
+   "id": "wiener",
+   "name": "アンティェ・ウィーナー",
+   "latin": "Antje Wiener",
+   "aliases": [],
+   "year": null,
+   "note": "刊行年の記載なし"
+  },
+  "price": {
+   "id": "price",
+   "name": "リチャード・プライス",
+   "latin": "Richard Price",
+   "aliases": [],
+   "year": 1998,
+   "note": ""
+  },
+  "bachrachbaratz": {
+   "id": "bachrachbaratz",
+   "name": "バクラック＆バラッツ",
+   "latin": "Bachrach & Baratz",
+   "aliases": [],
+   "year": 1962,
+   "note": "DB本文は「バラッツ＆バラッツ」と誤記"
+  },
+  "collier": {
+   "id": "collier",
+   "name": "ポール・コリア",
+   "latin": "Paul Collier",
+   "aliases": [],
+   "year": 2004,
+   "note": ""
+  },
+  "hoeffler": {
+   "id": "hoeffler",
+   "name": "アンケ・ホーフラー",
+   "latin": "Anke Hoeffler",
+   "aliases": [],
+   "year": 2004,
+   "note": ""
+  },
+  "stewart": {
+   "id": "stewart",
+   "name": "フランセス・スチュワート",
+   "latin": "Frances Stewart",
+   "aliases": [],
+   "year": 2008,
+   "note": ""
+  },
+  "fearon": {
+   "id": "fearon",
+   "name": "ジェームズ・フィアロン",
+   "latin": "James D. Fearon",
+   "aliases": [],
+   "year": 2004,
+   "note": ""
+  },
+  "luttwak": {
+   "id": "luttwak",
+   "name": "エドワード・ルトワック",
+   "latin": "Edward N. Luttwak",
+   "aliases": [],
+   "year": 1999,
+   "note": ""
+  },
+  "cashore": {
+   "id": "cashore",
+   "name": "ベンジャミン・キャショーア",
+   "latin": "Benjamin Cashore",
+   "aliases": [],
+   "year": null,
+   "note": "刊行年の記載なし"
+  },
+  "moravcsik": {
+   "id": "moravcsik",
+   "name": "モラフチック",
+   "latin": "Andrew Moravcsik",
+   "aliases": [],
+   "year": 1993,
+   "note": ""
+  },
+  "ehaas": {
+   "id": "ehaas",
+   "name": "エルンスト・ハース",
+   "latin": "Ernst B. Haas",
+   "aliases": [],
+   "year": 1958,
+   "note": ""
+  },
+  "lindberg": {
+   "id": "lindberg",
+   "name": "リンドバーグ",
+   "latin": "Leon N. Lindberg",
+   "aliases": [],
+   "year": 1963,
+   "note": ""
+  },
+  "mogami": {
+   "id": "mogami",
+   "name": "最上敏樹",
+   "latin": "",
+   "aliases": [],
+   "year": 2016,
+   "note": ""
+  },
+  "jacoby": {
+   "id": "jacoby",
+   "name": "ジャコビー",
+   "latin": "Wade Jacoby",
+   "aliases": [],
+   "year": 2010,
+   "note": ""
+  },
+  "victor": {
+   "id": "victor",
+   "name": "ヴィクター",
+   "latin": "David G. Victor",
+   "aliases": [],
+   "year": 2011,
+   "note": ""
+  },
+  "stevens": {
+   "id": "stevens",
+   "name": "スティーヴンス",
+   "latin": "Casey Stevens",
+   "aliases": [],
+   "year": 2011,
+   "note": ""
+  },
+  "snyder": {
+   "id": "snyder",
+   "name": "リチャード・スナイダー",
+   "latin": "Richard C. Snyder",
+   "aliases": [],
+   "year": 1962,
+   "note": ""
+  },
+  "goldstein": {
+   "id": "goldstein",
+   "name": "ゴールドスタイン",
+   "latin": "Judith Goldstein",
+   "aliases": [],
+   "year": 1993,
+   "note": ""
+  },
+  "watanabe": {
+   "id": "watanabe",
+   "name": "渡邉智明",
+   "latin": "",
+   "aliases": [],
+   "year": 2021,
+   "note": ""
+  },
+  "yukawa": {
+   "id": "yukawa",
+   "name": "湯川拓",
+   "latin": "",
+   "aliases": [],
+   "year": 2011,
+   "note": ""
+  },
+  "sabel": {
+   "id": "sabel",
+   "name": "セイベル",
+   "latin": "Charles F. Sabel",
+   "aliases": [],
+   "year": 2012,
+   "note": ""
+  },
+  "zeitlin": {
+   "id": "zeitlin",
+   "name": "ツァイトリン",
+   "latin": "Jonathan Zeitlin",
+   "aliases": [],
+   "year": 2012,
+   "note": ""
+  },
+  "nicolaidis": {
+   "id": "nicolaidis",
+   "name": "ニコライディス",
+   "latin": "Kalypso Nicolaïdis",
+   "aliases": [],
+   "year": 2006,
+   "note": ""
+  },
+  "hettne": {
+   "id": "hettne",
+   "name": "ヘトネ",
+   "latin": "Björn Hettne",
+   "aliases": [],
+   "year": 1998,
+   "note": ""
+  },
+  "soderbaum": {
+   "id": "soderbaum",
+   "name": "セーデルバウム",
+   "latin": "Fredrik Söderbaum",
+   "aliases": [],
+   "year": 1998,
+   "note": ""
+  },
+  "hoshino": {
+   "id": "hoshino",
+   "name": "星野俊也",
+   "latin": "",
+   "aliases": [],
+   "year": 2001,
+   "note": ""
   }
  },
  "institutions": {
@@ -720,7 +1234,74 @@
   "地域貿易協定（RTA）": "057d1bd5ba084719ab86204877caf5ba",
   "超国家的ガバナンス": "09c5fb28b24a423d90802474ab0020b9",
   "特別報告者（国連人権理事会の特別手続）とOHCHR": "edf5629d6ca341cd801cdd094388b5cc",
-  "非国家主体": "912e9cbee0c3406ba953bf643a70b105"
+  "非国家主体": "912e9cbee0c3406ba953bf643a70b105",
+  "ネオクラシカル・リアリズム": "3d5cebbea1f181968f80f7b5e460a7b8",
+  "ネオリアリズム（構造的リアリズム）": "3d5cebbea1f181a59dc6c951d1194a8c",
+  "バランシングとバンドワゴニング（内的均衡・外的均衡）": "3d5cebbea1f181709610dae815633b9b",
+  "パワートランジション論": "3d5cebbea1f181caa5a5d8782b45b104",
+  "安全保障のジレンマ": "3d5cebbea1f1816c8c8acbcf4f5b2775",
+  "脅威均衡論（balance of threat）": "3d5cebbea1f18163adf4ccb9b68eb46c",
+  "覇権安定論": "3d5cebbea1f1811a8c42d6d44d66a067",
+  "長期サイクル論（コンドラチェフ波動・モデルスキー）": "3d5cebbea1f1811e983fe2071cd0dc14",
+  "トランスガバナメンタル・ネットワーク": "bdd2ae9e406f464a913c9420bd28a3f9",
+  "ネオネオ統合（Neo-Neo Synthesis）": "3d5cebbea1f18103af7bfe854a7040c1",
+  "リベラル政府間主義（liberal intergovernmentalism）": "da946efe26394f5a8c3b6950768e00b5",
+  "交流主義論と安全保障共同体": "3d5cebbea1f18185b844c23774928e53",
+  "新機能主義（neofunctionalism）": "27a2de47694c4cb1ab9afb5cd4848caa",
+  "普遍的国際機構と地域機構の機能的分業（補完・代替／地域調整／コスト配分）": "d173dfd2290a4588b00b169b17a06924",
+  "民主的平和論": "3d5cebbea1f1815b8028d101f9f9d8be",
+  "永遠平和論（カント）": "3d5cebbea1f1812d9417edcf504bf707",
+  "理想主義とユートピアニズム批判（第一次大論争）": "3d5cebbea1f18181a344daf56c6f30da",
+  "絶対利得と相対利得": "3d5cebbea1f18128a895dc55a64537f3",
+  "通商的リベラリズム": "3d5cebbea1f181b681acf2731d44b6ba",
+  "集団安全保障": "2bf4e1db5dea4d589d393cadf6526da7",
+  "アナーキーの文化（Anarchy is what states make of it）": "3d5cebbea1f181a980a4da9584e3cf32",
+  "ガバナンスの垂直的変化・水平的変化": "1878b5a226a54e12ba40f92388b11356",
+  "スパイラル・モデル": "3d5cebbea1f181e180decb1594e5d877",
+  "ブーメラン・パターン": "3d5cebbea1f181929507ca48fe78f3e8",
+  "利用可能な知識（usable knowledge）と知識の3要件": "ab06dec94c864545af3d9c0ced1db892",
+  "国際官僚制による規範形成（内部規則の外部効果・実務の規範化）": "a83c7c5fe8dd40808d9629e380b9a32d",
+  "専門家組織の政治的独立性（専門家登録簿方式／開かれたメンバーシップ）": "b9c920128c2f43b6adee089d2612d79f",
+  "弱いコンストラクティヴィズムと強いコンストラクティヴィズム": "3d5cebbea1f18120a05dd8d375d1bc18",
+  "状況規定（definition of the situation）と理念の因果的役割": "5b1d71534552436fbfdd5552679f1984",
+  "社会的学習（social learning）": "b841dc2719f340c4857e54ef99b97d9e",
+  "科学・政策インターフェイス（science-policy interface）": "b5bf30344fbc4d8389ae845ac7fe9a33",
+  "第三論争（合理主義 vs 構成主義）": "3d5cebbea1f18110bd60e018cc03dbf0",
+  "規制的効果と構成的効果": "3d5cebbea1f181e5a236c0883c724078",
+  "規範のライフサイクルと転換点": "3d5cebbea1f181508b72da61b70fd779",
+  "規範の接ぎ木（grafting）とゲートキーパー": "3d5cebbea1f181db94eac3e89779ae98",
+  "規範起業家とフレーミング": "3d5cebbea1f1819ca654efec7109a233",
+  "規範間対立の調整メカニズム（内政不干渉 vs 人権）と規範の一貫性": "5112996fd4fd4c51b8ed68a28c216b2b",
+  "言説の拘束（rhetorical entrapment）": "3d5cebbea1f181e8973cf65a4454b81e",
+  "逆螺旋（backlash）と規範の後退": "3d5cebbea1f181ee9a5cdb9c99a3cada",
+  "インクリメンタリズム（漸進主義）": "3d5cebbea1f18147814debc118820675",
+  "グループ思考シンドロームと悪魔の提言者": "3d5cebbea1f18100a721fd22241f6fc7",
+  "グローバル公共政策ネットワーク": "7b5aa57910e040bda6752a0d08b9f78a",
+  "プロスペクト理論（損失回避・参照基準点）": "3d5cebbea1f18142ba3cf6636d507d97",
+  "プロセス・トレーシング": "3d5cebbea1f181e89f28f2f96979d3c7",
+  "中範囲理論とパーシモニーの原則": "3d5cebbea1f1819e9fddccbbe26ed190",
+  "内戦の長期化要因": "3d6cebbea1f181a78f0deafdc825c69b",
+  "協調的安全保障": "9ba1db6ffcb74803a2e1830db70d840e",
+  "反証可能性（ポパー）": "3d5cebbea1f1812ba1b6efc58ffb8830",
+  "合理的行為者モデル（アリソン第一モデル）": "3d5cebbea1f18146b315c267175dd6df",
+  "因果推論の三要件と擬似相関": "3d5cebbea1f18182a525d8e7f2688e60",
+  "国際リベラル秩序（LIO）とその動揺": "3d5cebbea1f181bd9a94cf36b3590279",
+  "国際機構の「3つの顔」": "4a083ee625904f5e92ad3fed3f36585e",
+  "地域機構の3つのイメージ（利益集合体／GGの担い手／規範エージェント）": "e09cfb2d14884bc0aac19103766d3c58",
+  "官僚政治モデル（アリソン第三モデル）": "3d5cebbea1f18158bc45ff1979713e4a",
+  "実験主義的ガバナンス（experimentalist governance）": "fedfd0c7320d488fa3097e989ab97961",
+  "対抗レジームとグリーンウォッシュ": "3d6cebbea1f181ea824ddab0b0f5d251",
+  "市場パワー・通商を通じたパワー（power through trade）": "5b4989ea3e16439fab47c090a7e66296",
+  "新しいリージョナリズム（new regionalism）": "1165dfd6e6f44ea187b7bce34a4e4150",
+  "新しい戦争論": "a4ab70a7d0b044418e358ae7be20dc79",
+  "標準作業手続き（SOP）と国益の漸進的変化": "692d2e4226fe40bba5155b2dd0638fae",
+  "水平的不平等（集団間格差）仮説": "3d6cebbea1f181bcbc78c84bf31c390d",
+  "相互依存の武器化": "3d5cebbea1f181368d9fcb134288bdc8",
+  "組織過程モデル（アリソン第二モデル）": "3d5cebbea1f181dc935ec81bc576478d",
+  "認識過程モデル（シグナルとノイズ）": "3d5cebbea1f181a08c6af6b7a323a3b1",
+  "資源の呪い仮説": "3d6cebbea1f181e084e3cebff3eeca9d",
+  "選択バイアス（逆因果）とPKO効果の検証": "3d5cebbea1f18113ab16d823ac1988ac",
+  "限定合理性とサティスファイシング": "3d5cebbea1f181e8a5fbcb03ee03a147"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
@@ -2199,6 +2780,1030 @@
     "序章"
    ],
    "note": "区別の関連論者としてCox（1986）"
+  },
+  "3d5cebbea1f181a59dc6c951d1194a8c": {
+   "name": "ネオリアリズム（構造的リアリズム）",
+   "proposers": [
+    {
+     "id": "waltz",
+     "role": "提唱"
+    },
+    {
+     "id": "morgenthau",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f1816c8c8acbcf4f5b2775": {
+   "name": "安全保障のジレンマ",
+   "proposers": [
+    {
+     "id": "herz",
+     "role": "提唱"
+    },
+    {
+     "id": "jervis",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18163adf4ccb9b68eb46c": {
+   "name": "脅威均衡論（balance of threat）",
+   "proposers": [
+    {
+     "id": "walt",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181709610dae815633b9b": {
+   "name": "バランシングとバンドワゴニング（内的均衡・外的均衡）",
+   "proposers": [
+    {
+     "id": "waltz",
+     "role": "提唱"
+    },
+    {
+     "id": "schweller",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f1811a8c42d6d44d66a067": {
+   "name": "覇権安定論",
+   "proposers": [
+    {
+     "id": "kindleberger",
+     "role": "提唱"
+    },
+    {
+     "id": "gilpin",
+     "role": "提唱"
+    },
+    {
+     "id": "keohane",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181caa5a5d8782b45b104": {
+   "name": "パワートランジション論",
+   "proposers": [
+    {
+     "id": "organski",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f1811e983fe2071cd0dc14": {
+   "name": "長期サイクル論（コンドラチェフ波動・モデルスキー）",
+   "proposers": [
+    {
+     "id": "kondratiev",
+     "role": "提唱"
+    },
+    {
+     "id": "modelski",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181968f80f7b5e460a7b8": {
+   "name": "ネオクラシカル・リアリズム",
+   "proposers": [
+    {
+     "id": "rose",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f1812d9417edcf504bf707": {
+   "name": "永遠平和論（カント）",
+   "proposers": [
+    {
+     "id": "kant",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18181a344daf56c6f30da": {
+   "name": "理想主義とユートピアニズム批判（第一次大論争）",
+   "proposers": [
+    {
+     "id": "carr",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181b681acf2731d44b6ba": {
+   "name": "通商的リベラリズム",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181368d9fcb134288bdc8": {
+   "name": "相互依存の武器化",
+   "proposers": [
+    {
+     "id": "farrell",
+     "role": "提唱"
+    },
+    {
+     "id": "newman",
+     "role": "提唱"
+    },
+    {
+     "id": "keohane",
+     "role": "関連"
+    },
+    {
+     "id": "nye",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18128a895dc55a64537f3": {
+   "name": "絶対利得と相対利得",
+   "proposers": [
+    {
+     "id": "grieco",
+     "role": "代表"
+    },
+    {
+     "id": "keohane",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18185b844c23774928e53": {
+   "name": "交流主義論と安全保障共同体",
+   "proposers": [
+    {
+     "id": "deutsch",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f1815b8028d101f9f9d8be": {
+   "name": "民主的平和論",
+   "proposers": [
+    {
+     "id": "doyle",
+     "role": "代表"
+    },
+    {
+     "id": "kant",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18103af7bfe854a7040c1": {
+   "name": "ネオネオ統合（Neo-Neo Synthesis）",
+   "proposers": [
+    {
+     "id": "dbaldwin",
+     "role": "整理"
+    }
+   ],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181bd9a94cf36b3590279": {
+   "name": "国際リベラル秩序（LIO）とその動揺",
+   "proposers": [
+    {
+     "id": "ikenberry",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18146b315c267175dd6df": {
+   "name": "合理的行為者モデル（アリソン第一モデル）",
+   "proposers": [
+    {
+     "id": "allison",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181dc935ec81bc576478d": {
+   "name": "組織過程モデル（アリソン第二モデル）",
+   "proposers": [
+    {
+     "id": "allison",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18158bc45ff1979713e4a": {
+   "name": "官僚政治モデル（アリソン第三モデル）",
+   "proposers": [
+    {
+     "id": "allison",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18147814debc118820675": {
+   "name": "インクリメンタリズム（漸進主義）",
+   "proposers": [
+    {
+     "id": "lindblom",
+     "role": "提唱"
+    },
+    {
+     "id": "simon",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181e8a5fbcb03ee03a147": {
+   "name": "限定合理性とサティスファイシング",
+   "proposers": [
+    {
+     "id": "simon",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181a08c6af6b7a323a3b1": {
+   "name": "認識過程モデル（シグナルとノイズ）",
+   "proposers": [
+    {
+     "id": "wohlstetter",
+     "role": "提唱"
+    },
+    {
+     "id": "jervis",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18100a721fd22241f6fc7": {
+   "name": "グループ思考シンドロームと悪魔の提言者",
+   "proposers": [
+    {
+     "id": "janis",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18142ba3cf6636d507d97": {
+   "name": "プロスペクト理論（損失回避・参照基準点）",
+   "proposers": [
+    {
+     "id": "kahneman",
+     "role": "提唱"
+    },
+    {
+     "id": "tversky",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18120a05dd8d375d1bc18": {
+   "name": "弱いコンストラクティヴィズムと強いコンストラクティヴィズム",
+   "proposers": [
+    {
+     "id": "phaas",
+     "role": "代表"
+    },
+    {
+     "id": "wendt",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181a980a4da9584e3cf32": {
+   "name": "アナーキーの文化（Anarchy is what states make of it）",
+   "proposers": [
+    {
+     "id": "wendt",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18110bd60e018cc03dbf0": {
+   "name": "第三論争（合理主義 vs 構成主義）",
+   "proposers": [
+    {
+     "id": "wendt",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181508b72da61b70fd779": {
+   "name": "規範のライフサイクルと転換点",
+   "proposers": [
+    {
+     "id": "finnemore",
+     "role": "提唱"
+    },
+    {
+     "id": "sikkink",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f1819ca654efec7109a233": {
+   "name": "規範起業家とフレーミング",
+   "proposers": [
+    {
+     "id": "finnemore",
+     "role": "提唱"
+    },
+    {
+     "id": "sikkink",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181e5a236c0883c724078": {
+   "name": "規制的効果と構成的効果",
+   "proposers": [
+    {
+     "id": "finnemore",
+     "role": "関連"
+    },
+    {
+     "id": "sikkink",
+     "role": "関連"
+    },
+    {
+     "id": "wendt",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181e180decb1594e5d877": {
+   "name": "スパイラル・モデル",
+   "proposers": [
+    {
+     "id": "risse",
+     "role": "提唱"
+    },
+    {
+     "id": "ropp",
+     "role": "提唱"
+    },
+    {
+     "id": "sikkink",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181929507ca48fe78f3e8": {
+   "name": "ブーメラン・パターン",
+   "proposers": [
+    {
+     "id": "keck",
+     "role": "提唱"
+    },
+    {
+     "id": "sikkink",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181e8973cf65a4454b81e": {
+   "name": "言説の拘束（rhetorical entrapment）",
+   "proposers": [
+    {
+     "id": "schimmelfennig",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181ee9a5cdb9c99a3cada": {
+   "name": "逆螺旋（backlash）と規範の後退",
+   "proposers": [
+    {
+     "id": "wiener",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181db94eac3e89779ae98": {
+   "name": "規範の接ぎ木（grafting）とゲートキーパー",
+   "proposers": [
+    {
+     "id": "price",
+     "role": "代表"
+    },
+    {
+     "id": "bachrachbaratz",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d6cebbea1f181e084e3cebff3eeca9d": {
+   "name": "資源の呪い仮説",
+   "proposers": [
+    {
+     "id": "collier",
+     "role": "代表"
+    },
+    {
+     "id": "hoeffler",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d6cebbea1f181bcbc78c84bf31c390d": {
+   "name": "水平的不平等（集団間格差）仮説",
+   "proposers": [
+    {
+     "id": "stewart",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d6cebbea1f181a78f0deafdc825c69b": {
+   "name": "内戦の長期化要因",
+   "proposers": [
+    {
+     "id": "fearon",
+     "role": "代表"
+    },
+    {
+     "id": "kaldor",
+     "role": "関連"
+    },
+    {
+     "id": "luttwak",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d6cebbea1f181ea824ddab0b0f5d251": {
+   "name": "対抗レジームとグリーンウォッシュ",
+   "proposers": [
+    {
+     "id": "cashore",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f1819e9fddccbbe26ed190": {
+   "name": "中範囲理論とパーシモニーの原則",
+   "proposers": [
+    {
+     "id": "merton",
+     "role": "関連"
+    },
+    {
+     "id": "waltz",
+     "role": "関連"
+    }
+   ],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18182a525d8e7f2688e60": {
+   "name": "因果推論の三要件と擬似相関",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f1812ba1b6efc58ffb8830": {
+   "name": "反証可能性（ポパー）",
+   "proposers": [
+    {
+     "id": "popper",
+     "role": "提唱"
+    },
+    {
+     "id": "waltz",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f181e89f28f2f96979d3c7": {
+   "name": "プロセス・トレーシング",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "3d5cebbea1f18113ab16d823ac1988ac": {
+   "name": "選択バイアス（逆因果）とPKO効果の検証",
+   "proposers": [],
+   "none": true,
+   "src": [
+    "国際政治理論"
+   ],
+   "note": ""
+  },
+  "da946efe26394f5a8c3b6950768e00b5": {
+   "name": "リベラル政府間主義（liberal intergovernmentalism）",
+   "proposers": [
+    {
+     "id": "moravcsik",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第2章"
+   ],
+   "note": ""
+  },
+  "27a2de47694c4cb1ab9afb5cd4848caa": {
+   "name": "新機能主義（neofunctionalism）",
+   "proposers": [
+    {
+     "id": "ehaas",
+     "role": "提唱"
+    },
+    {
+     "id": "lindberg",
+     "role": "代表"
+    },
+    {
+     "id": "watanabe",
+     "role": "整理"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第2章"
+   ],
+   "note": ""
+  },
+  "d173dfd2290a4588b00b169b17a06924": {
+   "name": "普遍的国際機構と地域機構の機能的分業（補完・代替／地域調整／コスト配分）",
+   "proposers": [
+    {
+     "id": "watanabe",
+     "role": "整理"
+    },
+    {
+     "id": "mogami",
+     "role": "関連"
+    },
+    {
+     "id": "jacoby",
+     "role": "関連"
+    },
+    {
+     "id": "meunier",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第2章"
+   ],
+   "note": ""
+  },
+  "1878b5a226a54e12ba40f92388b11356": {
+   "name": "ガバナンスの垂直的変化・水平的変化",
+   "proposers": [
+    {
+     "id": "yamada",
+     "role": "整理"
+    },
+    {
+     "id": "keohane",
+     "role": "関連"
+    },
+    {
+     "id": "victor",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第3章"
+   ],
+   "note": ""
+  },
+  "ab06dec94c864545af3d9c0ced1db892": {
+   "name": "利用可能な知識（usable knowledge）と知識の3要件",
+   "proposers": [
+    {
+     "id": "phaas",
+     "role": "提唱"
+    },
+    {
+     "id": "stevens",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第3章"
+   ],
+   "note": ""
+  },
+  "b9c920128c2f43b6adee089d2612d79f": {
+   "name": "専門家組織の政治的独立性（専門家登録簿方式／開かれたメンバーシップ）",
+   "proposers": [
+    {
+     "id": "phaas",
+     "role": "提唱"
+    },
+    {
+     "id": "stevens",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第3章"
+   ],
+   "note": ""
+  },
+  "5b1d71534552436fbfdd5552679f1984": {
+   "name": "状況規定（definition of the situation）と理念の因果的役割",
+   "proposers": [
+    {
+     "id": "snyder",
+     "role": "提唱"
+    },
+    {
+     "id": "goldstein",
+     "role": "代表"
+    },
+    {
+     "id": "keohane",
+     "role": "代表"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第3章"
+   ],
+   "note": ""
+  },
+  "b841dc2719f340c4857e54ef99b97d9e": {
+   "name": "社会的学習（social learning）",
+   "proposers": [
+    {
+     "id": "phaas",
+     "role": "提唱"
+    },
+    {
+     "id": "ehaas",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第3章"
+   ],
+   "note": ""
+  },
+  "b5bf30344fbc4d8389ae845ac7fe9a33": {
+   "name": "科学・政策インターフェイス（science-policy interface）",
+   "proposers": [
+    {
+     "id": "young",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "整理"
+    }
+   ],
+   "none": true,
+   "src": [
+    "第3章"
+   ],
+   "note": ""
+  },
+  "5112996fd4fd4c51b8ed68a28c216b2b": {
+   "name": "規範間対立の調整メカニズム（内政不干渉 vs 人権）と規範の一貫性",
+   "proposers": [
+    {
+     "id": "watanabe",
+     "role": "整理"
+    },
+    {
+     "id": "yukawa",
+     "role": "関連"
+    },
+    {
+     "id": "manners",
+     "role": "関連"
+    },
+    {
+     "id": "nishitani",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第2章"
+   ],
+   "note": ""
+  },
+  "e09cfb2d14884bc0aac19103766d3c58": {
+   "name": "地域機構の3つのイメージ（利益集合体／GGの担い手／規範エージェント）",
+   "proposers": [
+    {
+     "id": "watanabe",
+     "role": "提唱"
+    },
+    {
+     "id": "hoshino",
+     "role": "関連"
+    },
+    {
+     "id": "mogami",
+     "role": "関連"
+    },
+    {
+     "id": "yamada",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第2章"
+   ],
+   "note": ""
+  },
+  "fedfd0c7320d488fa3097e989ab97961": {
+   "name": "実験主義的ガバナンス（experimentalist governance）",
+   "proposers": [
+    {
+     "id": "sabel",
+     "role": "提唱"
+    },
+    {
+     "id": "zeitlin",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第2章"
+   ],
+   "note": ""
+  },
+  "5b4989ea3e16439fab47c090a7e66296": {
+   "name": "市場パワー・通商を通じたパワー（power through trade）",
+   "proposers": [
+    {
+     "id": "meunier",
+     "role": "提唱"
+    },
+    {
+     "id": "nicolaidis",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第2章"
+   ],
+   "note": ""
+  },
+  "1165dfd6e6f44ea187b7bce34a4e4150": {
+   "name": "新しいリージョナリズム（new regionalism）",
+   "proposers": [
+    {
+     "id": "hettne",
+     "role": "提唱"
+    },
+    {
+     "id": "soderbaum",
+     "role": "提唱"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第2章"
+   ],
+   "note": ""
+  },
+  "692d2e4226fe40bba5155b2dd0638fae": {
+   "name": "標準作業手続き（SOP）と国益の漸進的変化",
+   "proposers": [
+    {
+     "id": "allison",
+     "role": "提唱"
+    },
+    {
+     "id": "phaas",
+     "role": "関連"
+    }
+   ],
+   "none": false,
+   "src": [
+    "第3章"
+   ],
+   "note": ""
   }
  }
 }

@@ -7,6 +7,14 @@ const fs = require("fs");
 const path = require("path");
 
 const SRC = require("./master_src.js");           // { P, I, T }
+// 追加分ファイル（master_add*.js）があればマージする。語を足すときはここに追記していけばよい。
+for (const f of fs.readdirSync(__dirname).filter((n) => /^master_add.*\.js$/.test(n)).sort()) {
+  const add = require("./" + f);
+  Object.assign(SRC.P, add.P || {});
+  Object.assign(SRC.I, add.I || {});
+  Object.assign(SRC.T, add.T || {});
+  console.log("+ " + f + " をマージ");
+}
 const DATA = path.join(__dirname, "..", "data");
 const termsPath = path.join(DATA, "terms.json");
 const outPath = path.join(DATA, "proposers.json");
