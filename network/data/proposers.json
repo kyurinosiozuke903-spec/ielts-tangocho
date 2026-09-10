@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-09-09",
+  "generated": "2026-09-10",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1373,7 +1373,13 @@
   "社会ネットワーク分析（SNA）": "6fd7fcd6146f422680f611151d56568d",
   "繋がり行動（connective action）": "3d6cebbea1f181b7973df539177b2899",
   "遵守／実効性の区別（compliance / effectiveness）": "0163cf34093043c190b60e7e062f3e1d",
-  "選択バイアス（selection bias）": "3d5cebbea1f18113ab16d823ac1988ac"
+  "選択バイアス（selection bias）": "3d5cebbea1f18113ab16d823ac1988ac",
+  "ガバナンス・ネットワーク": "672cae917f4f4e0d98d97d0c66a1d1f3",
+  "分散型社会運動ネットワーク": "041cb47830ab42ba8e5d6ba25a356fbd",
+  "政策ネットワーク": "01fb6c7f80034b749c08717518d499ed",
+  "正統性共同体": "67b109421ed94618a2eacd5178846ba2",
+  "自省的正統化": "90070365341b44ef826a6805e723e654",
+  "遵守牽引力": "ff9806b433be4ec5a11dbf459c13dfc1"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
