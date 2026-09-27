@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-09-26",
+  "generated": "2026-09-27",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1457,7 +1457,10 @@
   "紛争鉱物と資金源の遮断": "95914f5e081544b68e6c74e8c5c0c0b4",
   "緩和（mitigation）と適応（adaptation）": "51b71b78af8a41f08e3609142e900443",
   "脆弱性（vulnerability）": "e00d9d926bf94d77bfd05a27ea25156e",
-  "開発効果（development effectiveness）": "379e524cbada4626a8f270b0efd31164"
+  "開発効果（development effectiveness）": "379e524cbada4626a8f270b0efd31164",
+  "多国間主義（multilateralism）": "6246e40008f34c22807befddd308f22b",
+  "集団安全保障（collective security）": "e9136a58556d450fb538832e2f1009c9",
+  "庇護の外部化（externalization of asylum）": "26c331ed5f29414c88fee862a7f8c051"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
