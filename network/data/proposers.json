@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-09-27",
+  "generated": "2026-09-28",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1460,7 +1460,15 @@
   "開発効果（development effectiveness）": "379e524cbada4626a8f270b0efd31164",
   "多国間主義（multilateralism）": "6246e40008f34c22807befddd308f22b",
   "集団安全保障（collective security）": "e9136a58556d450fb538832e2f1009c9",
-  "庇護の外部化（externalization of asylum）": "26c331ed5f29414c88fee862a7f8c051"
+  "庇護の外部化（externalization of asylum）": "26c331ed5f29414c88fee862a7f8c051",
+  "法の変更説": "21101b44a3c547428ca9ed30cb0ba110",
+  "法の欠缺説": "a477c2e3dd4f4d438b653401dbe718fc",
+  "混合紛争論": "25a4e7cb88054815ba2037fceb08ddfd",
+  "無差別戦争観": "b127ea84eee94145989d55beb2a2d414",
+  "紛争処理手段の単線構造論": "83564247bd3f45748be8eed8c922f76c",
+  "紛争処理手段の複線構造論": "c3a04ac973df4973a6ce4aa73e34545a",
+  "紛争（dispute）の存在要件（マヴロマティス定式）": "708c8dfc4c574c40be5e0213eecd89e4",
+  "重大利益説": "0a17c908c7cc4e649a27bab8f61db8a9"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
