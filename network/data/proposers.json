@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-09-28",
+  "generated": "2026-09-29",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1468,7 +1468,15 @@
   "紛争処理手段の単線構造論": "83564247bd3f45748be8eed8c922f76c",
   "紛争処理手段の複線構造論": "c3a04ac973df4973a6ce4aa73e34545a",
   "紛争（dispute）の存在要件（マヴロマティス定式）": "708c8dfc4c574c40be5e0213eecd89e4",
-  "重大利益説": "0a17c908c7cc4e649a27bab8f61db8a9"
+  "重大利益説": "0a17c908c7cc4e649a27bab8f61db8a9",
+  "移住ディプロマシー（migration diplomacy）": "8502bf3491d0465b87eeee9a97a3ff75",
+  "グローバル・ケア・チェーン（global care chain）": "31bca592544945cea2f386544e443143",
+  "プッシュ・プル・モデル（push-pull model）": "e29c93ea13644c708c425908c40b5261",
+  "南南移住（South-South migration）": "9e3bdce7a9684c09a0ae32610ebfec10",
+  "国際移住者の定義（常居所の変更と12か月基準）": "b587742cb03e499792a44045676e7f5d",
+  "移住の新経済学（NELM: New Economics of Labour Migration）": "1d737ebc8d7d427b84a88acec8ae7d91",
+  "移住インフラストラクチャー（migration infrastructure）": "663860dc494a4a63bacd46a8203fd794",
+  "移住産業（migration industry）": "e6d3e8ed01e848008ffeebd349b13fb7"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
