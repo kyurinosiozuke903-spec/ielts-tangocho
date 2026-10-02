@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-10-01",
+  "generated": "2026-10-02",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1487,7 +1487,18 @@
   "拒否権プレイヤー（veto player）": "84aee4d729004c568c13924e123e62ec",
   "最も野心的でないプログラムの法則（law of the least ambitious program）": "3e98cd1bb8fc464bb6c645e656694e1f",
   "集合行為問題（collective action problem）": "25ab88b493984ca3bdb5523645372972",
-  "国際立憲主義（international constitutionalism）": "3cb7c7cbe31f4fce91709d7c5f100743"
+  "国際立憲主義（international constitutionalism）": "3cb7c7cbe31f4fce91709d7c5f100743",
+  "安全保障化（securitization）": "7d623571fa1445f39908edf46adb106c",
+  "気候安全保障（climate security）": "c9b1d0b119eb4e3992d45ba1fcaac7cc",
+  "移住の問題化（problematization of migration）": "44b67a9699ca43efa15eb82f46b465fb",
+  "エスニック帰還移住（ethnic return migration）": "b04863b0057341e39bea01766e5a5e2e",
+  "トランスナショナリズム（transnationalism）": "e2e2114d563148e6a4bc5c573f933bc1",
+  "モビリティ・ターン（mobility turn）": "c82b19176ba7482f91611482c40ec1af",
+  "人材獲得競争（race for talent）": "4e7157e2757e4d5daa544317afacdbd9",
+  "移住のグローバル化（globalization of migration）": "6be9e3aaa5824a01b7d3999440dba86e",
+  "移住の地域化（regionalization of migration）": "9d8c098173d442f08ee3e3252212579b",
+  "移住の女性化（feminization of migration）": "87709bd9cc39497d9dd62b9bad6df0a6",
+  "移住システム論（migration systems theory）": "a6053306198b41db8c521cbbe705eb6c"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
