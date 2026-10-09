@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1498,7 +1498,31 @@
   "移住のグローバル化（globalization of migration）": "6be9e3aaa5824a01b7d3999440dba86e",
   "移住の地域化（regionalization of migration）": "9d8c098173d442f08ee3e3252212579b",
   "移住の女性化（feminization of migration）": "87709bd9cc39497d9dd62b9bad6df0a6",
-  "移住システム論（migration systems theory）": "a6053306198b41db8c521cbbe705eb6c"
+  "移住システム論（migration systems theory）": "a6053306198b41db8c521cbbe705eb6c",
+  "重商主義（mercantilism）": "6d3130c595a54af6ae0767baccdf3dd3",
+  "予防外交（preventive diplomacy）": "aba33f2b3b5d4dd5ab5bb01ed8b8c693",
+  "経済的自由主義（economic liberalism）": "8d9b97d10b274fb9bf76fec0b3f73ee0",
+  "埋め込まれた自由主義（embedded liberalism）": "9390cec42a3a43afb5176b26b7d8994a",
+  "移住の文化（culture of migration）": "b308451318204669b7e7c7280d97c88b",
+  "従属理論": "742a748b8f7547e08c5be3a16c54efbc",
+  "トランスナショナル・ロー（transnational law）": "987c11ddbaab4567a557fb4bf41b2243",
+  "トランスナショナル公法訴訟（transnational public law litigation）": "f8bd4361dbc849539960c9fb40a8e368",
+  "不動性（immobility）と移動性バイアス": "1a3cacaf7e7f4230b85b1ae45014ee19",
+  "世界法（world law）": "962cb855d09b48a7906b89f96563c074",
+  "仲介者のバイアスと信頼性（mediator bias and credibility）": "5e8f709dcdf5417fa8963532994ed966",
+  "分節化労働市場論（二重労働市場論）": "4a16fdcf41d24e79950024b29dd5d1e8",
+  "制限免除主義（restrictive theory of sovereign immunity）": "a994dbb8cc0f418b92c91e5c33937d79",
+  "新古典派移住理論（人的資本投資モデル）": "be14087bbe494a319feea4a8701ef32e",
+  "構造とエージェンシー（移住理論）": "3d6e94e63e184bf3838cef508548f05f",
+  "法の範囲内の衡平（equity infra legem）": "1e2d8bde42a1423499ca6ea8fe8106d6",
+  "相対的剥奪（移住の動機）": "4daac9b79bc340deab4d56302132620a",
+  "移住ドライバー（migration drivers）": "90dac4793a294969899c9f42ce262d22",
+  "移住ハンプ（migration hump）": "91d59832480d49819c3f33c882111adc",
+  "移動転換仮説（mobility transition）": "c9f786e89f97460eb797e2420872f9fb",
+  "移民ネットワーク理論": "ab897cbb850e47af8341128dfa26f9b0",
+  "紛争の成熟（ripeness）理論": "108ce85fba434be89273c84756da2508",
+  "誠実交渉義務（obligation to negotiate in good faith）": "b33b18341fd34aab8585f88c5c7cd825",
+  "願望・能力枠組み（aspirations–capabilities framework）": "fd01c72b54304f389c8b50644c5b884d"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
