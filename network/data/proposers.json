@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-10-16",
+  "generated": "2026-10-17",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1532,7 +1532,9 @@
   "数と権利のトレードオフ（numbers vs. rights）": "be13344e50994028b27f37c179be1914",
   "有益な頭脳流出（beneficial brain drain／頭脳獲得 brain gain）": "c07d4769d9e74ccbb7798d73cb3ccef2",
   "頭脳流出（brain drain）": "e84b0a275c534b708ccdc7d84602b975",
-  "頭脳浪費（brain waste）": "3e29daeb88b1482daea980b2ba8b72ee"
+  "頭脳浪費（brain waste）": "3e29daeb88b1482daea980b2ba8b72ee",
+  "新自由主義（neoliberalism）": "482abd6ee26d4da0976b0ccb0ccbffce",
+  "プレビッシュ＝シンガー命題（交易条件の長期悪化説）": "385ac722cef543fba8d60fa9dd629f81"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
