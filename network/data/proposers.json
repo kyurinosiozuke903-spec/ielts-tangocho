@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1535,7 +1535,13 @@
   "頭脳浪費（brain waste）": "3e29daeb88b1482daea980b2ba8b72ee",
   "新自由主義（neoliberalism）": "482abd6ee26d4da0976b0ccb0ccbffce",
   "プレビッシュ＝シンガー命題（交易条件の長期悪化説）": "385ac722cef543fba8d60fa9dd629f81",
-  "相互主義（reciprocity）": "cca213d1faa54617b8e8e3e195f201d0"
+  "相互主義（reciprocity）": "cca213d1faa54617b8e8e3e195f201d0",
+  "家族と帰属の共構築（co-construction of family and belonging）": "cc1b691ad61046df979fd47aacc067a4",
+  "インターセクショナリティ（intersectionality）": "7d87d05aa9714d5a9328ab078d627423",
+  "帰属の政治（politics of belonging）": "2752156175ae4fb09e895e1e3ce4e7d8",
+  "グローバル・ハイパーガミー（global hypergamy）": "4d9c51e89a5b47d6ae7da624d6c3272a",
+  "トランスナショナル・ファミリー（transnational family）": "46f31881fa32480b928a10612594267f",
+  "市民的階層化（civic stratification）": "3dc7b89e204849e6870b3614267cc98d"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
