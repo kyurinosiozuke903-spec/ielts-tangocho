@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-11-01",
+  "generated": "2026-11-02",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1550,7 +1550,16 @@
   "潤滑油仮説（grease the wheels hypothesis）": "115a5d3c1a444f4e8295eee98a409d4e",
   "腐敗の4類型（Ang）": "5aa6b6f07dc74ff29f2acb1c8478c811",
   "腐敗寛容度（corruption tolerance）": "2fdd7fa76914407b8a0477c73997d8f7",
-  "腐敗認識（perception of corruption）": "187238588188415c9190f25c7a0e6a8f"
+  "腐敗認識（perception of corruption）": "187238588188415c9190f25c7a0e6a8f",
+  "リベラル・パラドックス（liberal paradox）": "13ec73f7dbfb496e8a17656efc87c28c",
+  "負担分担（burden-sharing）": "0d25a6b8bb594bbebefc25f67a8de271",
+  "社会的再生産（social reproduction）": "c4fcdbfbd06b4a9390b24990383fae1d",
+  "主権国家体系の産物としての難民（refugee between sovereigns）": "231345d6ba534b0bb750e1ffac3251d9",
+  "強制的移民操作（coercive engineered migration）": "42c83dbe7f8240bfa72f704d0ff12b41",
+  "強制－自発の連続体（forced–voluntary continuum）": "e2561b034e9441978132c971b5b62ed1",
+  "混合移動（mixed migration）": "06b2dda51289423aaa981c6366b247ab",
+  "犯罪統制アプローチ（crime control approach）": "1cb3064022c944d4972251aa98a053a3",
+  "経路依存性（path dependence）": "b1a0d63a1f3346b79dfc8e46a1c5a4cb"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
