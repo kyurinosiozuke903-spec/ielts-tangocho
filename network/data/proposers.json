@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-11-02",
+  "generated": "2026-11-03",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1559,7 +1559,10 @@
   "強制－自発の連続体（forced–voluntary continuum）": "e2561b034e9441978132c971b5b62ed1",
   "混合移動（mixed migration）": "06b2dda51289423aaa981c6366b247ab",
   "犯罪統制アプローチ（crime control approach）": "1cb3064022c944d4972251aa98a053a3",
-  "経路依存性（path dependence）": "b1a0d63a1f3346b79dfc8e46a1c5a4cb"
+  "経路依存性（path dependence）": "b1a0d63a1f3346b79dfc8e46a1c5a4cb",
+  "ローフェア（lawfare）": "600aac5a4c61485db75ef40bb3db5553",
+  "制約された独立性（constrained independence）": "0026a67d7b7644d4b91a66a777a6bdf7",
+  "国際法遵守の管理モデルと強制モデル（managerial / enforcement model）": "2589ea4f542e4de4bfa76cce2b635a4e"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
