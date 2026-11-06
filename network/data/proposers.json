@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-11-05",
+  "generated": "2026-11-06",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1567,7 +1567,15 @@
   "地経学（geoeconomics）": "40fcebbea1f18141a3b8c4977cc83023",
   "ネオコロニアリズム（neo-colonialism）": "40fcebbea1f181d79022c29e7cecaf48",
   "ブリュッセル効果（Brussels effect）": "40fcebbea1f1817288e2cc8a1e9d88fe",
-  "地域間主義（interregionalism）": "40fcebbea1f18164bf4dcbbf41ba8dd0"
+  "地域間主義（interregionalism）": "40fcebbea1f18164bf4dcbbf41ba8dd0",
+  "レジーム・シフティング（regime shifting）": "410cebbea1f181f98512f21261c79054",
+  "集団的正統化（collective legitimization）": "410cebbea1f1819e8a30c48005b3ca67",
+  "ミドルパワー（middle power）": "410cebbea1f181579230c6aa2f5e3695",
+  "二段階移住（two-step migration）": "410cebbea1f181999cf4e128225d24c8",
+  "国際学生移動（international student mobility）": "410cebbea1f181519955ffb0a29f193a",
+  "大国協調（concert of powers）": "410cebbea1f1810db2dbd0a6303931ad",
+  "教育・移住ネクサス（education–migration nexus）": "410cebbea1f181d7876ed7a989746228",
+  "移動資本（mobility capital）": "410cebbea1f181e1bd02edcb41f1c35d"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
