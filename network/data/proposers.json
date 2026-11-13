@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-11-12",
+  "generated": "2026-11-13",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1577,7 +1577,15 @@
   "教育・移住ネクサス（education–migration nexus）": "410cebbea1f181d7876ed7a989746228",
   "移動資本（mobility capital）": "410cebbea1f181e1bd02edcb41f1c35d",
   "組織的偽善（organized hypocrisy）": "416cebbea1f181758649e42dc9e75357",
-  "正戦論（just war theory）": "bf5947e4a4584d42a63b524e2489189e"
+  "正戦論（just war theory）": "bf5947e4a4584d42a63b524e2489189e",
+  "予防戦争（preventive war）": "417cebbea1f181d081e9e21de0bab1f6",
+  "先制攻撃（preemptive strike）": "417cebbea1f181e0a0e3cf56bcfc6a74",
+  "歴史の終わり（the end of history）": "417cebbea1f181f089e8e5062caa1dd0",
+  "グローバル・バリューチェーン（global value chain, GVC）": "417cebbea1f181018e2fcc9574531b37",
+  "国家資本主義（state capitalism）": "417cebbea1f1819cafdae2c11c0b337f",
+  "外部からの体制転換（foreign-imposed regime change, FIRC）": "417cebbea1f181218c6cdc4b157d3195",
+  "法の遅れ（law lag）": "417cebbea1f1815c903dd4c85df51d17",
+  "貿易創出効果と貿易転換効果（trade creation / trade diversion）": "417cebbea1f181649179ffcb287498c5"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
