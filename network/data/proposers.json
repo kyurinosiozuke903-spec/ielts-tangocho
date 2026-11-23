@@ -1,7 +1,7 @@
 {
  "_meta": {
   "title": "提唱者マスタ（下書き）",
-  "generated": "2026-11-22",
+  "generated": "2026-11-23",
   "source": "network/tools/master_src.js × data/terms.json",
   "status": "Claude作成の下書き。役割（提唱／代表／関連／整理／機関）・原綴り・年・人物と機関の区分は要レビュー。",
   "schools": [
@@ -1588,7 +1588,15 @@
   "貿易創出効果と貿易転換効果（trade creation / trade diversion）": "417cebbea1f181649179ffcb287498c5",
   "正義の連鎖（justice cascade）": "41ecebbea1f181729dc3e300f6327d6c",
   "スポイラー（spoiler）": "41ecebbea1f1818b92cdecc9d753b0fe",
-  "抑止（deterrence）": "420cebbea1f1810cb1a9d3c9dc132220"
+  "抑止（deterrence）": "420cebbea1f1810cb1a9d3c9dc132220",
+  "ガバナンス効果（governance effects）": "421cebbea1f181ceaf22ec06cf27feac",
+  "空虚なシニフィアン（empty signifier）": "421cebbea1f1815a9248da8d46288a8d",
+  "グローバル・シティ（global city）": "421cebbea1f181dfa172e6b287a6e28e",
+  "ローカル・ターン（local turn）": "421cebbea1f1819492fccfe40bf9d46c",
+  "国家中心的ガバナンス（state-centred governance）": "421cebbea1f181d49979ca09e7ed8e13",
+  "奇妙な同床者（strange bedfellows）": "421cebbea1f18161810dd45231925b6e",
+  "移住禁止の政策サイクル（migration ban policy cycle）": "421cebbea1f181cca480d9dd412aac47",
+  "移民政策の失敗論（policy failure thesis）": "421cebbea1f18199bc85e5dae6181468"
  },
  "terms": {
   "d75a3be8a69f48cc8bd8b34f0ff1920b": {
